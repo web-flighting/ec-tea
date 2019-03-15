@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>一味一城茶舍</title>
+
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="logo pull-left"><img class="m-r" src="/img/logo.png">一味一城茶舍</div>
+            <div class="pull-right">
+                <select id="roleList" class="header-role form-control pull-left m-r"></select>
+                <div class="pull-left header-info pr">
+                    <ul class="pa header-info-list none">
+                        <li id="logout">退出账号</li>
+                    </ul>
+                    <img src="/img/profile_small.jpg" alt="">
+                    <span id="userName" class="name"></span>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation" style="overflow-y:auto;">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav index-nav" id="side-menu"></ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row J_mainContent" id="content-main">
+                <iframe class="J_iframe" width="100%" height="100%" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+
+    <!-- 菜单模板 -->
+    <script type="text/html" id="menuTpl">
+        {{each data}}
+        <li>
+            <a href="#">
+                <i class="fa fa-th-large"></i>
+                <span class="nav-label">{{$value.title}}</span>
+                <span class="fa arrow"></span>
+            </a>
+            {{if !!$value.ecTeaSystemMenus}}
+            <ul class="nav nav-second-level collapse">
+                {{each $value.ecTeaSystemMenus item index}}
+                    {{include 'menusTpl' item}}
+                {{/each}}
+            {{/if}}
+            </ul>
+        </li>
+        {{/each}}
+    </script>
+    <script type="text/html" id="menusTpl">
+        <li>
+            <a class="J_menuItem" href="/views{{hrefUrl}}">{{title}}</a>
+            {{if !!ecTeaSystemMenus}}
+            <ul class="nav nav-second-level collapse">
+                {{each ecTeaSystemMenus item index}}
+                    {{include 'menusTpl' item}}
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+    </script>
+    <script type="text/html" id="roleListTpl">
+        {{each data}}
+        <option value="{{$value.roleId}}">{{$value.roleName}}</option>
+        {{/each}}
+    </script>
+    
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+    
+    <!-- 插件 -->
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+    <script src="/js/plugins/template/template.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/contabs.js"></script>
+</body>
+
+</html>

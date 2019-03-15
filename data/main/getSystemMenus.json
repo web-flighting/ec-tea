@@ -1,0 +1,89 @@
+{
+  "code": 0,
+  "messageCode": "I000000",
+  "resultMessage": "Success Operation!",
+  "body": {
+    "ecTeaSystemMenus": [
+      {
+        "menuId": "1",
+        "title": "用户管理",
+        "ecTeaSystemMenus": [
+          {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "用户管理",
+            "hrefUrl": "/userManagement/user.html"
+          }, {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "用户级别管理",
+            "hrefUrl": "/userManagement/userLevel.html"
+          }
+        ]
+      },
+      {
+        "menuId": "1",
+        "title": "商品管理",
+        "ecTeaSystemMenus": [
+          {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "商品管理",
+            "hrefUrl": "/goodsManagement/goods.html"
+          }, {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "分类管理",
+            "hrefUrl": "/goodsManagement/classify.html"
+          }
+        ]
+      },
+      {
+        "menuId": "1",
+        "title": "订单管理",
+        "ecTeaSystemMenus": [
+          {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "线下订单管理",
+            "hrefUrl": "/orderManagement/offlineOrder.html"
+          }
+        ]
+      },
+      {
+        "menuId": "1",
+        "title": "系统管理",
+        "ecTeaSystemMenus": [
+          {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "管理员管理",
+            "hrefUrl": "/systemManagement/manager.html"
+          }, {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "角色管理",
+            "hrefUrl": "/systemManagement/role.html"
+          }
+        ]
+      },
+      {
+        "menuId": "1",
+        "title": "基础数据管理",
+        "ecTeaSystemMenus": [
+          {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "省市区行政编号管理",
+            "hrefUrl": "/basicDataManagement/city.html"
+          }, {
+            "menuId": "1",
+            "parentId": "1",
+            "title": "单位管理",
+            "hrefUrl": "/basicDataManagement/unit.html"
+          }
+        ]
+      }
+    ]
+  }
+}

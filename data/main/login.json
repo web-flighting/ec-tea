@@ -1,0 +1,27 @@
+{
+	"code": 0,
+	"messageCode": "I000000",
+	"resultMessage": "Success Operation!",
+	"body": {
+		"tokenId": "TK_cc0b0c3a621ae4c394bde11838200060",
+		"coreAccount": {
+			"accountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+			"accountNo": "admin",
+			"accountPassword": "21232f297a57a5a743894a0e4a801fc3",
+			"accountName": "administrator",
+			"status": "A",
+			"createDate": "2019-03-07T16:00:00.000+0000",
+			"createAccountId": "System",
+			"rcdsts": "A",
+			"accountToken": {
+				"tokenId": "TK_cc0b0c3a621ae4c394bde11838200060",
+				"accountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+				"expiredDate": "2019-03-09T14:37:08.945+0000",
+				"status": "A",
+				"createDate": "2019-03-09T14:07:08.952+0000",
+				"createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+				"rcdsts": "A"
+			}
+		}
+	}
+}

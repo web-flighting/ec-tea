@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>一味一城茶舍</title>
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- 对应样式表及插件 -->
+    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="ibox-titles">
+                            <h4>基本信息</h4>
+                        </div>
+                        <form id="form" role="form" class="m-t">
+                            <div class="form-group">
+                                <label class="text-danger">*</label><label>标题</label>
+                                <input class="form-control" name="title" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-danger">*</label><label>日期</label>
+                                <div class="input-group date js-date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="date" value="" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>描述</label>
+                                <textarea class="form-control" name="description" style="resize:none;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>地址</label>
+                                <div class="clearfix">
+                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                    <select class="form-control pull-left" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>来源</label>
+                                <div class="radio i-checks">
+                                    <label style="padding:0;">
+                                        <input type="radio" value="1" name="class_id">
+                                        <i></i> 网页表单
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="2" name="class_id">
+                                        <i></i> 电话
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="3" name="class_id">
+                                        <i></i> 电子邮件
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="4" name="class_id">
+                                        <i></i> 其他
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="4" name="class_id">
+                                        <i></i> 网络
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>影响</label>
+                                <div class="radio i-checks">
+                                    <label style="padding:0;">
+                                        <input type="checkbox" value="1" name="class_ids">
+                                        <i></i> 影响业务
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="2" name="class_ids">
+                                        <i></i> 影响公司
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="3" name="class_ids">
+                                        <i></i> 影响组
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" value="4" name="class_ids">
+                                        <i></i> 影响个人
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <button id="add" class="btn btn-success" type="button">添加功能区</button>
+
+                        <div class="text-center">
+                            <a id="save" class="J_menuItem btn btn-primary">保存</a>
+                        </div>
+                        <div class="row">
+                            <div class="tabs-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true">附件</a>
+                                    </li>
+                                    <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">类似请求</a>
+                                    </li>
+                                    <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">关联配置项</a>
+                                    </li>
+                                    <li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">类似知识</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane active">
+                                        <div class="panel-body">
+                                            1
+                                        </div>
+                                    </div>
+                                    <div id="tab-2" class="tab-pane">
+                                        <div class="panel-body">
+                                            2
+                                        </div>
+                                    </div>
+                                    <div id="tab-3" class="tab-pane">
+                                        <div class="panel-body">
+                                            3
+                                        </div>
+                                    </div>
+                                    <div id="tab-4" class="tab-pane">
+                                        <div class="panel-body">
+                                            4
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- 添加功能区弹出窗口 -->
+    <div id="addModal" class="modal inmodal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">添加功能区</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">编码</label>
+                        <div class="col-sm-9 fun-pl0">
+                            <input id="code" class="form-control" type="text" value="" autocomplete="off" placeholder="请输入编码">
+                        </div>
+                    </div>
+                    <div class="form-group fun-mb0">
+                        <label class="col-sm-3 control-label">名称</label>
+                        <div class="col-sm-9 fun-pl0">
+                            <input id="name" class="form-control" type="text" value="" autocomplete="off" placeholder="请输入名称">
+                        </div>
+                    </div>
+                    <div id="addError" class="text-danger m-t text-center none">密码错误</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button id="addConfirm" type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- 对应插件 -->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/js/plugins/validate/form-validate-demo.js"></script>
+    <script src="/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    
+
+    <script>
+        $(function(){
+            //单选框
+            $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
+
+            //日期选择
+            $('.js-date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+            
+           //form验证配置   只有标题必填
+            var icon = "<i class='fa fa-times-circle'></i> ";
+            var validateFirtst = $("#form").validate({
+                debug: true,
+                rules: {
+                    title: 'required'
+                },
+                messages: {
+                    title: icon + '请输入标题',
+                }
+            });
+            //保存
+            $('#save').on('click', function(){
+                if(validateFirtst.form()){ //form表单验证通过后
+                    var obj = $('#form').serializeObject(); //表单中的数据
+					console.log(obj)
+                }
+            });
+
+            //添加功能区
+            $('#add').on('click', function(){
+                $('#addModal').modal();
+            });
+        })
+    </script>
+</body>
+
+</html>

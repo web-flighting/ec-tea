@@ -1,1 +1,2 @@
-baseurl: "./"
+theme: jekyll-theme-slate
+include: [_images]

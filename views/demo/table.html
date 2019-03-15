@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>一味一城茶舍</title>
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- 对应样式表及插件 -->
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="ibox-titles clearfix">
+                            <h4 class="pull-left">用户管理</h4>
+                            <button class="btn btn-sm btn-primary pull-right" type="button">新增用户</button>
+                        </div>
+                        <form id="form" class="form-inline base-form m-t">
+                            <div class="form-group">
+                                <label class="m-r">商品ID</label>
+                                <input type="text" placeholder="请输入商品ID" name="id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">SKU</label>
+                                <input type="text" placeholder="请输入SKU" name="sku" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">状态</label>
+                                <select class="form-control" style="width:200px;" name="status">
+                                    <option value="0">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">分类</label>
+                                <select class="form-control" style="width:200px;" name="classify1">
+                                    <option value="0">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                                <span class="m-l m-r">-</span>
+                                <select class="form-control" style="width:200px;" name="classify2">
+                                    <option value="0">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                                <span class="m-l m-r">-</span>
+                                <select class="form-control" style="width:200px;" name="classify3">
+                                    <option value="0">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">日期</label>
+                                <div class="input-group date js-date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="date" value="" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <button id="search" class="btn btn-sm btn-primary m-r" type="button">查询</button>
+                                <button id="reset" class="btn btn-sm btn-primary" type="button">重置</button>
+                            </div>
+                        </form>
+                        <div class="m-t">
+                            <table id="table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- 对应插件 -->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/js/plugins/validate/form-validate-demo.js"></script>
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <script>
+        $(function(){
+            //日期选择
+            $('.js-date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+
+            var columns = [
+                {
+                    field: 'areaId',
+                    title: 'ID',
+                    align:'center',
+                },
+                {
+                    field: 'areaName',
+                    title: '地区名称',
+                    align:'center',
+                },
+                {
+                    field: 'updateAccountName',
+                    title: '管理员',
+                    align:'center',
+                },
+                {
+                    field: '',
+                    title: '操作',
+                    align: 'center',
+                    formatter: function (value, row, index) {
+                        var btns = '<a class="J_menuItem btn btn-sm btn-primary m-r" href="demo/form.html"><i class="fa fa-edit"></i> 修改</a>';
+                        btns += '<button class="delete btn btn-sm btn-danger" type="button"><i class="glyphicon glyphicon-trash"></i> 删除</button>';
+                        return btns;
+                    },
+                    events: {
+                        'click .delete': function(e, value, row, index){
+                            parent.layer.confirm('确定要删除吗？', {
+                                
+                            }, function(){
+                                //调取相关删除接口
+                                $('#table').bootstrapTable('remove', {
+                                    field: 'areaId',
+                                    values: [row['areaId']]
+                                })
+                                layer.closeAll();
+                            }, function(){
+                                
+                            });
+                        }
+                    }
+                }
+            ];
+            //初始化table
+            method.initTableServer({
+                'id': 'table',
+                'url': 'data/demo/table.json',
+                'type': 'get',
+                'data': [],
+                'columns': columns,
+                'queryParams': function (params) {
+                    var data = $('#form').serializeObject();
+                    return method.getTableParams(params, data);
+                },
+                'success': function(res){
+
+                }
+            });
+
+            //查询
+            $('#search').on('click', function(){
+                searchTable();
+            });
+            //重置
+            $('#reset').on('click', function(){
+                //先把相关表单中的输入框等重置后在调取查询方法
+                searchTable();
+            });
+
+            function searchTable(){
+                var param = function (params) {
+                    var data = $('#form').serializeObject();
+                    return method.getTableParams(params, data);
+                };
+                $('#table').bootstrapTable('selectPage', 1);
+                //$('#table').bootstrapTable('refreshOptions', {queryParams: param});
+            };
+
+
+        })
+    </script>
+</body>
+
+</html>

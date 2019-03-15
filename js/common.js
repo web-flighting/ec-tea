@@ -47,28 +47,24 @@ var method = {
    */
     getTableParams: function (params, obj) {
         var data = obj;
-        data.limit = params.limit;
-        data.offset = params.offset;
-        data.token = $.cookie('token');
-        return data;
+        data.pageSize = params.limit;
+        data.currentPage = Math.ceil(params.offset / 10) + 1;
+        return JSON.stringify(data);
     },
-    /**
-   * @method 初始化Table
-   * @param {tableId} table的id名称 {head}列配置项 {data}数据 {obj}配置参数
-   */
-    initTableServer: function (tableId, head, data, obj) {
+    //初始化Table
+    initTableServer: function (obj) {
         var uniqueId = obj.uniqueId || 'id',
             height = obj.height || 0,
-            method = obj.method || 'post',
+            type = obj.type || 'post',
             contentType;
         if(method == 'post'){
             contentType = 'application/x-www-form-urlencoded';
         }else{
             contentType = 'application/json';
         };
-        $('#' + tableId).bootstrapTable({
-          url: obj.url, //请求后台的URL（*）
-          method: method, //请求方式（*）
+        $('#' + obj.id).bootstrapTable({
+          url: config.service + obj.url, //请求后台的URL（*）
+          method: type, //请求方式（*）
           contentType: contentType,
           data: obj.data,
           striped: true, //是否显示行间隔色
@@ -77,13 +73,13 @@ var method = {
           sidePagination: "server", //分页方式：client客户端分页，server服务端分页（*）
           queryParams: obj.queryParams, //参数
           pageNumber: 1, //初始化加载第一页，默认第一页
-          pageSize: obj.pageSize || 15, //每页的记录行数（*）
-          pageList: [15, 20, 50, 100], //可供选择的每页的行数（*）
+          pageSize: obj.pageSize || 10, //每页的记录行数（*）
+          pageList: [20, 50, 100], //可供选择的每页的行数（*）
           clickToSelect: true, //是否启用点击选中行
           maintainSelected: true,
           height: height, //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
           uniqueId: uniqueId, //每一行的唯一标识，一般为主键列
-          columns: head,
+          columns: obj.columns,
           onCheck: obj.onCheckRow,
           onUncheck: obj.onUnCheckRow,
           onClickRow: obj.onClickRow,
@@ -99,11 +95,11 @@ var method = {
           },
           responseHandler: function (res) {
             var json = {
-              "rows": res.data.rows,
-              "total": res.data.total
+              "rows": res.body.result,
+              "total": res.body.pageInfo.totalCounts
             };
-            if (obj.callback){
-              obj.callback(json);  
+            if (obj.success){
+              obj.success(json);  
             };
             return json;
           },

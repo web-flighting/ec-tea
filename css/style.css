@@ -4056,6 +4056,7 @@ code {
 }
 .ibox-titles h4{
     margin: 0;
+    line-height: 30px;
 }
 
 .ibox-content {
@@ -7915,6 +7916,14 @@ body.skin-3 {
     }
 }
 
+.pagination-detail .btn-default{
+    background: #1ab394 !important;
+}
+.pagination>li.active a{
+    background: #1ab394 !important;
+    color: #fff !important;
+}
+
 .none{
     display: none;
 }
@@ -7976,6 +7985,12 @@ ul{
 }
 .header-info:hover .header-info-list{
     display: block;
+}
+
+/*查询头部*/
+.base-form .form-group{
+    margin-right: 30px;
+    margin-bottom: 15px;
 }
 
 

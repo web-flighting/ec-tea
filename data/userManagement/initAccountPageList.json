@@ -1,0 +1,93 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "authoritys" : [ {
+      "authCode" : "Add",
+      "authName" : "新增用户"
+    }, {
+      "authCode" : "Edit",
+      "authName" : "编辑用户"
+    } ],
+    "accountPageInformation" : {
+      "pageInfo" : {
+        "currentPage" : 1,
+        "pageSize" : 20,
+        "totalCounts" : 4,
+        "pageCounts" : 1,
+        "emptyRecords" : false
+      },
+      "result" : [ {
+        "accountName" : "王五",
+        "accountMobile" : "15000000001",
+        "accountMail" : "15000000001@126.com",
+        "accountLevelId" : "0c38cc34dd2e45fd937f003831548350",
+        "accountLevelName" : "普通",
+        "accountRemark" : "我是备注",
+        "accountAddresses" : "[{\"province\":\"北京\",\"city\":\"北京市\",\"district\":\"朝阳区\",\"address\":\"四惠大厦\",\"isDefault\":false}]",
+        "status" : "A",
+        "rcdsts" : "A",
+        "createDate" : "2019-03-15T16:00:00.000+0000",
+        "createAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName" : "administrator",
+        "updateDate" : "2019-03-15T16:00:00.000+0000",
+        "updateDateText" : "2019-03-16 00:00"
+      }, {
+        "accountName" : "赵六",
+        "accountMobile" : "15000000001",
+        "accountMail" : "15000000001@126.com",
+        "accountLevelId" : "0c38cc34dd2e45fd937f003831548350",
+        "accountLevelName" : "普通",
+        "accountRemark" : "我是备注",
+        "accountAddresses" : "[{\"province\":\"北京\",\"city\":\"北京市\",\"district\":\"朝阳区\",\"address\":\"四惠大厦\",\"isDefault\":false}]",
+        "status" : "A",
+        "rcdsts" : "A",
+        "createDate" : "2019-03-15T16:00:00.000+0000",
+        "createAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName" : "administrator",
+        "updateDate" : "2019-03-15T16:00:00.000+0000",
+        "updateDateText" : "2019-03-16 00:00"
+      }, {
+        "accountName" : "张三",
+        "accountMobile" : "15000000001",
+        "accountMail" : "15000000001@126.com",
+        "accountLevelId" : "0c38cc34dd2e45fd937f003831548350",
+        "accountLevelName" : "普通",
+        "accountRemark" : "我是备注",
+        "accountAddresses" : "[{\"province\":\"北京\",\"city\":\"北京市\",\"district\":\"朝阳区\",\"address\":\"四惠大厦\",\"isDefault\":false}]",
+        "status" : "A",
+        "rcdsts" : "A",
+        "createDate" : "2019-03-15T16:00:00.000+0000",
+        "createAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName" : "administrator",
+        "updateDate" : "2019-03-15T16:00:00.000+0000",
+        "updateDateText" : "2019-03-16 00:00"
+      }, {
+        "accountName" : "李四",
+        "accountMobile" : "15000000002",
+        "accountMail" : "15000000002@126.com",
+        "accountLevelId" : "0c38cc34dd2e45fd937f003831548350",
+        "accountLevelName" : "普通",
+        "accountRemark" : "我是备注2",
+        "accountAddresses" : "[{\"province\":\"天津\",\"city\":\"天津市\",\"district\":\"南开区\",\"address\":\"一旮旯\",\"isDefault\":false}]",
+        "status" : "A",
+        "rcdsts" : "A",
+        "createDate" : "2019-03-15T16:00:00.000+0000",
+        "createAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName" : "administrator",
+        "updateDate" : "2019-03-15T16:00:00.000+0000",
+        "updateDateText" : "2019-03-16 00:00"
+      } ],
+      "additionalResult" : [ ],
+      "additionalResult2" : [ ],
+      "additionalResult3" : [ ],
+      "additionalResult4" : [ ],
+      "empty" : false
+    }
+  }
+}

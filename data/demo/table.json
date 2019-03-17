@@ -3,43 +3,52 @@
   "messageCode" : "I000000",
   "resultMessage" : "Success Operation!",
   "body" : {
-  	"pageInfo" : {
-	    "currentPage" : 1,
-	    "pageSize" : 5,
-	    "totalCounts" : 100,
-	    "pageCounts" : 711,
-	    "emptyRecords" : false
-	},
-	"result" : [ {
-        "areaId" : "0",
-        "areaName" : "中国",
-        "parentId" : "0",
-        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
-        "updateAccountName" : "administrator"
-      }, {
-        "areaId" : "110000",
-        "areaName" : "北京市",
-        "parentId" : "0",
-        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
-        "updateAccountName" : "administrator"
-      }, {
-        "areaId" : "110100",
-        "areaName" : "东城区",
-        "parentId" : "110000",
-        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
-        "updateAccountName" : "administrator"
-      }, {
-        "areaId" : "110200",
-        "areaName" : "西城区",
-        "parentId" : "110000",
-        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
-        "updateAccountName" : "administrator"
-      }, {
-        "areaId" : "110500",
-        "areaName" : "朝阳区",
-        "parentId" : "110000",
-        "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
-        "updateAccountName" : "administrator"
-      } ]
+    "authoritys" : [ {
+      "authCode" : "Add",
+      "authName" : "新增用户"
+    }, {
+      "authCode" : "Edit",
+      "authName" : "编辑用户"
+    } ],
+    "tablePageInformation": {
+      "pageInfo" : {
+          "currentPage" : 1,
+          "pageSize" : 5,
+          "totalCounts" : 100,
+          "pageCounts" : 711,
+          "emptyRecords" : false
+      },
+      "result" : [ {
+            "areaId" : "0",
+            "areaName" : "中国",
+            "parentId" : "0",
+            "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+            "updateAccountName" : "administrator"
+          }, {
+            "areaId" : "110000",
+            "areaName" : "北京市",
+            "parentId" : "0",
+            "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+            "updateAccountName" : "administrator"
+          }, {
+            "areaId" : "110100",
+            "areaName" : "东城区",
+            "parentId" : "110000",
+            "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+            "updateAccountName" : "administrator"
+          }, {
+            "areaId" : "110200",
+            "areaName" : "西城区",
+            "parentId" : "110000",
+            "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+            "updateAccountName" : "administrator"
+          }, {
+            "areaId" : "110500",
+            "areaName" : "朝阳区",
+            "parentId" : "110000",
+            "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+            "updateAccountName" : "administrator"
+          } ]
+    }
   }
 }

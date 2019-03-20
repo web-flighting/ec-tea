@@ -181,7 +181,7 @@
                 },
                 'success': function(res){
                     //处理权限
-                    var authoritys = res.authoritys;
+                    var authoritys = res.body.authoritys;
                     var add = authoritys.filter(function(item){
                         return item.authCode == 'Add';
                     });

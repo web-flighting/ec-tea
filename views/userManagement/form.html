@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>用户管理</title>
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- 对应样式表及插件 -->
+    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="ibox-titles">
+                            <h4>用户管理 》<span id="title"></span></h4>
+                        </div>
+                        <form id="form" role="form" class="m-t">
+                            <div class="form-group">
+                                <label class="text-danger">*</label><label>标题</label>
+                                <input class="form-control" name="title" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-danger">*</label><label>日期</label>
+                                <div class="input-group date js-date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="date" value="" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>描述</label>
+                                <textarea class="form-control" name="description" style="resize:none;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>地址</label>
+                                <div class="clearfix">
+                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                    <select class="form-control pull-left" style="width:200px;" name="select" id="">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>来源</label>
+                                <div class="radio i-checks">
+                                    <label style="padding:0;">
+                                        <input type="radio" value="1" name="class_id">
+                                        <i></i> 网页表单
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="2" name="class_id">
+                                        <i></i> 电话
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="3" name="class_id">
+                                        <i></i> 电子邮件
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="4" name="class_id">
+                                        <i></i> 其他
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="4" name="class_id">
+                                        <i></i> 网络
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <button id="add" class="btn btn-success" type="button">添加功能区</button>
+
+                        <div class="text-center">
+                            <a id="save" class="J_menuItem btn btn-primary">保存</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- 对应插件 -->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/js/plugins/validate/form-validate-demo.js"></script>
+    <script src="/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+
+    <!-- 当前页面js -->
+    <script src="/js/page/userManagement/form.js"></script>
+</body>
+
+</html>

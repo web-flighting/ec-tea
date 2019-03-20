@@ -95,7 +95,7 @@ var method = {
           },
           responseHandler: function (res) {
             var json = {
-              "authoritys": res.body.authoritys,
+              "body": res.body,
               "rows": res.body[obj.pageInfoName].result,
               "total": res.body[obj.pageInfoName].pageInfo.totalCounts
             };

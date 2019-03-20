@@ -35,7 +35,7 @@ $(function(){
             width: 130
         },
         {
-            field: 'status',
+            field: 'statusText',
             title: '用户状态',
             align: 'center',
             width: 130
@@ -85,7 +85,7 @@ $(function(){
         },
         'success': function(res){
             //处理权限
-            var authoritys = res.authoritys;
+            var authoritys = res.body.authoritys;
             var add = authoritys.filter(function(item){
                 return item.authCode == 'Add';
             });
@@ -98,6 +98,20 @@ $(function(){
             if(edit.length != 0){
                 authEdit = true;
             };
+            //渲染用户级别与状态
+            var levelSelect = $('#levelSelect');
+            if(levelSelect.hasClass('off')){ //只渲染一次
+                return;
+            };
+            levelSelect.addClass('off');
+            var data = res.body.accountLevelSelectOption.selectOptionItems,
+                html = template('optionTpl',{data: data});
+            levelSelect.html(html);
+
+            var statusSelect = $('#statusSelect'),
+                data = res.body.accountStatusSelectOption.selectOptionItems,
+                html = template('optionTpl',{data: data});
+            statusSelect.html(html);
         }
     });
 

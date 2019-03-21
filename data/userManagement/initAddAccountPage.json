@@ -1,0 +1,33 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "accountStatusSelectOption" : {
+      "selectOptionItems" : [{
+        "optionCode" : "A",
+        "optionText" : "有效",
+        "selected" : false
+      }, {
+        "optionCode" : "T",
+        "optionText" : "无效",
+        "selected" : false
+      } ]
+    },
+    "accountLevelSelectOption" : {
+      "selectOptionItems" : [{
+        "optionCode" : "0c38cc34dd2e45fd937f003831548350",
+        "optionText" : "普通",
+        "selected" : false
+      }, {
+        "optionCode" : "119ebcaeb3554cf7926e88c2dfcd9d0c",
+        "optionText" : "vip",
+        "selected" : false
+      }, {
+        "optionCode" : "949aab40a55546598369bb8fdf4019f4",
+        "optionText" : "超级VIP",
+        "selected" : false
+      } ]
+    }
+  }
+}

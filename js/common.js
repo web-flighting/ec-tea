@@ -118,6 +118,57 @@ var method = {
             return k + '=' +  v;
         });
         return param;
+    },
+    //省、市、区请求  selector 要渲染到的容器选择器   parentId 上级ID 查询省时 值为0  selectedId 选中的项id
+    getCity: function(selector, parentId, selectedId){
+      this.ajax({
+          'url': 'data/common/queryCityByParentId.json',
+          'type': 'get',
+          'data': {"parentId": parentId},
+          'success': function(res){
+              var html = '<option value="">请选择</option>';
+              $.each(res.body.citys, function(index, item){
+                if(item.areaId == selectedId){
+                  html += '<option value="'+ item.areaId +'" selected>'+ item.areaName +'</option>';
+                }else{
+                  html += '<option value="'+ item.areaId +'">'+ item.areaName +'</option>';
+                };
+              });
+              selector.html(html);
+          } 
+      });
+    },
+    /**
+   * @method 省、市、区三级联动
+   * @param selector 省select的jquery选择器   provinceId 省id  cityId 市id  areaId 区id
+   */
+    //省、市、区三级联动 selector:
+    initCity: function(obj){
+      var province = obj.selector,
+          city = province.siblings('.city'),
+          area = province.siblings('.area'),
+          provinceId = obj.provinceId,
+          cityId = obj.cityId,
+          areaId = obj.areaId;
+      //获取省
+      this.getCity(province, 0, provinceId);
+      //如果存在城市id，则获取城市并选中
+      if(!!cityId){
+        this.getCity(city, provinceId, cityId);
+      };
+      //如果存在地区id，则获取地区并选中
+      if(!!areaId){
+        this.getCity(city, cityId, areaId);
+      };
+      province.on('change', function(){
+        var value = $(this).val();
+        city.find('option').not(':first').remove();
+        area.find('option').not(':first').remove();
+        if(value != ''){
+          method.getCity(city, value);
+        };
+      });
+
     }
 };
 //初始化WebStorageCache本地存储

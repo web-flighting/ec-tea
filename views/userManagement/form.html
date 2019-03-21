@@ -32,81 +32,71 @@
                         </div>
                         <form id="form" role="form" class="m-t">
                             <div class="form-group">
-                                <label class="text-danger">*</label><label>标题</label>
-                                <input class="form-control" name="title" type="text">
+                                <label class="text-danger">*</label><label>姓名</label>
+                                <input class="form-control" name="accountName" type="text">
                             </div>
                             <div class="form-group">
-                                <label class="text-danger">*</label><label>日期</label>
-                                <div class="input-group date js-date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                    <input type="text" class="form-control" name="date" value="" autocomplete="off">
+                                <label class="text-danger">*</label><label>手机号</label>
+                                <input class="form-control" name="accountMobile" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-danger">*</label><label>邮箱</label>
+                                <input class="form-control" name="accountMail" type="email">
+                            </div>
+                            <div class="form-group">
+                                <label>常用收货地址</label>
+                                <div class="clearfix m-t-xs m-b-xs">
+                                    <div class="radio i-checks pull-left m-r">
+                                        <label style="padding: 0;">
+                                            <input type="radio" checked value="" name="isDefault">
+                                            <i></i>
+                                        </label>
+                                    </div>
+                                    <select class="form-control pull-left province" style="width:150px;" name="provinceId">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <span class="m-l m-r m-t-xs pull-left">-</span>
+                                    <select class="form-control pull-left city" style="width:150px;" name="cityId">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <span class="m-l m-r m-t-xs pull-left">-</span>
+                                    <select class="form-control pull-left area" style="width:150px;" name="districtId">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <span class="m-l m-r m-t-xs pull-left">-</span>
+                                    <input class="form-control pull-left" style="width:300px;" name="address" type="text" placeholder="详细地址">
+                                    <button type="button" class="btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>描述</label>
-                                <textarea class="form-control" name="description" style="resize:none;"></textarea>
+                                <label>级别</label>
+                                <select id="levelSelect" class="form-control" name="accountLevelId"></select>
                             </div>
                             <div class="form-group">
-                                <label>地址</label>
-                                <div class="clearfix">
-                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
-                                        <option value="0">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
-                                    </select>
-                                    <select class="form-control pull-left m-r" style="width:200px;" name="select" id="">
-                                        <option value="0">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
-                                    </select>
-                                    <select class="form-control pull-left" style="width:200px;" name="select" id="">
-                                        <option value="0">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
-                                    </select>
-                                </div>
+                                <label>状态</label>
+                                <select id="statusSelect" class="form-control" name="status"></select>
                             </div>
                             <div class="form-group">
-                                <label>来源</label>
-                                <div class="radio i-checks">
-                                    <label style="padding:0;">
-                                        <input type="radio" value="1" name="class_id">
-                                        <i></i> 网页表单
-                                    </label>
-                                    <label>
-                                        <input type="radio" value="2" name="class_id">
-                                        <i></i> 电话
-                                    </label>
-                                    <label>
-                                        <input type="radio" value="3" name="class_id">
-                                        <i></i> 电子邮件
-                                    </label>
-                                    <label>
-                                        <input type="radio" value="4" name="class_id">
-                                        <i></i> 其他
-                                    </label>
-                                    <label>
-                                        <input type="radio" value="4" name="class_id">
-                                        <i></i> 网络
-                                    </label>
-                                </div>
+                                <label>备注</label>
+                                <textarea class="form-control" name="accountRemark" style="height:150px;resize:none;"></textarea>
                             </div>
                         </form>
-                        
-                        <button id="add" class="btn btn-success" type="button">添加功能区</button>
-
                         <div class="text-center">
-                            <a id="save" class="J_menuItem btn btn-primary">保存</a>
+                            <a id="cancel" class="btn btn-default btn-outline m-r-lg">取消</a>
+                            <a id="save" class="btn btn-primary">确定</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        
+    
+    <!-- 用户级别与状态模板 -->
+    <script type="text/html" id="optionTpl">
+        {{each data}}
+        <option value="{{$value.optionCode}}">{{$value.optionText}}</option>
+        {{/each}}
+    </script>    
 
     <!-- 全局js -->
     <script src="/js/jquery.min.js"></script>
@@ -120,6 +110,7 @@
     <script src="/js/plugins/validate/form-validate-demo.js"></script>
     <script src="/js/plugins/iCheck/icheck.min.js"></script>
     <script src="/js/plugins/layer/layer.min.js"></script>
+    <script src="/js/plugins/template/template.js"></script>
 
     <!-- 当前页面js -->
     <script src="/js/page/userManagement/form.js"></script>

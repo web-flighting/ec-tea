@@ -1,0 +1,88 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "citys" : [ {
+      "areaId" : "110100",
+      "areaName" : "东城区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110200",
+      "areaName" : "西城区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110500",
+      "areaName" : "朝阳区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110600",
+      "areaName" : "丰台区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110700",
+      "areaName" : "石景山区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110800",
+      "areaName" : "海淀区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "110900",
+      "areaName" : "门头沟区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111100",
+      "areaName" : "房山区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111200",
+      "areaName" : "通州区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111300",
+      "areaName" : "顺义区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111400",
+      "areaName" : "昌平区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111500",
+      "areaName" : "大兴区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111600",
+      "areaName" : "怀柔区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "111700",
+      "areaName" : "平谷区",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "112800",
+      "areaName" : "密云县",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    }, {
+      "areaId" : "112900",
+      "areaName" : "延庆县",
+      "parentId" : "110000",
+      "updateAccountId" : "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"
+    } ]
+  }
+}

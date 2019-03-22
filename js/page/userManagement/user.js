@@ -65,7 +65,7 @@ $(function(){
             formatter: function (value, row, index) {
                 var btns = '';
                 if(authEdit){
-                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="demo/form.html"><i class="fa fa-edit"></i> 修改</a>';
+                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 修改</a>';
                 };
                 return btns;
             }

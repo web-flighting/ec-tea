@@ -5,6 +5,7 @@ var config = {
 };
 //公用方法
 var method = {
+    loading: null,
     //ajax请求http服务
     ajax: function (obj) {
         var tokenId = wsCache.get('tokenId');
@@ -24,7 +25,11 @@ var method = {
             },
             crossDomain: true,
             cache: false,
+            beforeSend: function(){
+              method.loading = layer.load();
+            },
             success: function (res) {
+                layer.close(method.loading);
                 //如果登录超时则跳转至登录页
                 if (res.code == 92 && res.messageCode == 'I000061') {
                     wsCache.delete('tokenId');
@@ -119,6 +124,15 @@ var method = {
         });
         return param;
     },
+    //跳转至页面  url 要跳转至的页面地址
+    gotoPage: function(url) {
+        var src = $(window.parent.document).find('.J_iframe').attr('src');
+        if(!src){
+          location.href = url;
+        }else{
+          $(window.parent.document).find('.J_iframe').attr('src', url);
+        };
+    },
     //省、市、区请求  selector 要渲染到的容器选择器   parentId 上级ID 查询省时 值为0  selectedId 选中的项id
     getCity: function(selector, parentId, selectedId){
       this.ajax({
@@ -160,6 +174,7 @@ var method = {
       if(!!areaId){
         this.getCity(city, cityId, areaId);
       };
+      //省
       province.on('change', function(){
         var value = $(this).val();
         city.find('option').not(':first').remove();
@@ -168,7 +183,14 @@ var method = {
           method.getCity(city, value);
         };
       });
-
+      //市
+      city.on('change', function(){
+        var value = $(this).val();
+        area.find('option').not(':first').remove();
+        if(value != ''){
+          method.getCity(area, value);
+        };
+      });
     }
 };
 //初始化WebStorageCache本地存储

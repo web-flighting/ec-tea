@@ -1,0 +1,60 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "accountId" : "2b195fdb728d48bcbc3cb81d2c7bf23c",
+    "accountName" : "张2三",
+    "accountMobile" : "15000000001",
+    "accountMail" : "15000000001@126.com",
+    "accountAddresses" : [ {
+      "provinceId" : "110700",
+      "provinceName" : "中国",
+      "cityId" : "110700",
+      "cityName" : "北京市",
+      "districtId" : "111100",
+      "districtName" : "房山区",
+      "address" : "四惠大厦",
+      "isDefault" : false
+    },
+    {
+      "provinceId" : "110700",
+      "provinceName" : "中国",
+      "cityId" : "110700",
+      "cityName" : "北京市",
+      "districtId" : "111100",
+      "districtName" : "丰台区",
+      "address" : "四惠大厦2",
+      "isDefault" : true
+    } ],
+    "accountLevelId" : "0c38cc34dd2e45fd937f003831548350",
+    "status" : "A",
+    "accountRemark" : "我是备注",
+    "accountStatusSelectOption" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "A",
+        "optionText" : "有效",
+        "selected" : true
+      }, {
+        "optionCode" : "T",
+        "optionText" : "无效",
+        "selected" : false
+      } ]
+    },
+    "accountLevelSelectOption" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "0c38cc34dd2e45fd937f003831548350",
+        "optionText" : "普通",
+        "selected" : false
+      }, {
+        "optionCode" : "119ebcaeb3554cf7926e88c2dfcd9d0c",
+        "optionText" : "vip",
+        "selected" : true
+      }, {
+        "optionCode" : "949aab40a55546598369bb8fdf4019f4",
+        "optionText" : "超级VIP",
+        "selected" : false
+      } ]
+    }
+  }
+}

@@ -172,7 +172,7 @@ var method = {
       };
       //如果存在地区id，则获取地区并选中
       if(!!areaId){
-        this.getCity(city, cityId, areaId);
+        this.getCity(area, cityId, areaId);
       };
       //省
       province.on('change', function(){

@@ -35,7 +35,50 @@ $(function(){
 	}else{ //编辑用户
 		//标题
 		title = '编辑用户';
-		
+		//用户修改页面初始化
+		method.ajax({
+	        'url': 'data/userManagement/initEditAccountPage.json',
+	        'type': 'get',
+	        'success': function(res){
+	        	var body = res.body;
+	        	//姓名
+	        	$('#accountName').val(body.accountName);
+	        	//手机号
+	        	$('#accountMobile').val(body.accountMobile);
+	        	//邮箱
+	        	$('#accountMail').val(body.accountMail);
+	        	//备注
+	        	$('#accountRemark').val(body.accountRemark);
+
+	        	//常用收货地址（省、市、区初始化）
+	        	var data = body.accountAddresses,
+	                html = template('addressTpl',{data: data});
+	            $('#addressWrap').html(html);
+	            //单选框
+    			$(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
+    			//常用收货地址（省、市、区初始化）
+    			$('.province').each(function(){
+    				var _this = $(this);
+			        method.initCity({
+						'selector': _this,
+						'provinceId': _this.attr('data-provinceId'),
+						'cityId': _this.attr('data-cityId'),
+						'areaId': _this.attr('data-areaId')
+					});
+    			});
+
+	            //渲染用户级别与状态
+	            var levelSelect = $('#levelSelect');
+	            var data = body.accountLevelSelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            levelSelect.html(html);
+
+	            var statusSelect = $('#statusSelect'),
+	                data = body.accountStatusSelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            statusSelect.html(html);
+	        } 
+	    });
 	};
 	
 	//常用收货地址验证

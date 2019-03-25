@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>一味一城茶舍</title>
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- 对应样式表及插件 -->
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="ibox-titles clearfix">
+                            <h4 class="pull-left">商品管理</h4>
+                            <a id="add" href="/views/userManagement/user_form.html" class="J_menuItem btn btn-sm btn-primary pull-right none" type="button">新增商品</a>
+                        </div>
+                        <form id="form" class="form-inline base-form m-t clearfix">
+                            <div class="form-group">
+                                <label class="m-r">名称</label>
+                                <input type="text" placeholder="请输入名称" name="accountName" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">商品ID</label>
+                                <input type="text" placeholder="请输入商品ID" name="accountMobile" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">SKU</label>
+                                <input type="text" placeholder="请输入SKU" name="accountMail" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">状态</label>
+                                <select id="statusSelect" class="form-control" style="width:200px;" name="statusId">
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">分类</label>
+                                <select id="classify1" class="form-control" style="width:200px;" name="classify1">
+                                    <option value="">全部</option>
+                                </select>
+                                <span class="m-l m-r">-</span>
+                                <select id="classify2" class="form-control" style="width:200px;" name="classify2">
+                                    <option value="">全部</option>
+                                </select>
+                                <span class="m-l m-r">-</span>
+                                <select id="classify3" class="form-control" style="width:200px;" name="classify3">
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                            <div class="pull-right">
+                                <button id="search" class="btn btn-sm btn-primary m-r" type="button">查询</button>
+                                <button id="reset" class="btn btn-sm btn-primary" type="button">重置</button>
+                            </div>
+                        </form>
+                        <div class="m-t">
+                            <table id="table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 状态与分类模板 -->
+    <script type="text/html" id="optionTpl">
+        {{each data}}
+        <option value="{{$value.optionCode}}">{{$value.optionText}}</option>
+        {{/each}}
+    </script>
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+
+    <!-- 对应插件 -->
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/js/plugins/template/template.js"></script>
+    
+    <!-- 当前页面js -->
+    <script src="/js/page/goodsManagement/goods.js"></script>
+</body>
+
+</html>

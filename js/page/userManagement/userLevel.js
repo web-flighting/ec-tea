@@ -11,52 +11,19 @@ $(function(){
             }
         },
         {
-            field: 'accountName',
-            title: '姓名',
-            align: 'center',
-            width: 130
+            field: 'levelName',
+            title: '级别名称',
+            align: 'center'
         },
         {
-            field: 'accountMail',
-            title: '邮箱',
-            align: 'center',
-            width: 150
+            field: 'updateDateText',
+            title: '最后编辑时间',
+            align: 'center'
         },
         {
-            field: 'accountMobile',
-            title: '手机号',
-            align: 'center',
-            width: 130
-        },
-        {
-            field: 'accountLevelName',
-            title: '用户级别',
-            align: 'center',
-            width: 130
-        },
-        {
-            field: 'statusText',
-            title: '用户状态',
-            align: 'center',
-            width: 130
-        },
-        {
-            field: 'createDate',
-            title: '创建时间',
-            align: 'center',
-            width: 180
-        },
-        {
-            field: 'createDate',
+            field: 'updateAccountName',
             title: '最后编辑人',
-            align: 'center',
-            width: 130
-        },
-        {
-            field: 'accountRemark',
-            title: '备注',
-            align: 'center',
-            width: 200
+            align: 'center'
         },
         {
             field: 'do',
@@ -65,22 +32,34 @@ $(function(){
             formatter: function (value, row, index) {
                 var btns = '';
                 if(authEdit){
-                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/user_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 修改</a>';
+                    btns += '<button class="btn btn-sm btn-primary edit" type="button"><i class="fa fa-edit"></i> 编辑</button>';
                 };
                 return btns;
+            },
+            events: { //编辑级别
+                'click .edit': function(e, value, row, index){
+                    $('#levelModal .modal-title').html('编辑级别');
+                    $('#levelName').val(row.levelName);
+                    $('#levelId').val(row.levelId);
+                    $('#confirm').attr('data-type', 'edit');
+                    $('#levelModal').modal();
+                }
             }
         }
     ];
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/userManagement/initAccountPageList.json',
+        'url': 'data/userManagement/initAccountLevelPageList.json',
         'type': 'get',
         'data': [],
-        'pageInfoName': 'accountPageInformation',
+        'pageInfoName': 'accountLevelPageInformation',
         'columns': columns,
         'queryParams': function (params) {
-            var data = $('#form').serializeObject();
+            var data = {},
+                userParams = wsCache.get('userParams');
+            data.roleId = userParams.roleId;
+            data.menuId = userParams.menuId;
             return method.getTableParams(params, data);
         },
         'success': function(res){
@@ -98,45 +77,60 @@ $(function(){
             if(edit.length != 0){
                 authEdit = true;
             };
-            //渲染用户级别与状态
-            var levelSelect = $('#levelSelect');
-            if(levelSelect.hasClass('off')){ //只渲染一次
-                return;
-            };
-            levelSelect.addClass('off');
-            var data = res.body.accountLevelSelectOption.selectOptionItems,
-                html = template('optionTpl',{data: data});
-            levelSelect.html(html);
-
-            var statusSelect = $('#statusSelect'),
-                data = res.body.accountStatusSelectOption.selectOptionItems,
-                html = template('optionTpl',{data: data});
-            statusSelect.html(html);
         }
     });
 
-    //查询
-    $('#search').on('click', function(){
-        searchTable();
-    });
-    //重置
-    $('#reset').on('click', function(){
-        //先把相关表单中的输入框等重置后在调取查询方法
-        $('#form input').val('');
-        $('#form select').each(function(){
-            $(this).find('option:first').prop('selected', true);
-        });
-        searchTable();
-    });
 
     function searchTable(){
         var param = function (params) {
-            var data = $('#form').serializeObject();
+            var data = {},
+                userParams = wsCache.get('userParams');
+            data.roleId = userParams.roleId;
+            data.menuId = userParams.menuId;
             return method.getTableParams(params, data);
         };
         $('#table').bootstrapTable('selectPage', 1);
         //$('#table').bootstrapTable('refreshOptions', {queryParams: param});
     };
 
+    //新增级别
+    $('#add').on('click', function(){
+        $('#levelModal .modal-title').html('新增级别');
+        $('#levelName').val('');
+        $('#confirm').attr('data-type', 'add');
+        $('#levelModal').modal();
+    });
+
+    //级别确定
+    $('#confirm').on('click', function(){
+        var _this = $(this),
+            type = _this.attr('data-type'),
+            url = '',
+            obj = $('#form').serializeObject(); //表单中的数据
+        if(!obj.levelName){
+            $('#levelName').focus();
+            return;
+        };
+        //如果新增级别
+        if(type == 'add'){
+            delete obj.levelId;
+            url = 'data/userManagement/addAccountLevel.json';
+        }else{ //如果编辑级别
+            url = 'data/userManagement/editAccountLevel.json';
+        };
+        method.ajax({
+          'url': url,
+          'type': 'get',
+          'data': obj,
+          'success': function(res){
+            $('#levelModal').modal('hide');
+            searchTable();
+            layer.alert('保存成功', {
+                time: 1000,
+                btn: []
+            });
+          } 
+        });
+    });
 
 })

@@ -47,7 +47,7 @@ $(function(){
             width: 180
         },
         {
-            field: 'createDate',
+            field: 'updateAccountName',
             title: '最后编辑人',
             align: 'center',
             width: 130
@@ -65,7 +65,7 @@ $(function(){
             formatter: function (value, row, index) {
                 var btns = '';
                 if(authEdit){
-                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/user_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 修改</a>';
+                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/user_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 编辑</a>';
                 };
                 return btns;
             }
@@ -80,7 +80,10 @@ $(function(){
         'pageInfoName': 'accountPageInformation',
         'columns': columns,
         'queryParams': function (params) {
-            var data = $('#form').serializeObject();
+            var data = $('#form').serializeObject(),
+                userParams = wsCache.get('userParams');
+            data.roleId = userParams.roleId;
+            data.menuId = userParams.menuId;
             return method.getTableParams(params, data);
         },
         'success': function(res){
@@ -131,7 +134,10 @@ $(function(){
 
     function searchTable(){
         var param = function (params) {
-            var data = $('#form').serializeObject();
+            var data = $('#form').serializeObject(),
+                userParams = wsCache.get('userParams');
+            data.roleId = userParams.roleId;
+            data.menuId = userParams.menuId;
             return method.getTableParams(params, data);
         };
         $('#table').bootstrapTable('selectPage', 1);

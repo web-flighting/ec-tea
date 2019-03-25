@@ -7,7 +7,17 @@ $(function(){
             var securityRoles = res.body.securityRoles,
                 html = template('roleListTpl',{data: securityRoles});
             $('#roleList').html(html);
-            getSystemMenus(securityRoles[0]['roleId']);
+            var roleId = securityRoles[0]['roleId'];
+            var userParams = wsCache.get('userParams');
+            if(!!userParams){
+                userParams.roleId = roleId;
+            }else{
+                userParams = {
+                    "roleId": roleId
+                };
+            };
+            wsCache.set('userParams', userParams);
+            getSystemMenus(roleId);
         } 
     });
     //获取系统菜单
@@ -50,11 +60,18 @@ $(function(){
     $('#side-menu').on('click', '.J_menuItem', function(){
         $('#side-menu .J_menuItem').removeClass('active');
         $(this).addClass('active');
+        var menuId = $(this).attr('data-menuid');
+        var userParams = wsCache.get('userParams');
+        userParams.menuId = menuId;
+        wsCache.set('userParams', userParams);
     });
 
     //角色切换重新获取系统菜单
     $('#roleList').on('change', function(){
         var roleId = $(this).find('option:selected').val();
+        var userParams = wsCache.get('userParams');
+        userParams.roleId = roleId;
+        wsCache.set('userParams', userParams);
         getSystemMenus(roleId);
     });
 

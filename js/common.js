@@ -34,6 +34,7 @@ var method = {
                 if (res.code == 92 && res.messageCode == 'I000061') {
                     wsCache.delete('tokenId');
                     wsCache.delete('userInfo');
+                    wsCache.delete('userParams');
                     window.location = config.loginUrl;
                     return;
                 };

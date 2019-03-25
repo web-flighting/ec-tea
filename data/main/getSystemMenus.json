@@ -14,7 +14,7 @@
             "title": "用户管理",
             "hrefUrl": "/userManagement/user.html"
           }, {
-            "menuId": "1",
+            "menuId": "2",
             "parentId": "1",
             "title": "用户级别管理",
             "hrefUrl": "/userManagement/userLevel.html"

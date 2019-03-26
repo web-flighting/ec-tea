@@ -27,6 +27,8 @@
 - web-storage-cache 本地localStorage存储控件
 - metisMenu 多级菜单控件
 - slimscroll 滚动条控件
+- zTree 树形控件
+
 
 
 ## 项目结构

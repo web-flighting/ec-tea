@@ -1,17 +1,13 @@
 $(function(){
-	//单选框
-    $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
-
-	
 	var params = method.getParams(), //获取地址栏参数
 		title = ''; //初始化标题名称
 
 
-	//如果没有参数，则为新增用户
+	//如果没有参数，则为新增商品
 	if($.isEmptyObject(params)){
 		//标题
-		title = '新增用户';
-		//常用收货地址（省、市、区初始化）
+		title = '新增商品';
+		//商品产地（省、市、区初始化）
 		method.initCity({
 			'selector': $('.province')
 		});
@@ -20,11 +16,11 @@ $(function(){
 	        'url': 'data/userManagement/initAddAccountPage.json',
 	        'type': 'get',
 	        'success': function(res){
-	            //渲染用户级别与状态
-	            var levelSelect = $('#levelSelect');
+	            //渲染商品单位与状态
+	            var unitSelect = $('#unitSelect');
 	            var data = res.body.accountLevelSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
-	            levelSelect.html(html);
+	            unitSelect.html(html);
 
 	            var statusSelect = $('#statusSelect'),
 	                data = res.body.accountStatusSelectOption.selectOptionItems,
@@ -32,10 +28,10 @@ $(function(){
 	            statusSelect.html(html);
 	        } 
 	    });
-	}else{ //编辑用户
+	}else{ //修改商品
 		//标题
-		title = '编辑用户';
-		//用户修改页面初始化
+		title = '修改商品';
+		//修改商品页面初始化
 		method.ajax({
 	        'url': 'data/userManagement/initEditAccountPage.json',
 	        'type': 'get',
@@ -50,36 +46,78 @@ $(function(){
 	        	//备注
 	        	$('#accountRemark').val(body.accountRemark);
 
-	        	//常用收货地址（省、市、区初始化）
+	        	//商品产地（省、市、区初始化）
 	        	var data = body.accountAddresses,
 	                html = template('addressTpl',{data: data});
 	            $('#addressWrap').html(html);
-	            //单选框
-    			$(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
-    			//常用收货地址（省、市、区初始化）
-    			$('.province').each(function(){
-    				var _this = $(this);
-			        method.initCity({
-						'selector': _this,
-						'provinceId': _this.attr('data-provinceId'),
-						'cityId': _this.attr('data-cityId'),
-						'areaId': _this.attr('data-areaId')
-					});
-    			});
 
-	            //渲染用户级别与状态
-	            var levelSelect = $('#levelSelect');
-	            var data = body.accountLevelSelectOption.selectOptionItems,
+
+	            //渲染商品单位与状态
+	            var unitSelect = $('#unitSelect');
+	            var data = res.body.accountLevelSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
-	            levelSelect.html(html);
+	            unitSelect.html(html);
 
 	            var statusSelect = $('#statusSelect'),
-	                data = body.accountStatusSelectOption.selectOptionItems,
+	                data = res.body.accountStatusSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
 	            statusSelect.html(html);
 	        } 
 	    });
 	};
+
+	//商品分类
+	var arr = [
+        {
+            "id": 1,
+            "name": "一级目录",
+            "children": [
+                {
+                    "id": 11,
+                    "name": "一级子节点",
+                    "children": [
+                        {
+                            "id": 111,
+                            "name": "一级子节点1"
+                        },
+                        {
+                            "id": 112,
+                            "name": "一级子节点2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+    var setting = {
+        'view': {
+            'selectedMulti': false
+        }
+    };
+    var tree = $.fn.zTree.init($("#tree"), setting, arr);
+    tree.expandAll(true);
+
+    //添加商品分类
+    $('#addClassifyBtn,#classifyBtn').on('click', function(){
+    	$('#classifyModal').modal();
+    });
+    //分类确定
+    $('#confirm').on('click', function(){
+    	var zTree = $.fn.zTree.getZTreeObj("tree"),
+    		node = zTree.getSelectedNodes();
+    	if(node.length == 0){
+    		layer.tips('请选择一个分类', '#confirm', {
+			    tips: [1, '#18a689'],
+			    time: 1500
+			});
+    		return;
+    	};
+    	var id = node[0].id,
+    		name = node[0].name;
+    	$('#addClassifyBtn').hide();
+    	$('#classifyBtn').attr('data-id', id).text(name).show();
+    	$('#classifyModal').modal('hide');
+    });
 	
 	//常用收货地址验证
 	function addressCheck(){
@@ -111,64 +149,121 @@ $(function(){
 		});
 		return mark;
 	};
+	//规格设置验证
+	function setCheck(){
+		var mark = true;
+		$('#setWrap input').each(function(){
+			var input = $(this),
+				value = $.trim(input.val());
+			if(value == ''){
+				input.focus();
+				mark = false;
+			};
+			return mark;
+		});
+		return mark;
+	};
 
 	//设置标题
 	$('#title').text(title);
-	//添加常用收货地址
-	$('body').on('click', '.js-add-address', function(){
-		var mark = addressCheck();
+	//规格设置
+	$('body').on('click', '.js-add-set', function(){
+		var mark = setCheck();
 		if(mark){
-			var data = [{"address": "", "isDefault": false}],
-                html = template('addressTpl',{data: data});
-            $('#addressWrap').append(html);
-            //单选框
-    		$("#addressWrap .i-checks:last").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
-    		$('.js-del-address').show();
-    		//常用收货地址（省、市、区初始化）
-			method.initCity({
-				'selector': $('.province:last')
-			});
+			var data = [{}],
+                html = template('setTpl',{data: data});
+            $('#setWrap').append(html);
 		};
 	});
-	//删除当前常用收货地址
-	$('body').on('click', '.js-del-address', function(){
+
+	//删除当前规格设置、价格
+	$('body').on('click', '.js-del-btn', function(){
 		var _this = $(this),
-			parent = _this.parent(),
-			radio = parent.find('.isDefault');
-		//如果只剩当前一行，则不可删除(按钮是通过在控制台调样式显示出来的)
-		if(parent.siblings().length == 0){
-			$('.js-del-address').hide();
-			return;
-		};
-		//如果删除后只剩一行，则隐藏减号，不可在删除
-		if(parent.siblings().length <= 1){
-			$('.js-del-address').hide();
-		};
+			parent = _this.parent();
 		parent.remove();
-		//如果当前行是选中的，则删除后默认让第一行选中
-		if(radio.prop('checked')){
-			$('#addressWrap .isDefault:first').iCheck('check');
+	});
+
+	var setObj = {
+		"rowArr": [{}],
+		"selectArr": []
+	};
+	//规格设置-确定
+	$('#sure').on('click', function(){
+		var mark = setCheck();
+		if(mark){
+			setObj.selectArr = [];
+			$('#setWrap .set-row').each(function(){
+				var _this = $(this),
+					spec = $.trim(_this.find('.spec').val()),
+					attr = $.trim(_this.find('.attr').val()),
+					obj = {
+						"spec": spec,
+						"attr": attr
+					};
+				setObj.selectArr.push(obj);
+			});
+			var html = template('priceTpl',{data: setObj});
+            $('#priceWrap').html(html);
+            $('#priceBox').show();
 		};
 	});
+	//规格设置-重置
+	$('#reset').on('click', function(){
+		$('#setWrap .set-row').not(':first').remove();
+		$('#setWrap input').val('');
+		$('#priceBox').hide();
+		$('#priceWrap').html('');
+	});
+	//价格验证
+	function priceCheck(){
+		var mark = true;
+		$('#priceWrap .price-row').each(function(){
+			var row = $(this);
+			row.find('select').each(function(){
+				var _this = $(this),
+					value = _this.val();
+				if(value == ''){
+					_this.focus();
+	                layer.msg('请选择规格');
+					mark = false;
+					return false;
+				}
+			});
+			//验证当前行中的详细地址
+			if(mark){
+				row.find('input').each(function(){
+					var _this = $(this),
+						value = $.trim(_this.val());
+					if(value == ''){
+						_this.focus();
+						mark = false;
+						return false;
+					}
+				});
+			};
+			return mark;
+		});
+		return mark;
+	};
+	//价格
+	$('body').on('click', '.js-add-price', function(){
+		var mark = priceCheck();
+		if(mark){
+			var html = template('priceTpl',{data: setObj});
+            $('#priceWrap').append(html);
+            $('#priceWrap .js-del-btn:last').show();
+		};
+	});
+
 	//form验证配置
     var icon = "<i class='fa fa-times-circle'></i> ";
     var validateFirtst = $("#form").validate({
         debug: true,
         rules: {
-            accountName: 'required',
-            accountMobile: {
-            	'required': true,
-            	'phone': true
-            },
-            accountMail: {
-            	'email': true
-            }
+            accountName: 'required'
         },
         messages: {
-            accountName: icon + '请输入姓名',
-            accountMobile: {
-            	'required': icon + '请输入手机号'
-            }
+            accountName: icon + '请输入商品名称',
         }
     });
     //确定

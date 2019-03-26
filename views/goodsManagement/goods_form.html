@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>用户管理</title>
+    <title>商品管理</title>
     <!-- 全局css -->
     <link rel="shortcut icon" href="/img/favicon.ico"> 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +16,7 @@
     <link href="/css/style.css" rel="stylesheet">
     
     <!-- 对应样式表及插件 -->
-    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
-
+    <link href="/css/plugins/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 
 </head>
 
@@ -28,31 +27,17 @@
                 <div class="ibox">
                     <div class="ibox-content">
                         <div class="ibox-titles">
-                            <h4>用户管理 》<span id="title"></span></h4>
+                            <h4>商品管理 》<span id="title"></span></h4>
                         </div>
                         <form id="form" role="form" class="m-t">
                             <div class="form-group">
-                                <label class="text-danger">*</label><label>姓名</label>
+                                <label class="text-danger">*</label><label>商品名称</label>
                                 <input id="accountName" class="form-control" name="accountName" type="text">
                             </div>
                             <div class="form-group">
-                                <label class="text-danger">*</label><label>手机号</label>
-                                <input id="accountMobile" class="form-control" name="accountMobile" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label>邮箱</label>
-                                <input id="accountMail" class="form-control" name="accountMail" type="email">
-                            </div>
-                            <div class="form-group">
-                                <label>常用收货地址</label>
+                                <label>商品产地</label>
                                 <div id="addressWrap">
                                     <div class="address-row clearfix m-t-xs m-b-xs">
-                                        <div class="radio i-checks pull-left m-r">
-                                            <label style="padding: 0;">
-                                                <input class="isDefault" type="radio" checked value="" name="isDefault">
-                                                <i></i>
-                                            </label>
-                                        </div>
                                         <select class="form-control pull-left province" style="width:150px;" name="provinceId">
                                             <option value="">请选择</option>
                                         </select>
@@ -66,18 +51,41 @@
                                         </select>
                                         <span class="m-l m-r m-t-xs pull-left">-</span>
                                         <input class="form-control pull-left address" style="width:300px;" name="address" type="text" placeholder="详细地址">
-                                        <button type="button" class="js-add-address btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
-                                        <button type="button" class="js-del-address btn btn-primary btn-circle pull-left m-l m-t-xxs none"><i class="fa fa-minus"></i></button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>级别</label>
-                                <select id="levelSelect" class="form-control" name="accountLevelId"></select>
+                                <label>商品分类</label>
+                                <div>
+                                    <button id="addClassifyBtn" class="btn btn-sm btn-primary" type="button"><i class="fa fa-plus"></i> 添加</button>
+                                    <button id="classifyBtn" class="btn btn-sm btn-primary none" type="button"><i class="fa fa-plus"></i> 添加</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>规格设置</label>
+                                <div class="m-b" id="setWrap">
+                                    <div class="set-row clearfix m-t-xs m-b">
+                                        <input class="form-control pull-left spec" style="width:250px;" name="address" type="text" placeholder="规格字段如：重量，颜色，大小等">
+                                        <span class="m-l m-r m-t-xs pull-left">-</span>
+                                        <input class="form-control pull-left attr" style="width:400px;" name="address" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
+                                        <button type="button" class="js-add-set btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
+                                        <div class="pull-left m-l m-t-sm">规格值有多个，请用英文的 <span class="text-danger">; </span>隔开</div>
+                                    </div>
+                                </div>
+                                <button id="reset" class="btn btn-sm btn-primary" type="button">重置</button>
+                                <button id="sure" class="btn btn-sm btn-primary m-l" type="button">确定</button>
+                            </div>
+                            <div id="priceBox" class="form-group none">
+                                <label>价格</label>
+                                <div id="priceWrap"></div>
                             </div>
                             <div class="form-group">
                                 <label>状态</label>
                                 <select id="statusSelect" class="form-control" name="status"></select>
+                            </div>
+                            <div class="form-group">
+                                <label>商品单位</label>
+                                <select id="unitSelect" class="form-control" name="unit"></select>
                             </div>
                             <div class="form-group">
                                 <label>备注</label>
@@ -94,38 +102,66 @@
         </div>
     </div>
     
-    <!-- 用户级别与状态模板 -->
+    <!-- 添加分类弹出窗口 -->
+    <div id="classifyModal" class="modal inmodal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">分类</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <ul id="tree" class="ztree"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                    <button id="confirm" type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品单位与状态模板 -->
     <script type="text/html" id="optionTpl">
         {{each data}}
         <option value="{{$value.optionCode}}" {{$value.selected ? 'selected' : ''}}>{{$value.optionText}}</option>
         {{/each}}
     </script>
 
-    <!-- 用户级别与状态模板 -->
-    <script type="text/html" id="addressTpl">
+    <!-- 规格设置模板 -->
+    <script type="text/html" id="setTpl">
         {{each data}}
-        <div class="address-row clearfix m-t-xs m-b-xs">
-            <div class="radio i-checks pull-left m-r">
-                <label style="padding: 0;">
-                    <input class="isDefault" type="radio" {{$value.isDefault ? 'checked' : ''}} value="" name="isDefault">
-                    <i></i>
-                </label>
-            </div>
-            <select class="form-control pull-left province" style="width:150px;" name="provinceId" data-provinceId="{{$value.provinceId}}" data-cityId="{{$value.cityId}}" data-areaId="{{$value.districtId}}">
-                <option value="">请选择</option>
+        <div class="set-row clearfix m-t-xs m-b">
+            <input class="form-control pull-left spec" style="width:250px;" name="address" type="text" placeholder="规格字段如：重量，颜色，大小等">
+            <span class="m-l m-r m-t-xs pull-left">-</span>
+            <input class="form-control pull-left attr" style="width:400px;" name="address" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
+            <button type="button" class="js-add-set btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
+            <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-minus"></i></button>
+        </div>
+        {{/each}}
+    </script>
+
+    <!-- 价格模板 -->
+    <script type="text/html" id="priceTpl">
+        {{each data.rowArr}}
+        <div class="price-row clearfix m-t-xs m-b">
+            {{each data.selectArr as item index}}
+            <select class="form-control pull-left" style="width:150px;" name="price">
+                <option value="">选择{{item.spec}}</option>
+                {{each item.attr.split(';') as sitem sindex}}
+                <option value="{{sindex}}">{{sitem}}</option>
+                {{/each}}
             </select>
             <span class="m-l m-r m-t-xs pull-left">-</span>
-            <select class="form-control pull-left city" style="width:150px;" name="cityId">
-                <option value="">请选择</option>
-            </select>
-            <span class="m-l m-r m-t-xs pull-left">-</span>
-            <select class="form-control pull-left area" style="width:150px;" name="districtId">
-                <option value="">请选择</option>
-            </select>
-            <span class="m-l m-r m-t-xs pull-left">-</span>
-            <input class="form-control pull-left address" value="{{$value.address}}" style="width:300px;" name="address" type="text" placeholder="详细地址">
-            <button type="button" class="js-add-address btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
-            <button type="button" class="js-del-address btn btn-primary btn-circle pull-left m-l m-t-xxs {{data.length == 1 ? 'none' : ''}}"><i class="fa fa-minus"></i></button>
+            {{/each}}
+            <input class="form-control pull-left price" style="width:95px;" name="price" type="text" placeholder="价格">
+            <span class="m-l m-r m-t-sm pull-left">元</span>
+            <span class="m-t-sm pull-left">-</span>
+            <span class="m-l m-r m-t-sm pull-left">总数</span>
+            <input class="form-control pull-left total" style="width:95px;" name="price" type="text" placeholder="总数">
+            <button type="button" class="js-add-price btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
+            <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs {{$index != 0 ? '' : 'none'}}"><i class="fa fa-minus"></i></button>
         </div>
         {{/each}}
     </script>    
@@ -141,11 +177,11 @@
     <script src="/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="/js/plugins/validate/messages_zh.min.js"></script>
     <script src="/js/plugins/validate/form-validate-demo.js"></script>
-    <script src="/js/plugins/iCheck/icheck.min.js"></script>
     <script src="/js/plugins/template/template.js"></script>
+    <script src="/js/plugins/zTree/jquery.ztree.core.min.js"></script>
 
     <!-- 当前页面js -->
-    <script src="/js/page/userManagement/user_form.js"></script>
+    <script src="/js/page/goodsManagement/goods_form.js"></script>
 </body>
 
 </html>

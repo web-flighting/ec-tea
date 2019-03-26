@@ -65,7 +65,8 @@ $(function(){
     };
     var setting = {
         'view': {
-            addDiyDom: addDiyDom
+            'addDiyDom': addDiyDom,
+            'selectedMulti': false
         }
     };
     var tree = $.fn.zTree.init($("#tree"), setting, arr);

@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>一味一城茶舍</title>
+    <title>分类管理</title>
     <!-- 全局css -->
     <link rel="shortcut icon" href="/img/favicon.ico"> 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,6 @@
     <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <link href="/css/plugins/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
-
 
 </head>
 
@@ -41,6 +40,44 @@
         </div>
     </div>
     
+    <!-- 新增、编辑弹出窗口 -->
+    <div id="addEditModal" class="modal inmodal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">新增</h4>
+                </div>
+                <div class="modal-body form-horizontal">
+                    <form id="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 col-sm-offset-1 control-label">分类名称</label>
+                            <div class="col-sm-5 fun-pl0">
+                                <input id="name" class="form-control" name="name" type="text" value="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div id="relation" class="form-group">
+                            <label class="col-sm-3 col-sm-offset-1 control-label">分类关系</label>
+                            <div class="col-sm-5 fun-pl0">
+                                <select class="form-control" name="relation">
+                                    <option value="1">同级分类</option>
+                                    <option value="2">子级分类</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="error" class="text-danger m-t text-center none"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+                    <button id="confirm" type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 全局js -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

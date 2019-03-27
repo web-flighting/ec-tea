@@ -1,0 +1,50 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "orderNo": 20190222012350123,
+    "accountStatusSelectOption" : {
+      "selectOptionItems": [{
+        "optionCode": "1",
+        "optionText": "下单未支付",
+        "selected": false
+      }, {
+        "optionCode": "2",
+        "optionText": "已支付未发货",
+        "selected": false
+      }, {
+        "optionCode": "3",
+        "optionText": "配送中",
+        "selected": false
+      }, {
+        "optionCode": "4",
+        "optionText": "已签收",
+        "selected": false
+      }, {
+        "optionCode": "5",
+        "optionText": "退换货",
+        "selected": false
+      }, {
+        "optionCode": "6",
+        "optionText": "已失效",
+        "selected": false
+      }]
+    },
+    "accountLevelSelectOption" : {
+      "selectOptionItems" : [{
+        "optionCode" : "0c38cc34dd2e45fd937f003831548350",
+        "optionText" : "普通",
+        "selected" : false
+      }, {
+        "optionCode" : "119ebcaeb3554cf7926e88c2dfcd9d0c",
+        "optionText" : "vip",
+        "selected" : false
+      }, {
+        "optionCode" : "949aab40a55546598369bb8fdf4019f4",
+        "optionText" : "超级VIP",
+        "selected" : false
+      } ]
+    }
+  }
+}

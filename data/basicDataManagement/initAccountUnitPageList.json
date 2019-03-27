@@ -1,0 +1,81 @@
+{
+  "code": 0,
+  "messageCode": "I000000",
+  "resultMessage": "Success Operation!",
+  "body": {
+    "unitPageInformation": {
+      "pageInfo": {
+        "currentPage": 1,
+        "pageSize": 5,
+        "totalCounts": 12,
+        "pageCounts": 3,
+        "emptyRecords": false
+      },
+      "result": [{
+        "unitName": "把",
+        "status": "A",
+        "rcdsts": "A",
+        "createDate": "2019-03-09T16:00:00.000+0000",
+        "createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName": "administrator",
+        "updateDate": "2019-03-09T16:00:00.000+0000",
+        "updateDateText": "2019-03-10 00:00"
+      }, {
+        "unitName": "桶",
+        "status": "A",
+        "rcdsts": "A",
+        "createDate": "2019-03-09T16:00:00.000+0000",
+        "createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName": "administrator",
+        "updateDate": "2019-03-09T16:00:00.000+0000",
+        "updateDateText": "2019-03-10 00:00"
+      }, {
+        "unitName": "头",
+        "status": "A",
+        "rcdsts": "A",
+        "createDate": "2019-03-09T16:00:00.000+0000",
+        "createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName": "administrator",
+        "updateDate": "2019-03-09T16:00:00.000+0000",
+        "updateDateText": "2019-03-10 00:00"
+      }, {
+        "unitName": "米",
+        "status": "A",
+        "rcdsts": "A",
+        "createDate": "2019-03-09T16:00:00.000+0000",
+        "createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName": "administrator",
+        "updateDate": "2019-03-09T16:00:00.000+0000",
+        "updateDateText": "2019-03-10 00:00"
+      }, {
+        "unitName": "只",
+        "status": "A",
+        "rcdsts": "A",
+        "createDate": "2019-03-09T16:00:00.000+0000",
+        "createAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountId": "d80a92ff-41ba-11e9-b389-e0d55e4d4f8e",
+        "updateAccountName": "administrator",
+        "updateDate": "2019-03-09T16:00:00.000+0000",
+        "updateDateText": "2019-03-10 00:00"
+      }],
+      "additionalResult": [],
+      "additionalResult2": [],
+      "additionalResult3": [],
+      "additionalResult4": [],
+      "empty": false
+    },
+    "authoritys": [{
+      "authCode": "Add",
+      "authName": "新增单位",
+      "optional": ""
+    }, {
+      "authCode": "Edit",
+      "authName": "修改单位",
+      "optional": ""
+    }]
+  }
+}

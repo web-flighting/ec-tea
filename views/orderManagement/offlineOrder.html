@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>一味一城茶舍</title>
+    <!-- 全局css -->
+    <link rel="shortcut icon" href="/img/favicon.ico"> 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- 对应样式表及插件 -->
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="ibox-titles clearfix">
+                            <h4 class="pull-left">订单管理</h4>
+                            <a id="add" href="/views/orderManagement/order_form.html" class="J_menuItem btn btn-sm btn-primary pull-right none" type="button">新增用户</a>
+                        </div>
+                        <form id="form" class="form-inline base-form m-t clearfix">
+                            <div class="form-group">
+                                <label class="m-r">订单号</label>
+                                <input type="text" placeholder="请输入订单号" name="accountOrderNo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="m-r">买家手机号</label>
+                                <input type="text" placeholder="请输入买家手机号" name="accountMobile" class="form-control">
+                            </div>
+                            <div class="form-group">
+                              <label class="m-r">下单时间</label>
+                              <div class="input-group date js-date" id="startTime">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input type="text" class="form-control" name="start" value="" autocomplete="off"
+                                  placeholder="开始日期">
+                              </div>
+                              <span class="m-l m-r">-</span>
+                              <div class="input-group date js-date" id="endTime">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input type="text" class="form-control" name="end" value="" autocomplete="off"
+                                  placeholder="结束日期">
+                              </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="m-r">下单时间</label>
+                                <div class="input-group date js-date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="predate" value="" autocomplete="off">
+                                </div>
+                                -
+                                <div class="input-group date js-date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="nextdate" value="" autocomplete="off">
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label class="m-r">订单状态</label>
+                                <select id="statusSelect" class="form-control" style="width:200px;" name="status">
+                                    <option value="">全部</option>
+                                </select>
+                            </div>
+                            <div class="pull-right">
+                                <button id="search" class="btn btn-sm btn-primary m-r" type="button">查询</button>
+                                <button id="reset" class="btn btn-sm btn-primary" type="button">重置</button>
+                            </div>
+                        </form>
+                        <div class="m-t">
+                            <table id="table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 用户级别与状态模板 -->
+    <script type="text/html" id="optionTpl">
+        {{each data}}
+        <option value="{{$value.optionCode}}">{{$value.optionText}}</option>
+        {{/each}}
+    </script>
+
+    <!-- 全局js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/localStorage/web-storage-cache.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+
+    <!-- 对应插件 -->
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/js/plugins/validate/form-validate-demo.js"></script>
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/js/plugins/template/template.js"></script>
+    <script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    
+    <!-- 当前页面js -->
+    <script src="/js/page/orderManagement/offlineOrder.js"></script>
+</body>
+
+</html>

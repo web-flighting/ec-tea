@@ -1,0 +1,72 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "teaCategoryTrees" : [ {
+      "id" : "100000",
+      "categoryName" : "食品饮料",
+      "teaCategoryTreeChildren" : [ {
+        "id" : "100100",
+        "categoryName" : "糖巧",
+        "parentId" : "100000"
+      }, {
+        "id" : "100200",
+        "categoryName" : "饼干",
+        "parentId" : "100000"
+      }, {
+        "id" : "100300",
+        "categoryName" : "坚果",
+        "parentId" : "100000"
+      } ]
+    }, {
+      "id" : "200000",
+      "categoryName" : "美容洗护",
+      "teaCategoryTreeChildren" : [ {
+        "id" : "200100",
+        "categoryName" : "洗发",
+        "parentId" : "200000"
+      }, {
+        "id" : "200200",
+        "categoryName" : "沐浴",
+        "parentId" : "200000"
+      }, {
+        "id" : "200300",
+        "categoryName" : "洁面",
+        "parentId" : "200000"
+      } ]
+    }, {
+      "id" : "300000",
+      "categoryName" : "家居家电",
+      "teaCategoryTreeChildren" : [ {
+        "id" : "300100",
+        "categoryName" : "毛巾",
+        "parentId" : "300000"
+      }, {
+        "id" : "300200",
+        "categoryName" : "家电",
+        "parentId" : "300000"
+      }, {
+        "id" : "300300",
+        "categoryName" : "水杯",
+        "parentId" : "300000"
+      } ]
+    }, {
+      "id" : "400000",
+      "categoryName" : "生鲜水果",
+      "teaCategoryTreeChildren" : [ {
+        "id" : "400100",
+        "categoryName" : "水果",
+        "parentId" : "400000"
+      }, {
+        "id" : "400200",
+        "categoryName" : "肉类",
+        "parentId" : "400000"
+      }, {
+        "id" : "400300",
+        "categoryName" : "海产",
+        "parentId" : "400000"
+      } ]
+    } ]
+  }
+}

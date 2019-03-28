@@ -54,16 +54,13 @@
                         <div class="form-group">
                             <label class="col-sm-3 col-sm-offset-1 control-label">分类名称</label>
                             <div class="col-sm-5 fun-pl0">
-                                <input id="name" class="form-control" name="name" type="text" value="" autocomplete="off">
+                                <input id="name" class="form-control" name="categoryName" type="text" value="" autocomplete="off">
                             </div>
                         </div>
                         <div id="relation" class="form-group">
                             <label class="col-sm-3 col-sm-offset-1 control-label">分类关系</label>
                             <div class="col-sm-5 fun-pl0">
-                                <select class="form-control" name="relation">
-                                    <option value="1">同级分类</option>
-                                    <option value="2">子级分类</option>
-                                </select>
+                                <select id="relationSelect" class="form-control" name="categoryRelation"></select>
                             </div>
                         </div>
                         <div id="error" class="text-danger m-t text-center none"></div>
@@ -76,7 +73,13 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- 分类关系模板 -->
+    <script type="text/html" id="optionTpl">
+        {{each data}}
+        <option value="{{$value.optionCode}}" {{$value.selected ? 'selected' : ''}}>{{$value.optionText}}</option>
+        {{/each}}
+    </script>
 
     <!-- 全局js -->
     <script src="/js/jquery.min.js"></script>
@@ -86,6 +89,7 @@
     <script src="/js/plugins/layer/layer.min.js"></script>
 
     <!-- 对应插件 -->
+    <script src="/js/plugins/template/template.js"></script>
     <script src="/js/plugins/zTree/jquery.ztree.core.min.js"></script>
     
     <!-- 当前页面js -->

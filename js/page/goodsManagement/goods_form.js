@@ -66,36 +66,31 @@ $(function(){
 	    });
 	};
 
-	//商品分类
-	var arr = [
-        {
-            "id": 1,
-            "name": "一级目录",
-            "children": [
-                {
-                    "id": 11,
-                    "name": "一级子节点",
-                    "children": [
-                        {
-                            "id": 111,
-                            "name": "一级子节点1"
-                        },
-                        {
-                            "id": 112,
-                            "name": "一级子节点2"
-                        }
-                    ]
+    //获取商品分类树形结构列表
+    var data = {},
+        userParams = wsCache.get('userParams');
+        data.roleId = userParams.roleId;
+        data.menuId = userParams.menuId;
+    method.ajax({
+        'url': 'data/goodsManagement/queryCategoryTree.json',
+        'type': 'get',
+        'data': data,
+        'success': function(res){
+            var setting = {
+                'view': {
+                    'selectedMulti': false
+                },
+                'data': {
+                    'key': {
+                        'name': 'categoryName',
+                        'children': 'teaCategoryTreeChildren'
+                    }
                 }
-            ]
-        }
-    ];
-    var setting = {
-        'view': {
-            'selectedMulti': false
-        }
-    };
-    var tree = $.fn.zTree.init($("#tree"), setting, arr);
-    tree.expandAll(true);
+            };
+            var tree = $.fn.zTree.init($("#tree"), setting, res.body.teaCategoryTrees);
+            tree.expandAll(true);
+        } 
+    });
 
     //添加商品分类
     $('#addClassifyBtn,#classifyBtn').on('click', function(){
@@ -113,7 +108,7 @@ $(function(){
     		return;
     	};
     	var id = node[0].id,
-    		name = node[0].name;
+    		name = node[0].categoryName;
     	$('#addClassifyBtn').hide();
     	$('#classifyBtn').attr('data-id', id).text(name).show();
     	$('#classifyModal').modal('hide');

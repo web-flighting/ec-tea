@@ -1,0 +1,18 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "categoryRelationSelect" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "0",
+        "optionText" : "同级分类",
+        "selected" : true
+      }, {
+        "optionCode" : "1",
+        "optionText" : "子集分类",
+        "selected" : false
+      } ]
+    }
+  }
+}

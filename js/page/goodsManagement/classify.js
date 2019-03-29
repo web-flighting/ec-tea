@@ -48,14 +48,13 @@ $(function(){
                         'type': 'get',
                         'data': {"categoryId": treeNode.id},
                         'success': function(res){
-                            var zTree = $.fn.zTree.getZTreeObj("tree"),
-                                nodes = zTree.getNodes();
-                            if(nodes.length == 2){
-                                location.reload();
-                                return;
-                            };
+                            var zTree = $.fn.zTree.getZTreeObj("tree");
                             zTree.removeNode(treeNode);
-                            layer.closeAll();
+                            parent.layer.closeAll();
+                            var nodes = zTree.getNodes();
+                            if(nodes.length == 1){
+                                location.reload();
+                            };
                         } 
                     });
                 }, function(){

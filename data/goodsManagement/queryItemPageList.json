@@ -1,0 +1,88 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "itemPageList" : {
+      "pageInfo" : {
+        "currentPage" : 1,
+        "pageSize" : 5,
+        "totalCounts" : 5,
+        "emptyRecords" : false,
+        "pageCounts" : 1
+      },
+      "result" : [ {
+        "itemId" : "d271243d-4f0a-11e9-bdba-f8a96349df52",
+        "itemName" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "sku" : "01062ff5-5159-11e9-8641-e0d55e4d4f8e",
+        "categoryText" : "饼干",
+        "propertiesText" : "500g/个",
+        "quantity" : 5,
+        "price" : "200.00元",
+        "statusText" : "上架",
+        "remark" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "unitId" : "90a4e539ff9548af9c23d1a3b1f2b8ae"
+      }, {
+        "itemId" : "d271243d-4f0a-11e9-bdba-f8a96349df52",
+        "itemName" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "sku" : "34bd25a8-5159-11e9-8641-e0d55e4d4f8e",
+        "categoryText" : "饼干",
+        "propertiesText" : "1000g/个",
+        "quantity" : 4,
+        "price" : "300.00元",
+        "statusText" : "上架",
+        "remark" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "unitId" : "90a4e539ff9548af9c23d1a3b1f2b8ae"
+      }, {
+        "itemId" : "d271243d-4f0a-11e9-bdba-f8a96349df52",
+        "itemName" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "sku" : "41dc9e2d-5159-11e9-8641-e0d55e4d4f8e",
+        "categoryText" : "饼干",
+        "propertiesText" : "1500g/个",
+        "quantity" : 3,
+        "price" : "400.00元",
+        "statusText" : "上架",
+        "remark" : "稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",
+        "unitId" : "90a4e539ff9548af9c23d1a3b1f2b8ae"
+      }, {
+        "itemId" : "d28122c3-4f0a-11e9-bdba-f8a96349df52",
+        "itemName" : "【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",
+        "sku" : "55004bc0-5159-11e9-8641-e0d55e4d4f8e",
+        "categoryText" : "饼干",
+        "propertiesText" : "黄色/个",
+        "quantity" : 100,
+        "price" : "880.00元",
+        "statusText" : "上架",
+        "unitId" : "90a4e539ff9548af9c23d1a3b1f2b8ae"
+      }, {
+        "itemId" : "d28122c3-4f0a-11e9-bdba-f8a96349df52",
+        "itemName" : "【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",
+        "sku" : "63d6a310-5159-11e9-8641-e0d55e4d4f8e",
+        "categoryText" : "饼干",
+        "propertiesText" : "红色/个",
+        "quantity" : 200,
+        "price" : "44.22元",
+        "statusText" : "上架",
+        "unitId" : "90a4e539ff9548af9c23d1a3b1f2b8ae"
+      } ],
+      "additionalResult" : [ ],
+      "additionalResult2" : [ ],
+      "additionalResult3" : [ ],
+      "additionalResult4" : [ ],
+      "empty" : false
+    },
+    "authoritys" : [ {
+      "authCode" : "Add",
+      "authName" : "新增商品",
+      "optional" : ""
+    }, {
+      "authCode" : "Edit",
+      "authName" : "编辑商品",
+      "optional" : ""
+    }, {
+      "authCode" : "RepositoryMgt",
+      "authName" : "库存管理",
+      "optional" : ""
+    } ]
+  }
+}

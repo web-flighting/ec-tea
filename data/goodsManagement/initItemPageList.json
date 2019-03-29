@@ -1,0 +1,45 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "itemStatusSelectOption" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "",
+        "optionText" : "全部",
+        "selected" : true
+      }, {
+        "optionCode" : "A",
+        "optionText" : "上架",
+        "selected" : false
+      }, {
+        "optionCode" : "T",
+        "optionText" : "下架",
+        "selected" : false
+      } ]
+    },
+    "itemCategorySelectOption" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "",
+        "optionText" : "全部",
+        "selected" : true
+      }, {
+        "optionCode" : "100000",
+        "optionText" : "食品饮料",
+        "selected" : false
+      }, {
+        "optionCode" : "200000",
+        "optionText" : "美容洗护",
+        "selected" : false
+      }, {
+        "optionCode" : "300000",
+        "optionText" : "家居家电",
+        "selected" : false
+      }, {
+        "optionCode" : "400000",
+        "optionText" : "生鲜水果",
+        "selected" : false
+      } ]
+    }
+  }
+}

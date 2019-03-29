@@ -2,37 +2,37 @@ $(function(){
     var authEdit = false;
     var columns = [
         {
-            field: 'id',
+            field: 'itemId',
             title: 'ID',
             align: 'center',
             width: 50
         },
         {
-            field: 'accountName',
+            field: 'itemName',
             title: '商品名称',
             align: 'center',
             width: 130
         },
         {
-            field: 'accountMail',
+            field: 'sku',
             title: 'SKU',
             align: 'center',
             width: 150
         },
         {
-            field: 'accountMobile',
+            field: 'categoryText',
             title: '分类',
             align: 'center',
             width: 80
         },
         {
-            field: 'accountLevelName',
+            field: 'propertiesText',
             title: '规格',
             align: 'center',
             width: 130
         },
         {
-            field: 'statusText',
+            field: 'quantity',
             title: '总库存',
             align: 'center',
             width: 100
@@ -44,7 +44,7 @@ $(function(){
             width: 100
         },
         {
-            field: 'updateAccountName',
+            field: 'price',
             title: '售价',
             align: 'center',
             width: 100
@@ -56,7 +56,7 @@ $(function(){
             width: 100
         },
         {
-            field: 'accountRemark',
+            field: 'remark',
             title: '备注',
             align: 'center',
             width: 160
@@ -70,7 +70,9 @@ $(function(){
                 if(authEdit){
                     btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/goods_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 编辑</a>';
                 };
-                btns += ' <a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/stock.html?id='+ row.createAccountId +'"><i class="glyphicon glyphicon-briefcase"></i> 库存</a>';
+                if(authRepositoryMgt){
+                    btns += ' <a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/stock.html?id='+ row.createAccountId +'"><i class="glyphicon glyphicon-briefcase"></i> 库存</a>';
+                };
                 return btns;
             }
         }
@@ -78,16 +80,27 @@ $(function(){
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/userManagement/initAccountPageList.json',
+        'url': 'data/goodsManagement/queryItemPageList.json',
         'type': 'get',
         'data': [],
-        'pageInfoName': 'accountPageInformation',
+        'pageInfoName': 'itemPageList',
         'columns': columns,
         'queryParams': function (params) {
             var data = $('#form').serializeObject(),
                 userParams = wsCache.get('userParams');
             data.roleId = userParams.roleId;
             data.menuId = userParams.menuId;
+            var itemCategoryId = '';
+            if(data.itemCategoryId != ''){
+                itemCategoryId = data.itemCategoryId[0];
+                if(data.itemCategoryId[1] != ''){
+                    itemCategoryId = data.itemCategoryId[1];
+                };
+                if(data.itemCategoryId[2] != ''){
+                    itemCategoryId = data.itemCategoryId[2];
+                };
+            };
+            data.itemCategoryId = itemCategoryId;
             return method.getTableParams(params, data);
         },
         'success': function(res){
@@ -105,35 +118,45 @@ $(function(){
             if(edit.length != 0){
                 authEdit = true;
             };
-            //渲染状态
-            var statusSelect = $('#statusSelect');
-            if(statusSelect.hasClass('off')){ //只渲染一次
-                return;
+            var RepositoryMgt = authoritys.filter(function(item){
+                return item.authCode == 'RepositoryMgt';
+            });
+            if(RepositoryMgt.length != 0){
+                authRepositoryMgt = true;
             };
-            statusSelect.addClass('off');
-
-            var data = res.body.accountStatusSelectOption.selectOptionItems,
-                html = template('optionTpl',{data: data});
-            statusSelect.html(html);
         }
     });
+
+    //初始化商品分页列表页面条件
+    method.ajax({
+      'url': 'data/goodsManagement/initItemPageList.json',
+      'type': 'get',
+      'success': function(res){
+            //状态
+            var data = res.body.itemStatusSelectOption.selectOptionItems,
+                html = template('optionTpl',{data: data});
+            $('#statusSelect').html(html);
+            //分类
+            var data = res.body.itemCategorySelectOption.selectOptionItems,
+                html = template('optionTpl',{data: data});
+            $('#classify1').html(html);
+      } 
+  });
 
     //初始化分类
     function getClassify(selector, parentId){
       method.ajax({
-          'url': 'data/common/queryCityByParentId.json',
+          'url': 'data/goodsManagement/getSubItemCategory.json',
           'type': 'get',
           'data': {"parentId": parentId},
           'success': function(res){
-              var html = '<option value="">全部</option>';
-              $.each(res.body.citys, function(index, item){
-                html += '<option value="'+ item.areaId +'">'+ item.areaName +'</option>';
-              });
+              //分类
+            var data = res.body.itemCategorySelectOption.selectOptionItems,
+                html = template('optionTpl',{data: data});
               selector.html(html);
           } 
       });
     };
-    getClassify($('#classify1'), 0);
     $('#classify1').on('change', function(){
         var value = $(this).val();
         $('#classify2').find('option').not(':first').remove();
@@ -172,6 +195,17 @@ $(function(){
                 userParams = wsCache.get('userParams');
             data.roleId = userParams.roleId;
             data.menuId = userParams.menuId;
+            var itemCategoryId = '';
+            if(data.itemCategoryId != ''){
+                itemCategoryId = data.itemCategoryId[0];
+                if(data.itemCategoryId[1] != ''){
+                    itemCategoryId = data.itemCategoryId[1];
+                };
+                if(data.itemCategoryId[2] != ''){
+                    itemCategoryId = data.itemCategoryId[2];
+                };
+            };
+            data.itemCategoryId = itemCategoryId;
             return method.getTableParams(params, data);
         };
         $('#table').bootstrapTable('selectPage', 1);

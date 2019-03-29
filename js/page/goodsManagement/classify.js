@@ -11,8 +11,13 @@ $(function(){
         };
         str += "<span class='button edit' id='editBtn_" + treeNode.tId
             + "' onfocus='this.blur();' title='编辑'></span>";
-        str += "<span class='button remove' id='deleteBtn_" + treeNode.tId
-        + "' onfocus='this.blur();' title='删除'></span>";
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        var nodes = zTree.getNodes();
+        if(nodes.length != 1 || treeNode.level != 0){
+            str += "<span class='button remove' id='deleteBtn_" + treeNode.tId
+            + "' onfocus='this.blur();' title='删除'></span>";
+        };
+        
         sObj.after(str);
         var addBtn = $("#addBtn_"+treeNode.tId),
             editBtn = $("#editBtn_"+treeNode.tId),
@@ -43,7 +48,12 @@ $(function(){
                         'type': 'get',
                         'data': {"categoryId": treeNode.id},
                         'success': function(res){
-                            var zTree = $.fn.zTree.getZTreeObj("tree");
+                            var zTree = $.fn.zTree.getZTreeObj("tree"),
+                                nodes = zTree.getNodes();
+                            if(nodes.length == 2){
+                                location.reload();
+                                return;
+                            };
                             zTree.removeNode(treeNode);
                             layer.closeAll();
                         } 

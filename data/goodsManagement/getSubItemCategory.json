@@ -1,0 +1,18 @@
+{
+  "code" : 0,
+  "messageCode" : "I000000",
+  "resultMessage" : "Success Operation!",
+  "body" : {
+    "itemCategorySelectOption" : {
+      "selectOptionItems" : [ {
+        "optionCode" : "",
+        "optionText" : "全部",
+        "selected" : true
+      }, {
+        "optionCode" : "ade3fa7d53484e3a98fe1b1fe9b2cd26",
+        "optionText" : "鸡肉",
+        "selected" : false
+      } ]
+    }
+  }
+}

@@ -598,6 +598,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 							<li>
 								<em></em><a href="#_module_商品管理">2.8. 商品管理</a>
 								<ul>
+										<li>
+											<a href="#_inter_8_1">2.8.1. <span style=''>分页查询商品列表</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_2">2.8.2. <span style=''>初始化商品分页列表页面条件查询接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_3">2.8.3. <span style=''>获取商品分类级联下拉列表数据</span></a>
+										</li>
 								</ul>
 							</li>
 							<li>
@@ -6724,6 +6733,594 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 							
 						</div>
 						
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_1" href="#_inter_8_1"></a>
+									2.8.1. <span style=''>分页查询商品列表</span>
+								</h4>
+								<div class="paragraph">
+									<p>按照条件分页查询商品列表。其中商品类型下拉列表字段传递最末位的categoryId值<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询商品列表_basic" href="#_inter_分页查询商品列表_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/queryItemPageList</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-28 21:20:23</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-28 23:15:58</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询商品列表_param" href="#_inter_分页查询商品列表_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">roleId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">当前选中的角色ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">menuId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">当前选中的菜单ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemName</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品名称</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">sku</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">SKU</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemStatusId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品状态</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemCategoryId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品类别ID，仅传递最末位下拉列表所选值</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">currentPage</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">当前页码</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">pageSize</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">每页显示记录数</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询商品列表_resp" href="#_inter_分页查询商品列表_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310079_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310079_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310079_resp_json_schema_成功" href="#_inter_310079_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemPageList"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageInfo"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"currentPage"&nbsp;:&nbsp;1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageSize"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"totalCounts"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"emptyRecords"&nbsp;:&nbsp;false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageCounts"&nbsp;:&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"result"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"01062ff5-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"500g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"200.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"34bd25a8-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"1000g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;4,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"300.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"41dc9e2d-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"1500g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;3,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"400.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d28122c3-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"55004bc0-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"黄色/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;100,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"880.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d28122c3-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"63d6a310-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"红色/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;200,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"44.22元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult2"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult3"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult4"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"empty"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"authoritys"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Add",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"新增商品",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Edit",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"编辑商品",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"RepositoryMgt",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"库存管理",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310079_resp_json_schema_失败" href="#_inter_310079_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_2" href="#_inter_8_2"></a>
+									2.8.2. <span style=''>初始化商品分页列表页面条件查询接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化商品分页列表页面条件查询接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品分页列表页面条件查询接口_basic" href="#_inter_初始化商品分页列表页面条件查询接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/initItemPageList</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-28 22:05:04</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-28 22:06:18</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品分页列表页面条件查询接口_param" href="#_inter_初始化商品分页列表页面条件查询接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品分页列表页面条件查询接口_resp" href="#_inter_初始化商品分页列表页面条件查询接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310082_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310082_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310082_resp_json_schema_成功" href="#_inter_310082_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"全部",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"A",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"T",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemCategorySelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"全部",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"100000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"食品饮料",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"200000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"美容洗护",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"300000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"家居家电",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"400000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"生鲜水果",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310082_resp_json_schema_失败" href="#_inter_310082_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_3" href="#_inter_8_3"></a>
+									2.8.3. <span style=''>获取商品分类级联下拉列表数据</span>
+								</h4>
+								<div class="paragraph">
+									<p>获取商品分类级联下拉列表数据,传递当前下拉列表选中的分类ID获取下一个分类下拉列表数据结构<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类级联下拉列表数据_basic" href="#_inter_获取商品分类级联下拉列表数据_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/getSubItemCategory</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-28 22:08:02</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-28 22:09:37</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类级联下拉列表数据_param" href="#_inter_获取商品分类级联下拉列表数据_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">categoryId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品类别ID</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类级联下拉列表数据_resp" href="#_inter_获取商品分类级联下拉列表数据_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310083_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310083_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310083_resp_json_schema_成功" href="#_inter_310083_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemCategorySelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"全部",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"ade3fa7d53484e3a98fe1b1fe9b2cd26",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"鸡肉",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310083_resp_json_schema_失败" href="#_inter_310083_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
 					</div>
 					<div class="sect2">
 						<h3>
@@ -7881,7 +8478,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 		</div>
 	</div>
 	<div id="footer">
-		<div id="footer-text">生成时间：2019-03-27 23:54:32</div>
+		<div id="footer-text">生成时间：2019-03-28 23:16:34</div>
 	</div>
 	
 	<script type="text/javascript">

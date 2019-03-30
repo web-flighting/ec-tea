@@ -178,7 +178,15 @@ $(function(){
             var mark = addressCheck();
 	    	if(mark){
 	    		var obj = $('#form').serializeObject(); //表单中的数据
-				var accountAddresses = [];
+
+		    	var url = 'account/addAccount';
+		    	//如果为修改，则上传用户id
+		    	if(!!params.id){
+		    		url = 'account/editAccount';
+		    		obj.accountId = params.id;
+		    	};
+
+		    	var accountAddresses = [];
 		    	$('.address-row').each(function(){
 		    		var row = $(this),
 		    			provinceId = row.find('.province').val(),
@@ -195,13 +203,6 @@ $(function(){
 		    			};
 		    		accountAddresses.push(rowObj);
 		    	});
-
-		    	var url = 'account/addAccount';
-		    	//如果为修改，则上传用户id
-		    	if(!!params.id){
-		    		url = 'account/editAccount';
-		    		obj.accountId = params.id;
-		    	};
 		    	obj.accountAddresses = accountAddresses;
 		    	delete obj.provinceId;
 		    	delete obj.cityId;

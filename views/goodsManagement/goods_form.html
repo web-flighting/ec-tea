@@ -32,7 +32,7 @@
                         <form id="form" role="form" class="m-t">
                             <div class="form-group">
                                 <label class="text-danger">*</label><label>商品名称</label>
-                                <input id="accountName" class="form-control" name="accountName" type="text">
+                                <input id="itemName" class="form-control" name="itemName" type="text">
                             </div>
                             <div class="form-group">
                                 <label>商品产地</label>
@@ -46,11 +46,11 @@
                                             <option value="">请选择</option>
                                         </select>
                                         <span class="m-l m-r m-t-xs pull-left">-</span>
-                                        <select class="form-control pull-left area" style="width:150px;" name="districtId">
+                                        <select class="form-control pull-left area" style="width:150px;" name="areaId">
                                             <option value="">请选择</option>
                                         </select>
                                         <span class="m-l m-r m-t-xs pull-left">-</span>
-                                        <input class="form-control pull-left address" style="width:300px;" name="address" type="text" placeholder="详细地址">
+                                        <input class="form-control pull-left address" style="width:300px;" name="addressDetail" type="text" placeholder="详细地址">
                                     </div>
                                 </div>
                             </div>
@@ -59,15 +59,16 @@
                                 <div>
                                     <button id="addClassifyBtn" class="btn btn-sm btn-primary" type="button"><i class="fa fa-plus"></i> 添加</button>
                                     <button id="classifyBtn" class="btn btn-sm btn-primary none" type="button"><i class="fa fa-plus"></i> 添加</button>
+                                    <input type="hidden" name="itemCategoryId" value="" class="classifyId">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>规格设置</label>
                                 <div class="m-b" id="setWrap">
                                     <div class="set-row clearfix m-t-xs m-b">
-                                        <input class="form-control pull-left spec" style="width:250px;" name="address" type="text" placeholder="规格字段如：重量，颜色，大小等">
+                                        <input class="form-control pull-left spec" style="width:250px;" name="propertiesName" type="text" placeholder="规格字段如：重量，颜色，大小等">
                                         <span class="m-l m-r m-t-xs pull-left">-</span>
-                                        <input class="form-control pull-left attr" style="width:400px;" name="address" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
+                                        <input class="form-control pull-left attr" style="width:400px;" name="propertiesValue" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
                                         <button type="button" class="js-add-set btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
                                         <div class="pull-left m-l m-t-sm">规格值有多个，请用英文的 <span class="text-danger">; </span>隔开</div>
                                     </div>
@@ -81,15 +82,15 @@
                             </div>
                             <div class="form-group">
                                 <label>状态</label>
-                                <select id="statusSelect" class="form-control" name="status"></select>
+                                <select id="statusSelect" class="form-control" name="itemStatusId"></select>
                             </div>
                             <div class="form-group">
                                 <label>商品单位</label>
-                                <select id="unitSelect" class="form-control" name="unit"></select>
+                                <select id="unitSelect" class="form-control" name="itemUnitId"></select>
                             </div>
                             <div class="form-group">
                                 <label>备注</label>
-                                <textarea id="accountRemark" class="form-control" name="accountRemark" style="height:150px;resize:none;"></textarea>
+                                <textarea id="accountRemark" class="form-control" name="remark" style="height:150px;resize:none;"></textarea>
                             </div>
                         </form>
                         <div class="text-center">
@@ -133,9 +134,9 @@
     <script type="text/html" id="setTpl">
         {{each data}}
         <div class="set-row clearfix m-t-xs m-b">
-            <input class="form-control pull-left spec" style="width:250px;" name="address" type="text" placeholder="规格字段如：重量，颜色，大小等">
+            <input class="form-control pull-left spec" style="width:250px;" name="propertiesName" type="text" placeholder="规格字段如：重量，颜色，大小等">
             <span class="m-l m-r m-t-xs pull-left">-</span>
-            <input class="form-control pull-left attr" style="width:400px;" name="address" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
+            <input class="form-control pull-left attr" style="width:400px;" name="propertiesValue" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
             <button type="button" class="js-add-set btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
             <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-minus"></i></button>
         </div>
@@ -146,10 +147,10 @@
     <script type="text/html" id="priceTpl">
         {{each data.rowArr}}
         <div class="price-row clearfix m-t-xs m-b">
-            {{each data.selectArr as item index}}
-            <select class="form-control pull-left" style="width:150px;" name="price">
+            {{each data.selectArr item index}}
+            <select class="form-control pull-left" style="width:150px;" name="propertiesIdGroup">
                 <option value="">选择{{item.spec}}</option>
-                {{each item.attr.split(';') as sitem sindex}}
+                {{each item.attr.split(';') sitem sindex}}
                 <option value="{{sindex}}">{{sitem}}</option>
                 {{/each}}
             </select>
@@ -159,7 +160,7 @@
             <span class="m-l m-r m-t-sm pull-left">元</span>
             <span class="m-t-sm pull-left">-</span>
             <span class="m-l m-r m-t-sm pull-left">总数</span>
-            <input class="form-control pull-left total" style="width:95px;" name="price" type="text" placeholder="总数">
+            <input class="form-control pull-left total" style="width:95px;" name="quantity" type="text" placeholder="总数">
             <button type="button" class="js-add-price btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
             <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs {{$index != 0 ? '' : 'none'}}"><i class="fa fa-minus"></i></button>
         </div>

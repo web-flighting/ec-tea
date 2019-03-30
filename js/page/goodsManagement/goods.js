@@ -1,5 +1,6 @@
 $(function(){
-    var authEdit = false;
+    var authEdit = false,
+        authRepositoryMgt = false;
     var columns = [
         {
             field: 'itemId',
@@ -129,8 +130,8 @@ $(function(){
 
     //初始化商品分页列表页面条件
     method.ajax({
-      'url': 'data/goodsManagement/initItemPageList.json',
-      'type': 'get',
+      'url': 'item/initItemPageList',
+      'type': 'post',
       'success': function(res){
             //状态
             var data = res.body.itemStatusSelectOption.selectOptionItems,
@@ -146,9 +147,9 @@ $(function(){
     //初始化分类
     function getClassify(selector, parentId){
       method.ajax({
-          'url': 'data/goodsManagement/getSubItemCategory.json',
-          'type': 'get',
-          'data': {"parentId": parentId},
+          'url': 'item/getSubItemCategory',
+          'type': 'post',
+          'data': {"categoryId": parentId},
           'success': function(res){
               //分类
             var data = res.body.itemCategorySelectOption.selectOptionItems,

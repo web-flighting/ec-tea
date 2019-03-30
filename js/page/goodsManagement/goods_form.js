@@ -11,19 +11,19 @@ $(function(){
 		method.initCity({
 			'selector': $('.province')
 		});
-		//用户添加页面初始化
+		//新增商品页面初始化
 		method.ajax({
-	        'url': 'data/userManagement/initAddAccountPage.json',
-	        'type': 'get',
+	        'url': 'item/initItemAddOperatePage',
+	        'type': 'post',
 	        'success': function(res){
 	            //渲染商品单位与状态
 	            var unitSelect = $('#unitSelect');
-	            var data = res.body.accountLevelSelectOption.selectOptionItems,
+	            var data = res.body.itemUnitSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
 	            unitSelect.html(html);
 
 	            var statusSelect = $('#statusSelect'),
-	                data = res.body.accountStatusSelectOption.selectOptionItems,
+	                data = res.body.itemStatusSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
 	            statusSelect.html(html);
 	        } 
@@ -72,8 +72,8 @@ $(function(){
         data.roleId = userParams.roleId;
         data.menuId = userParams.menuId;
     method.ajax({
-        'url': 'data/goodsManagement/queryCategoryTree.json',
-        'type': 'get',
+        'url': 'item/getECTeaItemCategoryTree',
+        'type': 'post',
         'data': data,
         'success': function(res){
             var setting = {
@@ -110,7 +110,8 @@ $(function(){
     	var id = node[0].id,
     		name = node[0].categoryName;
     	$('#addClassifyBtn').hide();
-    	$('#classifyBtn').attr('data-id', id).text(name).show();
+    	$('#classifyId').val(id);
+    	$('#classifyBtn').text(name).show();
     	$('#classifyModal').modal('hide');
     });
 	
@@ -255,10 +256,10 @@ $(function(){
     var validateFirtst = $("#form").validate({
         debug: true,
         rules: {
-            accountName: 'required'
+            itemName: 'required'
         },
         messages: {
-            accountName: icon + '请输入商品名称',
+            itemName: icon + '请输入商品名称',
         }
     });
     //确定
@@ -268,37 +269,61 @@ $(function(){
             var mark = addressCheck();
 	    	if(mark){
 	    		var obj = $('#form').serializeObject(); //表单中的数据
-				var accountAddresses = [];
-		    	$('.address-row').each(function(){
-		    		var row = $(this),
-		    			provinceId = row.find('.province').val(),
-		    			cityId = row.find('.city').val(),
-		    			districtId = row.find('.area').val(),
-		    			address = $.trim(row.find('.address').val()),
-		    			isDefault = row.find('.isDefault').prop('checked'),
-		    			rowObj = {
-		    				"provinceId": provinceId,
-		    				"cityId": cityId,
-		    				"districtId": districtId,
-		    				"address": address,
-		    				"isDefault": isDefault
-		    			};
-		    		accountAddresses.push(rowObj);
-		    	});
 
-		    	var url = 'data/userManagement/addAccount.json';
+		    	var url = 'item/doAddItem';
 		    	//如果为修改，则上传用户id
 		    	if(!!params.id){
 		    		url = 'data/userManagement/editAccount.json';
 		    		obj.accountId = params.id;
 		    	};
-		    	obj.accountAddresses = accountAddresses;
-		    	delete obj.provinceId;
-		    	delete obj.cityId;
-		    	delete obj.districtId;
-		    	delete obj.address;
-		    	delete obj.isDefault;
+		    	//获取规格设置
+		    	var propertiesConfigures = [];
+		    	$('.set-row').each(function(){
+		    		var row = $(this),
+		    			propertiesName = $.trim(row.find('.spec').val()),
+		    			propertiesValue = $.trim(row.find('.attr').val()),
+		    			rowObj = {
+		    				"propertiesName": propertiesName,
+		    				"propertiesValue": propertiesValue
+		    			};
+		    		propertiesConfigures.push(rowObj);
+		    	});
+		    	obj.propertiesConfigures = propertiesConfigures;
+		    	delete obj.propertiesName;
+		    	delete obj.propertiesValue;
 
+		    	//获取价格
+		    	var itemPriceGroups = [];
+		    	$('.price-row').each(function(){
+		    		var row = $(this),
+		    			select = row.find('select'),
+		    			price = $.trim(row.find('.price').val()),
+		    			quantity = $.trim(row.find('.total').val()),
+		    			rowObj = {
+		    				"price": price,
+		    				"quantity": quantity
+		    			};
+		    		var arr = [];
+		    		select.each(function(){
+		    			var _this = $(this),
+		    				spec = _this.find('option:first').text(),
+		    				spec = spec.substring(2),
+		    				attr = '';
+		    			if(_this.val() != ''){
+		    				attr = _this.find('option:selected').text();
+		    			};
+		    			var str = spec + ':' + attr;
+		    			arr.push(str);
+		    		});
+		    		rowObj.propertiesIdGroup = arr.join('-');
+		    		itemPriceGroups.push(rowObj);
+		    	});
+		    	obj.itemPriceGroups = itemPriceGroups;
+		    	delete obj.propertiesIdGroup;
+		    	delete obj.price;
+		    	delete obj.quantity;
+		    	console.log(obj)
+		    	return;
 		    	method.ajax({
 		          'url': url,
 		          'type': 'get',

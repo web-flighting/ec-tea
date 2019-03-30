@@ -17,8 +17,8 @@ $(function(){
 		});
 		//用户添加页面初始化
 		method.ajax({
-	        'url': 'data/userManagement/initAddAccountPage.json',
-	        'type': 'get',
+	        'url': 'account/initAddAccountPage',
+	        'type': 'post',
 	        'success': function(res){
 	            //渲染用户级别与状态
 	            var levelSelect = $('#levelSelect');
@@ -37,8 +37,8 @@ $(function(){
 		title = '编辑用户';
 		//用户修改页面初始化
 		method.ajax({
-	        'url': 'data/userManagement/initEditAccountPage.json',
-	        'type': 'get',
+	        'url': 'account/initEditAccountPage',
+	        'type': 'post',
 	        'success': function(res){
 	        	var body = res.body;
 	        	//姓名
@@ -196,10 +196,10 @@ $(function(){
 		    		accountAddresses.push(rowObj);
 		    	});
 
-		    	var url = 'data/userManagement/addAccount.json';
+		    	var url = 'account/addAccount';
 		    	//如果为修改，则上传用户id
 		    	if(!!params.id){
-		    		url = 'data/userManagement/editAccount.json';
+		    		url = 'account/editAccount';
 		    		obj.accountId = params.id;
 		    	};
 		    	obj.accountAddresses = accountAddresses;
@@ -211,7 +211,7 @@ $(function(){
 
 		    	method.ajax({
 		          'url': url,
-		          'type': 'get',
+		          'type': 'post',
 		          'data': obj,
 		          'success': function(res){
 	                layer.alert('保存成功', {

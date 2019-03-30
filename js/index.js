@@ -1,8 +1,8 @@
 $(function () {
   //获取当前登录用户所有角色列表
   method.ajax({
-    'url': 'data/main/initAccountRoles.json',
-    'type': 'get',
+    'url': 'security/initAccountRoles',
+    'type': 'post',
     'success': function (res) {
       var securityRoles = res.body.securityRoles,
         html = template('roleListTpl', {
@@ -25,8 +25,8 @@ $(function () {
   //获取系统菜单
   function getSystemMenus(roleId) {
     method.ajax({
-      'url': 'data/main/getSystemMenus.json',
-      'type': 'get',
+      'url': 'security/getSystemMenus',
+      'type': 'post',
       'data': {
         "selectAccountRoleId": roleId
       },
@@ -48,8 +48,8 @@ $(function () {
 
     }, function () {
       method.ajax({
-        'url': 'data/main/loginOut.json',
-        'type': 'get',
+        'url': 'security/loginOut',
+        'type': 'post',
         'success': function (res) {
           wsCache.delete('tokenId');
           wsCache.delete('userInfo');
@@ -60,6 +60,39 @@ $(function () {
 
     });
   });
+
+  template.defaults.imports.menu = function(value){
+    switch(value){
+      case '/accountManagement.html':
+        value = '/userManagement/user.html';
+        break;
+      case '/accountLevelManagement.html':
+        value = '/userManagement/userLevel.html';
+        break;
+      case '/productManagement.html':
+        value = '/goodsManagement/goods.html';
+        break;
+      case '/productTypeManagement.html':
+        value = '/goodsManagement/classify.html';
+        break;
+      case '/orderOutlineManagement.html':
+        value = '/orderManagement/offlineOrder.html';
+        break;
+      case '/adminManagement.html':
+        value = '/systemManagement/manager.html';
+        break;
+      case '/roleManagement.html':
+        value = '/systemManagement/role.html';
+        break;
+      case '/cityManagement.html':
+        value = '/basicDataManagement/city.html';
+        break;
+      case '/unitManagement.html':
+        value = '/basicDataManagement/unit.html';
+        break;
+    };
+    return value;
+  };
 
 
   //菜单点击选中

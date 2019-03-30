@@ -40,7 +40,7 @@ $(function(){
                 'click .edit': function(e, value, row, index){
                     $('#levelModal .modal-title').html('编辑级别');
                     $('#levelName').val(row.levelName);
-                    $('#levelId').val(row.levelId);
+                    $('#levelId').val(row.id);
                     $('#confirm').attr('data-type', 'edit');
                     $('#levelModal').modal();
                 }
@@ -50,8 +50,8 @@ $(function(){
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/userManagement/initAccountLevelPageList.json',
-        'type': 'get',
+        'url': 'accountLevel/initAccountLevelPageList',
+        'type': 'post',
         'data': [],
         'pageInfoName': 'accountLevelPageInformation',
         'columns': columns,
@@ -114,13 +114,13 @@ $(function(){
         //如果新增级别
         if(type == 'add'){
             delete obj.levelId;
-            url = 'data/userManagement/addAccountLevel.json';
+            url = 'accountLevel/addAccountLevel';
         }else{ //如果编辑级别
-            url = 'data/userManagement/editAccountLevel.json';
+            url = 'accountLevel/editAccountLevel';
         };
         method.ajax({
           'url': url,
-          'type': 'get',
+          'type': 'post',
           'data': obj,
           'success': function(res){
             $('#levelModal').modal('hide');

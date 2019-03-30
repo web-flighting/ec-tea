@@ -71,11 +71,12 @@ $(function(){
             }
         }
     ];
+
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/userManagement/initAccountPageList.json',
-        'type': 'get',
+        'url': 'account/initAccountPageList',
+        'type': 'post',
         'data': [],
         'pageInfoName': 'accountPageInformation',
         'columns': columns,

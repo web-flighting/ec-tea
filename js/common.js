@@ -1,6 +1,6 @@
 //公用配置
 var config = {
-  'service': '/', //api请求
+  'service': 'http://47.99.245.132:8081/ec-tea/webservice/', //api请求
   'loginUrl': '/login.html' //登录页地址 
 };
 //公用方法
@@ -9,10 +9,6 @@ var method = {
     //ajax请求http服务
     ajax: function (obj) {
         var tokenId = wsCache.get('tokenId');
-        if(!obj.data){
-            obj.data = {};
-        };
-        obj.data.tokenId = tokenId;
         var url = config.service + obj.url;
         $.ajax({
             url: url,
@@ -38,6 +34,10 @@ var method = {
                     window.location = config.loginUrl;
                     return;
                 };
+                if(res.code != 0){
+                  parent.layer.alert(res.resultMessage);
+                  return;
+                };
                 if (obj.success){
                   obj.success(res);  
                 };
@@ -62,17 +62,19 @@ var method = {
         var uniqueId = obj.uniqueId || 'id',
             height = obj.height || 0,
             type = obj.type || 'post',
-            contentType;
-        if(method == 'post'){
-            contentType = 'application/x-www-form-urlencoded';
-        }else{
-            contentType = 'application/json';
-        };
+            contentType = 'application/json;charset=utf-8';
+        
         $('#' + obj.id).bootstrapTable({
           url: config.service + obj.url, //请求后台的URL（*）
           method: type, //请求方式（*）
           contentType: contentType,
           data: obj.data,
+          ajaxOptions: {
+              xhrFields: {
+                withCredentials: true 
+              },
+              crossDomain: true,
+          },
           striped: true, //是否显示行间隔色
           cache: false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
           pagination: true, //是否显示分页（*）
@@ -100,10 +102,22 @@ var method = {
             return '没有找到匹配的记录';
           },
           responseHandler: function (res) {
+            //如果登录超时则跳转至登录页
+            if (res.code == 92 && res.messageCode == 'I000061') {
+                wsCache.delete('tokenId');
+                wsCache.delete('userInfo');
+                wsCache.delete('userParams');
+                window.location = config.loginUrl;
+                return;
+            };
+            if(res.code != 0){
+              parent.layer.alert(res.resultMessage);
+              return;
+            };
             var json = {
               "body": res.body,
-              "rows": res.body[obj.pageInfoName].result,
-              "total": res.body[obj.pageInfoName].pageInfo.totalCounts
+              "rows": !!res.body[obj.pageInfoName] ? res.body[obj.pageInfoName].result : [],
+              "total": !!res.body[obj.pageInfoName] && res.body[obj.pageInfoName].pageInfo.totalCounts
             };
             if (obj.success){
               obj.success(json);  
@@ -137,8 +151,8 @@ var method = {
     //省、市、区请求  selector 要渲染到的容器选择器   parentId 上级ID 查询省时 值为0  selectedId 选中的项id
     getCity: function(selector, parentId, selectedId){
       this.ajax({
-          'url': 'data/common/queryCityByParentId.json',
-          'type': 'get',
+          'url': 'account/queryCityByParentId',
+          'type': 'post',
           'data': {"parentId": parentId},
           'success': function(res){
               var html = '<option value="">请选择</option>';

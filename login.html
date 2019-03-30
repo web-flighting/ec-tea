@@ -102,8 +102,8 @@
                     return;
                 };
                 method.ajax({
-                    'url': 'data/main/login.json',
-                    'type': 'get',
+                    'url': 'security/login',
+                    'type': 'post',
                     'data': data,
                     'success': function(res){
                         if(res.code == 60){

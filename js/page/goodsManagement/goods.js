@@ -80,8 +80,8 @@ $(function(){
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/goodsManagement/queryItemPageList.json',
-        'type': 'get',
+        'url': 'item/queryItemPageList',
+        'type': 'post',
         'data': [],
         'pageInfoName': 'itemPageList',
         'columns': columns,

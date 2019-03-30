@@ -72,7 +72,7 @@
     </script>
     <script type="text/html" id="menusTpl">
         <li>
-            <a class="J_menuItem" href="/views{{hrefUrl}}" data-menuid="{{menuId}}">{{title}}</a>
+            <a class="J_menuItem" href="/views{{hrefUrl | menu}}" data-menuid="{{menuId}}">{{title}}</a>
             {{if !!ecTeaSystemMenus}}
             <ul class="nav nav-second-level collapse">
                 {{each ecTeaSystemMenus item index}}

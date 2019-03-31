@@ -2,11 +2,15 @@ $(function(){
 	var params = method.getParams(), //获取地址栏参数
 		title = ''; //初始化标题名称
 
+	var setMark = true; //规格设置修改过，则需要确定
 
 	//如果没有参数，则为新增商品
 	if($.isEmptyObject(params)){
+		$('#setWrap .none').removeClass('none');
+		$('#reset, #sure').removeClass('none');
 		//标题
 		title = '新增商品';
+
 		//新增商品页面初始化
 		method.ajax({
 	        'url': 'item/initItemAddOperatePage',
@@ -31,6 +35,7 @@ $(function(){
 	        } 
 	    });
 	}else{ //修改商品
+		setMark = false;
 		//标题
 		title = '修改商品';
 		//修改商品页面初始化
@@ -74,6 +79,7 @@ $(function(){
 	            var data = body.propertiesConfigures,
 	                html = template('setTpl',{data: data, edit: true});
 	            setWrap.html(html);
+	            $('#setWrap input').prop('disabled', true);
 	            //通过确定按钮来渲染出价格的整体结构，然后在填入值
 	            if(!!body.itemPriceGroups && body.itemPriceGroups.length != 0){
 	            	setObj.rowArr = body.itemPriceGroups;
@@ -87,7 +93,7 @@ $(function(){
 		            		propertiesIdGroup = item.propertiesIdGroup,
 		            		price = item.price,
 		            		quantity = item.quantity;
-		            	priceBox.val(price);
+		            	priceBox.val(price).attr('data-skuid', skuId);
 		            	totalBox.val(quantity);
 		            	$.each(propertiesIdGroup.split(';'), function(i, t){
 		            		t = t.split(':')[1];
@@ -232,6 +238,11 @@ $(function(){
 		parent.remove();
 	});
 
+	//规格设置修改过，则需要确定
+	$('#setWrap').on('keyup', 'input', function(){
+		setMark = true;
+	});
+
 	var setObj = {
 		"rowArr": [{}],
 		"selectArr": []
@@ -261,6 +272,7 @@ $(function(){
 			};
             $('#priceWrap').html(html);
             $('#priceBox').show();
+            setMark = false;
 		};
 	});
 	//规格设置-重置
@@ -297,6 +309,28 @@ $(function(){
 					}
 				});
 			};
+			return mark;
+		});
+		return mark;
+	};
+	//验证价格下的规格是否有选择重复
+	function checkRepeat(){
+		var mark = true;
+		$('#priceWrap select').each(function(){
+			var _this = $(this),
+				parent = _this.parent(),
+				rowSelects = parent.find('select'),
+				index = $.makeArray(rowSelects).indexOf(_this.get(0)),
+				value = _this.val();
+			parent.siblings().each(function(){
+				var siblingsValue = $(this).find('select').eq(index).val();
+				if(value == siblingsValue){
+					_this.focus();
+					layer.msg('检测到有选择重复的规格');
+					mark = false;
+					return false;
+				};
+			});
 			return mark;
 		});
 		return mark;
@@ -339,6 +373,15 @@ $(function(){
 		    	if(!setCheck() || !priceCheck()){
 		    		return;
 		    	};
+		    	//如果规格设置有修改过，则需要确定
+		    	if(setMark){
+		    		parent.layer.alert('检测到规格设置有过修改，但尚未确定');
+		    		return;
+		    	};
+		    	//检测价格下的规格是否有选择重复的
+		    	if(!checkRepeat()){
+		    		return;
+		    	};
 		    	//获取规格设置
 		    	var propertiesConfigures = [];
 		    	$('.set-row').each(function(){
@@ -361,11 +404,18 @@ $(function(){
 		    		var row = $(this),
 		    			select = row.find('select'),
 		    			price = $.trim(row.find('.price').val()),
+		    			skuId = row.find('.price').attr('data-skuid'),
 		    			quantity = $.trim(row.find('.total').val()),
 		    			rowObj = {
 		    				"price": price,
 		    				"quantity": quantity
 		    			};
+		    		if(!!params.id){
+		    			if(!skuId){
+		    				skuId = '';
+		    			};
+		    			rowObj.skuId = skuId;
+		    		};
 		    		var arr = [];
 		    		select.each(function(){
 		    			var _this = $(this),

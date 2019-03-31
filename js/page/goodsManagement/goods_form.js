@@ -7,15 +7,17 @@ $(function(){
 	if($.isEmptyObject(params)){
 		//标题
 		title = '新增商品';
-		//商品产地（省、市、区初始化）
-		method.initCity({
-			'selector': $('.province')
-		});
 		//新增商品页面初始化
 		method.ajax({
 	        'url': 'item/initItemAddOperatePage',
 	        'type': 'post',
 	        'success': function(res){
+	        	//商品产地（省、市、区初始化）
+	            var province = $('.province');
+	            var data = res.body.provinceSelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            province.html(html);
+
 	            //渲染商品单位与状态
 	            var unitSelect = $('#unitSelect');
 	            var data = res.body.itemUnitSelectOption.selectOptionItems,
@@ -51,19 +53,21 @@ $(function(){
 	        	//备注
 	        	$('#remark').val(body.remark);
 
-	        	body.provinceId = 130000;
-	        	body.cityId = 130100;
-	        	body.areaId = 130121;
 	        	//商品产地（省、市、区初始化）
-	        	$('.province').each(function(){
-    				var _this = $(this);
-			        method.initCity({
-						'selector': _this,
-						'provinceId': body.provinceId,
-						'cityId': body.cityId,
-						'areaId': body.areaId
-					});
-    			});
+	            var province = $('.province');
+	            var data = body.provinceSelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            province.html(html);
+	            //商品产地（省、市、区初始化）
+	            var city = $('.city');
+	            var data = body.citySelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            city.html(html);
+	            //商品产地（省、市、区初始化）
+	            var area = $('.area');
+	            var data = body.areaSelectOption.selectOptionItems,
+	                html = template('optionTpl',{data: data});
+	            area.html(html);
 
     			//规格设置
     			var setWrap = $('#setWrap');
@@ -133,6 +137,12 @@ $(function(){
             var tree = $.fn.zTree.init($("#tree"), setting, res.body.teaCategoryTrees);
             tree.expandAll(true);
         } 
+    });
+
+    //商品产地
+    method.initCity2({
+    	'selector': $('.province'),
+    	'url': 'item/getItemCityByParentId'
     });
 
     //添加商品分类

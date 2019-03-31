@@ -218,8 +218,52 @@ var method = {
           method.getCity(area, value);
         };
       });
+    },
+    //省、市、区请求  selector 要渲染到的容器选择器   parentId 上级ID  url请求地址
+    getCity2: function(selector, parentId, url){
+      this.ajax({
+          'url': url,
+          'type': 'post',
+          'data': {"parentId": parentId},
+          'success': function(res){
+              var html = '';
+              $.each(res.body.teaCities, function(index, item){
+                html += '<option value="'+ item.areaId +'">'+ item.areaName +'</option>';
+              });
+              selector.append(html);
+          } 
+      });
+    },
+    /**
+   * @method 省、市、区三级联动
+   * @param selector 省select的jquery选择器
+   */
+    //省、市、区三级联动 selector:
+    initCity2: function(obj){
+      var province = obj.selector,
+          city = province.siblings('.city'),
+          area = province.siblings('.area'),
+          url = obj.url;
+      //省
+      province.on('change', function(){
+        var value = $(this).val();
+        city.find('option').not(':first').remove();
+        area.find('option').not(':first').remove();
+        if(value != ''){
+          method.getCity2(city, value, url);
+        };
+      });
+      //市
+      city.on('change', function(){
+        var value = $(this).val();
+        area.find('option').not(':first').remove();
+        if(value != ''){
+          method.getCity2(area, value, url);
+        };
+      });
     }
 };
+
 //初始化WebStorageCache本地存储
 var wsCache = new WebStorageCache();
 

@@ -149,6 +149,7 @@ var method = {
     },
     //跳转至登录
     gotoLogin: function(){
+      return;
       wsCache.delete('tokenId');
       wsCache.delete('userInfo');
       //wsCache.delete('userParams');

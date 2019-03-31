@@ -39,6 +39,7 @@ $(function(){
 		method.ajax({
 	        'url': 'account/initEditAccountPage',
 	        'type': 'post',
+	        'data': {"accountId": params.id},
 	        'success': function(res){
 	        	var body = res.body;
 	        	//姓名

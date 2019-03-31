@@ -607,6 +607,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 										<li>
 											<a href="#_inter_8_3">2.8.3. <span style=''>获取商品分类级联下拉列表数据</span></a>
 										</li>
+										<li>
+											<a href="#_inter_8_4">2.8.4. <span style=''>初始化添加页面接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_5">2.8.5. <span style=''>通过省市区父节点级联获取下拉列表数据</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_6">2.8.6. <span style=''>获取商品分类树形结构接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_7">2.8.7. <span style=''>添加商品接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_8">2.8.8. <span style=''>初始化商品修改页面接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_8_9">2.8.9. <span style=''>商品修改接口</span></a>
+										</li>
 								</ul>
 							</li>
 							<li>
@@ -629,6 +647,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 										</li>
 										<li>
 											<a href="#_inter_9_6">2.9.6. <span style=''>删除商品分类接口</span></a>
+										</li>
+								</ul>
+							</li>
+							<li>
+								<em></em><a href="#_module_线下订单管理">2.10. 线下订单管理</a>
+								<ul>
+										<li>
+											<a href="#_inter_10_1">2.10.1. <span style=''>初始化线下订单分页列表条件接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_10_2">2.10.2. <span style=''>线下订单分页查询接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_10_3">2.10.3. <span style=''>初始化新增线下订单页面接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_10_4">2.10.4. <span style=''>通过手机号获取用户地址列表接口</span></a>
+										</li>
+								</ul>
+							</li>
+							<li>
+								<em></em><a href="#_module_库存">2.11. 库存</a>
+								<ul>
+										<li>
+											<a href="#_inter_11_1">2.11.1. <span style=''>分页查询库存列表</span></a>
 										</li>
 								</ul>
 							</li>
@@ -679,6 +722,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 							</li>
 							<li>
 								<em></em><a href="#_resp_schema_module_商品分类管理">3.9. 商品分类管理</a>
+								<ul>
+								</ul>
+							</li>
+							<li>
+								<em></em><a href="#_resp_schema_module_线下订单管理">3.10. 线下订单管理</a>
+								<ul>
+								</ul>
+							</li>
+							<li>
+								<em></em><a href="#_resp_schema_module_库存">3.11. 库存</a>
 								<ul>
 								</ul>
 							</li>
@@ -5571,7 +5624,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 											</li>
 											<li>
 												<p>
-													修改时间：<code>2019-03-19 00:29:17</code>
+													修改时间：<code>2019-03-31 00:52:09</code>
 												</p>
 											</li>
 										</ul>
@@ -7321,6 +7374,1277 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 									<div class="sect4">
 									</div>
 							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_4" href="#_inter_8_4"></a>
+									2.8.4. <span style=''>初始化添加页面接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化添加页面接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化添加页面接口_basic" href="#_inter_初始化添加页面接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/initItemAddOperatePage</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-29 21:39:08</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-29 21:39:50</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化添加页面接口_param" href="#_inter_初始化添加页面接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化添加页面接口_resp" href="#_inter_初始化添加页面接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310247_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310247_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310247_resp_json_schema_成功" href="#_inter_310247_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"provinceSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"120000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"天津市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"130000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"河北省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"140000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"山西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"150000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"内蒙古自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"210000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"辽宁省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"220000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"吉林省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"230000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"黑龙江省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"310000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"上海市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"320000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"江苏省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"330000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"浙江省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"340000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"安徽省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"350000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"福建省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"360000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"江西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"370000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"山东省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"410000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"河南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"420000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"湖北省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"430000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"湖南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"440000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"广东省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"450000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"广西壮族自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"460000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"海南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"500000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"重庆市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"510000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"四川省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"520000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"贵州省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"530000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"云南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"540000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"西藏自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"610000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"陕西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"620000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"甘肃省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"630000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"青海省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"640000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"宁夏回族自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"650000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"新疆维吾尔自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"990000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"新疆建设兵团",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"citySelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"areaSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"A",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"T",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemUnitSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"034922ff579242f8a9eaec0190840602",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"把",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"1cd25fb92f49466c8b0f03607e23b2b3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"桶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"55c908859e4e4baf9a3c623d496db846",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"头",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"7d4bc796ebb242769c582e7e24c29f86",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"米",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"903dd032706a444f9ecd466bcad5b604",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"只",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"b6b8110f2051490d94406169e8848957",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"辆",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"e33a1939d3b9415f8e15ffc11b5d6466",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"匹",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f30b0520d10a4c64b9ac8548c1be4060",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"千克",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f78c71da326e48f48963f2dc78e54e26",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"克",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f7d3fe6fdb2e44228f89b5de4b80383b",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"件",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"fd2559c5233c44f8991ef6d0fead36a3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"千米",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310247_resp_json_schema_失败" href="#_inter_310247_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_5" href="#_inter_8_5"></a>
+									2.8.5. <span style=''>通过省市区父节点级联获取下拉列表数据</span>
+								</h4>
+								<div class="paragraph">
+									<p>通过省市区父节点级联获取下拉列表数据<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过省市区父节点级联获取下拉列表数据_basic" href="#_inter_通过省市区父节点级联获取下拉列表数据_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/getItemCityByParentId</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-29 21:55:49</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-29 21:56:49</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过省市区父节点级联获取下拉列表数据_param" href="#_inter_通过省市区父节点级联获取下拉列表数据_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">parentId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">父节点ID</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过省市区父节点级联获取下拉列表数据_resp" href="#_inter_通过省市区父节点级联获取下拉列表数据_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310254_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310254_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310254_resp_json_schema_成功" href="#_inter_310254_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"teaCities"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"东城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"西城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110500",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"朝阳区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110600",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"丰台区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110700",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"石景山区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110800",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"海淀区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"110900",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"门头沟区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"房山区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"通州区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"顺义区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111400",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"昌平区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111500",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"大兴区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111600",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"怀柔区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"111700",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"平谷区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"112800",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"密云县",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaId"&nbsp;:&nbsp;"112900",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areaName"&nbsp;:&nbsp;"延庆县",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateAccountId"&nbsp;:&nbsp;"d80a92ff-41ba-11e9-b389-e0d55e4d4f8e"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310254_resp_json_schema_失败" href="#_inter_310254_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_6" href="#_inter_8_6"></a>
+									2.8.6. <span style=''>获取商品分类树形结构接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>获取商品分类树形结构接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类树形结构接口_basic" href="#_inter_获取商品分类树形结构接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/getECTeaItemCategoryTree</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-29 21:58:04</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-29 21:58:55</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类树形结构接口_param" href="#_inter_获取商品分类树形结构接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_获取商品分类树形结构接口_resp" href="#_inter_获取商品分类树形结构接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310255_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310255_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310255_resp_json_schema_成功" href="#_inter_310255_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTrees"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"100000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"食品饮料",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"100100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"糖巧",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"100000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"100200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"100000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"100300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"坚果",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"100000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"200000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"美容洗护",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"200100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"洗发",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"200000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"200200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"沐浴",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"200000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"200300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"洁面",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"200000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"300000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"家居家电",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"300100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"毛巾",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"300000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"300200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"家电",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"300000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"300300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"水杯",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"300000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"生鲜水果",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"水果",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"肉类",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"ade3fa7d53484e3a98fe1b1fe9b2cd26",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"鸡肉",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400200"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"海产",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"teaCategoryTreeChildren"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400301",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"海生动物",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400300"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"400302",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"海生植物",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400300"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"92f3d61d8bba4460b908492ba1633af0",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName"&nbsp;:&nbsp;"蔬菜1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"parentId"&nbsp;:&nbsp;"400000"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310255_resp_json_schema_失败" href="#_inter_310255_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_7" href="#_inter_8_7"></a>
+									2.8.7. <span style=''>添加商品接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>添加商品接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加商品接口_basic" href="#_inter_添加商品接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/doAddItem</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-30 10:43:40</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-30 16:59:26</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加商品接口_param" href="#_inter_添加商品接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemName</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品名称</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">provinceId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">省ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">cityId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">市ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">areaId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">区ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">addressDetail</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">详细地址</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemCategoryId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品分类ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">propertiesConfigures</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310305_param_json_schema_propertiesConfigures">propertiesConfigures</a>&gt;
+																</p>
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">propertiesName：规格设置名称propertiesValue：规格设置值”;“分割</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemPriceGroups</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310305_param_json_schema_itemPriceGroups">itemPriceGroups</a>&gt;
+																</p>
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">propertiesIdGroup：规格下拉列表组合名称:下拉列表选中的属性名称，多个下拉列表用-分割price：价格quantity：总数</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemStatusId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品状态A上架 T下架</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemUnitId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品单位ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">remark</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">备注</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310305_param_json_schema_propertiesConfigures" href="#_inter_310305_param_json_schema_propertiesConfigures"></a>
+												[<span class="ref-title">propertiesConfigures</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">[&nbsp;{<br/>&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"长度",<br/>&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"5cm;10cm;15cm;"<br/>},&nbsp;{<br/>&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"甜度",<br/>&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"少糖;正常;高糖;"<br/>}&nbsp;]</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310305_param_json_schema_itemPriceGroups" href="#_inter_310305_param_json_schema_itemPriceGroups"></a>
+												[<span class="ref-title">itemPriceGroups</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">[&nbsp;{<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:5cm-甜度:少糖",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;100.1,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;500<br/>},&nbsp;{<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:10cm-甜度:正常",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;120.2,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;300<br/>},&nbsp;{<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:15cm-甜度:高糖",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;123.2,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;100<br/>}&nbsp;]</p>
+											</div>
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加商品接口_resp" href="#_inter_添加商品接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310305_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310305_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310305_resp_json_schema_成功" href="#_inter_310305_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!"<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310305_resp_json_schema_失败" href="#_inter_310305_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_8" href="#_inter_8_8"></a>
+									2.8.8. <span style=''>初始化商品修改页面接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化商品修改页面接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品修改页面接口_basic" href="#_inter_初始化商品修改页面接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/initEditItemOperatePage</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-30 12:54:03</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-30 12:55:04</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品修改页面接口_param" href="#_inter_初始化商品修改页面接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品ID</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化商品修改页面接口_resp" href="#_inter_初始化商品修改页面接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310320_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310320_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310320_resp_json_schema_成功" href="#_inter_310320_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"[Test]-商品名称",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"provinceSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"120000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"天津市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"130000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"河北省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"140000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"山西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"150000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"内蒙古自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"210000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"辽宁省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"220000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"吉林省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"230000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"黑龙江省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"310000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"上海市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"320000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"江苏省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"330000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"浙江省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"340000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"安徽省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"350000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"福建省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"360000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"江西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"370000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"山东省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"410000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"河南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"420000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"湖北省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"430000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"湖南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"440000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"广东省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"450000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"广西壮族自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"460000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"海南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"500000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"重庆市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"510000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"四川省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"520000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"贵州省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"530000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"云南省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"540000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"西藏自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"610000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"陕西省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"620000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"甘肃省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"630000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"青海省",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"640000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"宁夏回族自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"650000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"新疆维吾尔自治区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"990000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"新疆建设兵团",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"citySelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"东城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"西城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110500",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"朝阳区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110600",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"丰台区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110700",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"石景山区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110800",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"海淀区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"110900",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"门头沟区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"房山区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"通州区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"顺义区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111400",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"昌平区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111500",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"大兴区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111600",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"怀柔区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"111700",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"平谷区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"112800",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"密云县",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"112900",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"延庆县",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"areaSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"addressDetail"&nbsp;:&nbsp;"详细地址",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemCategory"&nbsp;:&nbsp;"100300",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemCategoryText"&nbsp;:&nbsp;"坚果",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"propertiesConfigures"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"长度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"15cm;10cm;5cm;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"甜度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"正常;少糖;高糖;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"长度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"15cm;10cm;5cm;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"甜度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"正常;少糖;高糖;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"长度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"15cm;10cm;5cm;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"甜度",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"正常;少糖;高糖;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemPriceGroups"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"0d8632b02a674b66bf01b4c28123eccb",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:5cm;甜度:少糖;",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;10000,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;500<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:10cm;甜度:正常;",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;12000,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;300<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"9c830d3bcb0f4a468a0ff346676b0f5b",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:15cm;甜度:高糖;",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;12300,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;100<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"A",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"T",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemUnitSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"034922ff579242f8a9eaec0190840602",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"把",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"1cd25fb92f49466c8b0f03607e23b2b3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"桶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"55c908859e4e4baf9a3c623d496db846",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"头",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"7d4bc796ebb242769c582e7e24c29f86",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"米",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"903dd032706a444f9ecd466bcad5b604",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"只",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"b6b8110f2051490d94406169e8848957",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"辆",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"e33a1939d3b9415f8e15ffc11b5d6466",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"匹",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f30b0520d10a4c64b9ac8548c1be4060",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"千克",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f78c71da326e48f48963f2dc78e54e26",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"克",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"f7d3fe6fdb2e44228f89b5de4b80383b",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"件",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"fd2559c5233c44f8991ef6d0fead36a3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"千米",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"商品备注"<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310320_resp_json_schema_失败" href="#_inter_310320_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_8_9" href="#_inter_8_9"></a>
+									2.8.9. <span style=''>商品修改接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>商品修改接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_商品修改接口_basic" href="#_inter_商品修改接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/item/doEditItemOperate</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-30 16:52:51</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-30 16:59:05</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_商品修改接口_param" href="#_inter_商品修改接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemName</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品名称</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">provinceId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">省ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">cityId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">市ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">areaId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">区ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">addressDetail</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">详细地址</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemCategoryId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品分类ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">propertiesConfigures</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310369_param_json_schema_propertiesConfigures">propertiesConfigures</a>&gt;
+																</p>
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品规格设置propertiesName:规格名称propertiesValue：规格值：name1;name2;name3;</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemPriceGroups</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310369_param_json_schema_itemPriceGroups">itemPriceGroups</a>&gt;
+																</p>
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">规格组合skuId：skuID若该值为空代表为该商品的新的sku记录propertiesIdGroup：规格属性值：规格名称1:规格值1-规格名称2:规格值2price：价格quantity：总量</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemStatusId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品状态ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">itemUnitId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">商品单位ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">remark</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">备注</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310369_param_json_schema_propertiesConfigures" href="#_inter_310369_param_json_schema_propertiesConfigures"></a>
+												[<span class="ref-title">propertiesConfigures</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">[&nbsp;{<br/>&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"长度",<br/>&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"5cm;10cm;15cm;"<br/>},&nbsp;{<br/>&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"甜度",<br/>&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"少糖;正常;高糖;"<br/>},&nbsp;{<br/>&nbsp;&nbsp;"propertiesName"&nbsp;:&nbsp;"硬度",<br/>&nbsp;&nbsp;"propertiesValue"&nbsp;:&nbsp;"软;正常;硬;"<br/>}&nbsp;]</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310369_param_json_schema_itemPriceGroups" href="#_inter_310369_param_json_schema_itemPriceGroups"></a>
+												[<span class="ref-title">itemPriceGroups</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">[&nbsp;{<br/>&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:10cm-甜度:少糖-硬度:软",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;100.1,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;500<br/>},&nbsp;{<br/>&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"b4b4ef1fc36144708a80d6fc3945d688",<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:5cm-甜度:少糖-硬度:软",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;100.1,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;500<br/>},&nbsp;{<br/>&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"b9fc4293358f4169b14faee9a326d65a",<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:10cm-甜度:正常",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;120.2,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;300<br/>},&nbsp;{<br/>&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"afa5a36c2b054305be9e2217a6d0142d",<br/>&nbsp;&nbsp;"propertiesIdGroup"&nbsp;:&nbsp;"长度:15cm-甜度:高糖",<br/>&nbsp;&nbsp;"price"&nbsp;:&nbsp;123.2,<br/>&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;100<br/>}&nbsp;]</p>
+											</div>
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_商品修改接口_resp" href="#_inter_商品修改接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310369_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310369_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310369_resp_json_schema_成功" href="#_inter_310369_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!"<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310369_resp_json_schema_失败" href="#_inter_310369_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
 					</div>
 					<div class="sect2">
 						<h3>
@@ -8384,6 +9708,998 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 									</div>
 							</div>
 					</div>
+					<div class="sect2">
+						<h3>
+							<a class="anchor" name="_module_线下订单管理" href="#_module_线下订单管理"></a>
+							2.10. 线下订单管理
+						</h3>
+						<div class="paragraph">
+							
+						</div>
+						
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_1" href="#_inter_10_1"></a>
+									2.10.1. <span style=''>初始化线下订单分页列表条件接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化线下订单分页列表条件接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单分页列表条件接口_basic" href="#_inter_初始化线下订单分页列表条件接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/trade/initTradePageListCondition</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-30 23:27:59</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-30 23:28:31</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单分页列表条件接口_param" href="#_inter_初始化线下订单分页列表条件接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单分页列表条件接口_resp" href="#_inter_初始化线下订单分页列表条件接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310384_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310384_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310384_resp_json_schema_成功" href="#_inter_310384_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"全部",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"0",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下单未支付",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已支付未发货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"配送中",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已签收",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"4",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"退换货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"5",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已失效",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310384_resp_json_schema_失败" href="#_inter_310384_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_2" href="#_inter_10_2"></a>
+									2.10.2. <span style=''>线下订单分页查询接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>线下订单分页查询接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_线下订单分页查询接口_basic" href="#_inter_线下订单分页查询接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/trade/queryTradePageList</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 00:37:22</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 00:40:15</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_线下订单分页查询接口_param" href="#_inter_线下订单分页查询接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeNo</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单号</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">accountMobile</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">手机号</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeStartTime</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">开始下单时间</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeEndTime</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">结束下单时间</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeStatus</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单状态</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">currentPage</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">当前页码</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">pageSize</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">分页记录数</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">roleId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">选中角色ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">menuId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">选择菜单ID</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_线下订单分页查询接口_resp" href="#_inter_线下订单分页查询接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310388_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310388_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310388_resp_json_schema_成功" href="#_inter_310388_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradePageList"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageInfo"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"currentPage"&nbsp;:&nbsp;1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageSize"&nbsp;:&nbsp;10,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"totalCounts"&nbsp;:&nbsp;6,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageCounts"&nbsp;:&nbsp;1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"emptyRecords"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"result"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"379ab78e-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"438b3253-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"addressId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"已支付未发货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"9002bdf9-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"438b3254-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"addressId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"配送中",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"9004e92f-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"438b3255-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"addressId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"已签收",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"9008107c-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"438b3256-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"addressId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test4",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"4",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"退换货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"900af0b1-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"438b3257-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"addressId"&nbsp;:&nbsp;"",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test5",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"5",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"已失效",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id"&nbsp;:&nbsp;"b6721247-5306-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"2b298369-5307-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountId"&nbsp;:&nbsp;"2b195fdb728d48bcbc3cb81d2c7bf23c",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ecAccountLevelText"&nbsp;:&nbsp;"普通",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"0bc40d45d54f4c7282862f5da3f20bc6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"skuId"&nbsp;:&nbsp;"81b48d36bd754a9aae6695347307aa51",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"test6",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status"&nbsp;:&nbsp;"0",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"下单未支付",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDate"&nbsp;:&nbsp;"2019-03-30T16:00:00.000+0000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updateDateText"&nbsp;:&nbsp;"2019-03-31&nbsp;00:00"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult2"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult3"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult4"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"empty"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"authoritys"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Add",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"新增订单",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Edit",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"修改订单",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310388_resp_json_schema_失败" href="#_inter_310388_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_3" href="#_inter_10_3"></a>
+									2.10.3. <span style=''>初始化新增线下订单页面接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化新增线下订单页面接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化新增线下订单页面接口_basic" href="#_inter_初始化新增线下订单页面接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>localhost:8080/ec-tea/webservice/trade/initAddTradePage</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 00:47:13</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 00:47:58</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化新增线下订单页面接口_param" href="#_inter_初始化新增线下订单页面接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化新增线下订单页面接口_resp" href="#_inter_初始化新增线下订单页面接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310389_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310389_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310389_resp_json_schema_成功" href="#_inter_310389_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"20190331004630482",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"0",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下单未支付",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已支付未发货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"配送中",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已签收",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"4",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"退换货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"5",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已失效",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310389_resp_json_schema_失败" href="#_inter_310389_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_4" href="#_inter_10_4"></a>
+									2.10.4. <span style=''>通过手机号获取用户地址列表接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>通过手机号获取用户地址列表接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过手机号获取用户地址列表接口_basic" href="#_inter_通过手机号获取用户地址列表接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/trade/getAccountAddress</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 01:16:50</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 08:40:50</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过手机号获取用户地址列表接口_param" href="#_inter_通过手机号获取用户地址列表接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">mobile</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">手机号</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_通过手机号获取用户地址列表接口_resp" href="#_inter_通过手机号获取用户地址列表接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310392_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310392_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310392_resp_json_schema_成功" href="#_inter_310392_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"addressList"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceName"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtId"&nbsp;:&nbsp;"110100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtName"&nbsp;:&nbsp;"东城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address"&nbsp;:&nbsp;"XXX1111"<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceName"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtId"&nbsp;:&nbsp;"110200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtName"&nbsp;:&nbsp;"西城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address"&nbsp;:&nbsp;"XXX1111"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310392_resp_json_schema_失败" href="#_inter_310392_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+					</div>
+					<div class="sect2">
+						<h3>
+							<a class="anchor" name="_module_库存" href="#_module_库存"></a>
+							2.11. 库存
+						</h3>
+						<div class="paragraph">
+							
+						</div>
+						
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_11_1" href="#_inter_11_1"></a>
+									2.11.1. <span style=''>分页查询库存列表</span>
+								</h4>
+								<div class="paragraph">
+									<p>通过skuId按照条件分页查询库存列表。<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询库存列表_basic" href="#_inter_分页查询库存列表_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/stock/queryStockPageList</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 00:32:42</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 00:40:45</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询库存列表_param" href="#_inter_分页查询库存列表_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">skuId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">skuId</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">type</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">入库 I 出库 O</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">startDate</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">开始时间 2019-03-01 12:00:00</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">endDate</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">结束时间 2019-06-01 12:00:00</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">currentPage</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">当前页码</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">pageSize</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">每页显示记录数</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_分页查询库存列表_resp" href="#_inter_分页查询库存列表_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310387_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310387_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310387_resp_json_schema_成功" href="#_inter_310387_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"itemPageList"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageInfo"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"currentPage"&nbsp;:&nbsp;1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageSize"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"totalCounts"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"emptyRecords"&nbsp;:&nbsp;false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pageCounts"&nbsp;:&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"result"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"01062ff5-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"500g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;5,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"200.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"34bd25a8-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"1000g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;4,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"300.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d271243d-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"41dc9e2d-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"1500g/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;3,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"400.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"稻香村桃酥640g中式糕点礼盒传统特产传统饼干休闲零食小吃",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d28122c3-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"55004bc0-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"黄色/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;100,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"880.00元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemId"&nbsp;:&nbsp;"d28122c3-4f0a-11e9-bdba-f8a96349df52",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"itemName"&nbsp;:&nbsp;"【良品铺子蛋黄酥100g】饼干中式糕点地方特产下午茶",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"63d6a310-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryText"&nbsp;:&nbsp;"饼干",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"propertiesText"&nbsp;:&nbsp;"红色/个",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;200,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price"&nbsp;:&nbsp;"44.22元",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"statusText"&nbsp;:&nbsp;"上架",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unitId"&nbsp;:&nbsp;"90a4e539ff9548af9c23d1a3b1f2b8ae"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult2"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult3"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"additionalResult4"&nbsp;:&nbsp;[&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"empty"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"authoritys"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Add",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"新增商品",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"Edit",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"编辑商品",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authCode"&nbsp;:&nbsp;"RepositoryMgt",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authName"&nbsp;:&nbsp;"库存管理",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optional"&nbsp;:&nbsp;""<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310387_resp_json_schema_失败" href="#_inter_310387_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+					</div>
 			</div>
 		</div>
 		<div class="sect1">
@@ -8445,6 +10761,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 						</h3>
 						
 					</div>
+					<div class="sect2">
+						<h3>
+							<a class="anchor" name="_resp_schema_module_线下订单管理" href="#_resp_schema_module_线下订单管理"></a>3.10. 线下订单管理
+						</h3>
+						
+					</div>
+					<div class="sect2">
+						<h3>
+							<a class="anchor" name="_resp_schema_module_库存" href="#_resp_schema_module_库存"></a>3.11. 库存
+						</h3>
+						
+					</div>
 			</div>
 		</div>
 		
@@ -8478,7 +10806,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 		</div>
 	</div>
 	<div id="footer">
-		<div id="footer-text">生成时间：2019-03-28 23:16:34</div>
+		<div id="footer-text">生成时间：2019-03-31 10:12:46</div>
 	</div>
 	
 	<script type="text/javascript">

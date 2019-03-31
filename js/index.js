@@ -51,9 +51,7 @@ $(function () {
         'url': 'security/loginOut',
         'type': 'post',
         'success': function (res) {
-          wsCache.delete('tokenId');
-          wsCache.delete('userInfo');
-          window.location.href = config.loginUrl;
+          method.gotoLogin();
         }
       });
     }, function () {
@@ -119,7 +117,7 @@ $(function () {
   if (!!userInfo) {
     $('#userName').text(userInfo.accountName);
   } else {
-    window.location = config.loginUrl;
+    window.location.href = config.loginUrl;
   };
 
 

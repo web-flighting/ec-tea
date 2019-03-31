@@ -65,7 +65,7 @@ $(function(){
             formatter: function (value, row, index) {
                 var btns = '';
                 if(authEdit){
-                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/user_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 编辑</a>';
+                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/userManagement/user_form.html?id='+ row.id +'"><i class="fa fa-edit"></i> 编辑</a>';
                 };
                 return btns;
             }

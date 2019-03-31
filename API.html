@@ -665,6 +665,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 										<li>
 											<a href="#_inter_10_4">2.10.4. <span style=''>通过手机号获取用户地址列表接口</span></a>
 										</li>
+										<li>
+											<a href="#_inter_10_5">2.10.5. <span style=''>添加线下订单</span></a>
+										</li>
+										<li>
+											<a href="#_inter_10_6">2.10.6. <span style=''>初始化线下订单修改页面接口</span></a>
+										</li>
+										<li>
+											<a href="#_inter_10_7">2.10.7. <span style=''>修改线下订单接口</span></a>
+										</li>
 								</ul>
 							</li>
 							<li>
@@ -5624,7 +5633,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 											</li>
 											<li>
 												<p>
-													修改时间：<code>2019-03-31 00:52:09</code>
+													修改时间：<code>2019-03-31 10:23:26</code>
 												</p>
 											</li>
 										</ul>
@@ -10463,6 +10472,728 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 									<div class="sect4">
 									</div>
 							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_5" href="#_inter_10_5"></a>
+									2.10.5. <span style=''>添加线下订单</span>
+								</h4>
+								<div class="paragraph">
+									<p>添加线下订单<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加线下订单_basic" href="#_inter_添加线下订单_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/trade/doAddTrade</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 11:34:08</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 11:34:51</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加线下订单_param" href="#_inter_添加线下订单_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeNo</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单号</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">sku</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">sku</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">quantity</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">数量</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">mobile</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">电话号码</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeStatus</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单状态</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">provinceId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">省ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">cityId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">市ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">districtId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">区ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">address</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">详细地址</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">remark</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">备注</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_添加线下订单_resp" href="#_inter_添加线下订单_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310395_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310395_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310395_resp_json_schema_成功" href="#_inter_310395_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!"<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310395_resp_json_schema_失败" href="#_inter_310395_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_6" href="#_inter_10_6"></a>
+									2.10.6. <span style=''>初始化线下订单修改页面接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>初始化线下订单修改页面接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单修改页面接口_basic" href="#_inter_初始化线下订单修改页面接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>localhost:8080/ec-tea/webservice/trade/initEditTradePage</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 12:22:57</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 12:23:55</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单修改页面接口_param" href="#_inter_初始化线下订单修改页面接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单ID</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_初始化线下订单修改页面接口_resp" href="#_inter_初始化线下订单修改页面接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310417_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310417_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310417_resp_json_schema_成功" href="#_inter_310417_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!",<br/>&nbsp;&nbsp;"body"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeId"&nbsp;:&nbsp;"c32ab152629745c8b5549888d62dea1e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeNo"&nbsp;:&nbsp;"20190222012350124",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"sku"&nbsp;:&nbsp;"34bd25a8-5159-11e9-8641-e0d55e4d4f8e",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"quantity"&nbsp;:&nbsp;1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;"mobile"&nbsp;:&nbsp;"15000000001",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"tradeStatusSelectOption"&nbsp;:&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selectOptionItems"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"0",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"下单未支付",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已支付未发货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"2",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"配送中",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"3",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已签收",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"4",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"退换货",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionCode"&nbsp;:&nbsp;"5",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"optionText"&nbsp;:&nbsp;"已失效",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"selected"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;"addressList"&nbsp;:&nbsp;[&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceName"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtId"&nbsp;:&nbsp;"110100",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtName"&nbsp;:&nbsp;"东城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address"&nbsp;:&nbsp;"XXX1111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isDefault"&nbsp;:&nbsp;true<br/>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceId"&nbsp;:&nbsp;"110000",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"provinceName"&nbsp;:&nbsp;"北京市",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtId"&nbsp;:&nbsp;"110200",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"districtName"&nbsp;:&nbsp;"西城区",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address"&nbsp;:&nbsp;"XXX1111",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isDefault"&nbsp;:&nbsp;false<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;"remark"&nbsp;:&nbsp;"remark2"<br/>&nbsp;&nbsp;}<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310417_resp_json_schema_失败" href="#_inter_310417_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"xxxxxx"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
+							<div class="sect3">
+								<h4>
+									<a class="anchor" name="_inter_10_7" href="#_inter_10_7"></a>
+									2.10.7. <span style=''>修改线下订单接口</span>
+								</h4>
+								<div class="paragraph">
+									<p>修改线下订单接口<br></p>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_修改线下订单接口_basic" href="#_inter_修改线下订单接口_basic"></a>基本信息
+									</h5>
+									<div class="ulist">
+										<ul>
+											<li>
+												<p>
+													请求url：<code>http://localhost:8080/ec-tea/webservice/trade/doEditTrade</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否弃用：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													是否忽略公共请求参数：<code>否</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													请求协议：<code>HTTP</code>
+												</p>
+											</li>
+												<li>
+													<p>
+														请求方式：<code>POST</code>
+													</p>
+												</li>
+											<li>
+												<p>
+													请求格式：<code>application/json</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													响应格式：<code>application/json</code>
+												</p>
+											</li>
+											
+											
+												<li>
+													<p>
+														责任人：<code>John Sun</code>
+													</p>
+												</li>
+											
+											
+											<li>
+												<p>
+													创建时间：<code>2019-03-31 12:29:03</code>
+												</p>
+											</li>
+											<li>
+												<p>
+													修改时间：<code>2019-03-31 12:32:13</code>
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_修改线下订单接口_param" href="#_inter_修改线下订单接口_param"></a>请求参数
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">字段</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">参数位置</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">默认值</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">必输项</th>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 23%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeNo</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单号</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">sku</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">skuID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">quantity</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">数量</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">mobile</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">手机号</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">tradeStatus</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">订单状态</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">provinceId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">省ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">cityId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">市ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">districtId</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">区ID</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">address</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">详细地址</td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">remark</td>
+														<td class="tableblock halign-left valign-middle">body</td>
+														<td class="tableblock halign-left valign-middle">string</td>
+														<td class="tableblock halign-left valign-middle"></td>
+														<td class="tableblock halign-left valign-middle">是</td>
+														<td class="tableblock halign-left valign-middle">
+															
+														</td>
+														<td class="tableblock halign-left valign-middle">备注</td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+									</div>
+								
+								<div class="sect4">
+									<h5>
+										<a class="anchor" name="_inter_修改线下订单接口_resp" href="#_inter_修改线下订单接口_resp"></a>请求响应
+									</h5>
+									<table class="tableblock frame-all grid-all spread">
+										<thead>
+											<tr>
+												<th class="tableblock halign-left valign-middle" style="width: 16%;">名称</th>
+												<th class="tableblock halign-left valign-middle" style="width: 12%;">类型</th>
+												<th class="tableblock halign-left valign-middle" style="width: 10%;">默认</th>
+												<th class="tableblock halign-left valign-middle" style="width: 22%;">结构</th>
+												<th class="tableblock halign-left valign-middle" style="width: 39%;">描述</th>
+											</tr>
+										</thead>
+											<tbody>
+													<tr>
+														<td class="tableblock halign-left valign-middle">成功</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310418_resp_json_schema_成功">成功</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+													<tr>
+														<td class="tableblock halign-left valign-middle">失败</td>
+														<td class="tableblock halign-left valign-middle">cust_json</td>
+														<td class="tableblock halign-left valign-middle">否</td>
+														<td class="tableblock halign-left valign-middle">
+																<p class="tableblock">
+																	&lt;<a href="#_inter_310418_resp_json_schema_失败">失败</a>&gt;
+																</p>
+															
+															
+														</td>
+														<td class="tableblock halign-left valign-middle"></td>
+													</tr>
+											</tbody>
+									</table>
+								</div>
+								
+									<div class="sect4">
+											<div class="cust-paragraph">
+												<a name="_inter_310418_resp_json_schema_成功" href="#_inter_310418_resp_json_schema_成功"></a>
+												[<span class="ref-title">成功</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;0,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"I000000",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"Success&nbsp;Operation!"<br/>}</p>
+											</div>
+											<div class="cust-paragraph">
+												<a name="_inter_310418_resp_json_schema_失败" href="#_inter_310418_resp_json_schema_失败"></a>
+												[<span class="ref-title">失败</span>]
+											</div>
+											<div class="content">
+												<p class="schema-content">{<br/>&nbsp;&nbsp;"code"&nbsp;:&nbsp;98,<br/>&nbsp;&nbsp;"messageCode"&nbsp;:&nbsp;"xxxx",<br/>&nbsp;&nbsp;"resultMessage"&nbsp;:&nbsp;"XXXXX"<br/>}</p>
+											</div>
+									</div>
+								
+									<div class="sect4">
+									</div>
+							</div>
 					</div>
 					<div class="sect2">
 						<h3>
@@ -10806,7 +11537,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 		</div>
 	</div>
 	<div id="footer">
-		<div id="footer-text">生成时间：2019-03-31 10:12:46</div>
+		<div id="footer-text">生成时间：2019-03-31 12:32:19</div>
 	</div>
 	
 	<script type="text/javascript">

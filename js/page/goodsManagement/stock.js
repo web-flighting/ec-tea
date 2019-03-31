@@ -11,25 +11,25 @@ $(function(){
             }
         },
         {
-            field: 'accountName',
+            field: 'typeText',
             title: '进出货',
             align: 'center',
             width: 100
         },
         {
-            field: 'accountMail',
+            field: 'afterQuality',
             title: '进出货量',
             align: 'center',
             width: 130
         },
         {
-            field: 'accountMobile',
+            field: 'quality',
             title: '总库存（袋）',
             align: 'center',
             width: 130
         },
         {
-            field: 'accountLevelName',
+            field: 'createDateText',
             title: '进出货时间',
             align: 'center',
             width: 130
@@ -41,25 +41,25 @@ $(function(){
             width: 100
         },
         {
-            field: 'accountRemark',
+            field: 'remark',
             title: '备注',
             align: 'center',
             width: 200
         }
     ];
+    var param = method.getParams();
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/userManagement/initAccountPageList.json',
-        'type': 'get',
+        'url': 'stock/queryStockPageList',
+        'type': 'post',
         'data': [],
-        'pageInfoName': 'accountPageInformation',
+        'pageInfoName': 'stockPageInformation',
         'columns': columns,
         'queryParams': function (params) {
-            var data = $('#form').serializeObject(),
-                userParams = wsCache.get('userParams');
-            data.roleId = userParams.roleId;
-            data.menuId = userParams.menuId;
+            var data = $('#form').serializeObject();
+            data.skuId = param.id;
+                
             return method.getTableParams(params, data);
         },
         'success': function(res){
@@ -70,7 +70,7 @@ $(function(){
             };
             statusSelect.addClass('off');
 
-            var data = res.body.accountStatusSelectOption.selectOptionItems,
+            var data = res.body.stockTypeSelectOption.selectOptionItems,
                 html = template('optionTpl',{data: data});
             statusSelect.html(html);
         }
@@ -116,10 +116,8 @@ $(function(){
 
     function searchTable(){
         var param = function (params) {
-            var data = $('#form').serializeObject(),
-                userParams = wsCache.get('userParams');
-            data.roleId = userParams.roleId;
-            data.menuId = userParams.menuId;
+            var data = $('#form').serializeObject();
+            data.skuId = param.id;
             return method.getTableParams(params, data);
         };
         $('#table').bootstrapTable('selectPage', 1);

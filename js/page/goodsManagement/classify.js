@@ -1,19 +1,24 @@
 $(function(){
+    var authAdd = false,
+        authEdit = false,
+        authDelete = false;
     var treeNodes;
     //配置ztree显示添加、编辑、删除按钮
     function addDiyDom(treeId, treeNode) {
         var sObj = $("#" + treeNode.tId + "_span"),
             str = '';
         //限制最多3级分类
-        if(treeNode.level < 2){
+        if(treeNode.level < 2 && authAdd){
             str += "<span class='button add' id='addBtn_" + treeNode.tId
             + "' onfocus='this.blur();' title='新增'></span>";
         };
-        str += "<span class='button edit' id='editBtn_" + treeNode.tId
+        if(authEdit){
+            str += "<span class='button edit' id='editBtn_" + treeNode.tId
             + "' onfocus='this.blur();' title='编辑'></span>";
+        };
         var zTree = $.fn.zTree.getZTreeObj("tree");
         var nodes = zTree.getNodes();
-        if(nodes.length != 1 || treeNode.level != 0){
+        if((nodes.length != 1 || treeNode.level != 0) && authDelete){
             str += "<span class='button remove' id='deleteBtn_" + treeNode.tId
             + "' onfocus='this.blur();' title='删除'></span>";
         };
@@ -44,8 +49,8 @@ $(function(){
                                 
                 }, function(){
                     method.ajax({
-                        'url': 'data/goodsManagement/deleteCategory.json',
-                        'type': 'get',
+                        'url': 'category/deleteCategory',
+                        'type': 'post',
                         'data': {"categoryId": treeNode.id},
                         'success': function(res){
                             var zTree = $.fn.zTree.getZTreeObj("tree");
@@ -69,10 +74,31 @@ $(function(){
         data.roleId = userParams.roleId;
         data.menuId = userParams.menuId;
     method.ajax({
-        'url': 'data/goodsManagement/queryCategoryTree.json',
-        'type': 'get',
+        'url': 'category/queryCategoryTree',
+        'type': 'post',
         'data': data,
         'success': function(res){
+            //处理权限
+            var authoritys = res.body.authoritys;
+            var add = authoritys.filter(function(item){
+                return item.authCode == 'Add';
+            });
+            if(add.length != 0){
+                authAdd = true;
+            };
+            var edit = authoritys.filter(function(item){
+                return item.authCode == 'Edit';
+            });
+            if(edit.length != 0){
+                authEdit = true;
+            };
+            var deleted = authoritys.filter(function(item){
+                return item.authCode == 'Delete';
+            });
+            if(deleted.length != 0){
+                authDelete = true;
+            };
+
             var setting = {
                 'view': {
                     'addDiyDom': addDiyDom,
@@ -92,8 +118,8 @@ $(function(){
 
     //获取分类关系
     method.ajax({
-        'url': 'data/goodsManagement/initCategoryAddPage.json',
-        'type': 'get',
+        'url': 'category/initCategoryAddPage',
+        'type': 'post',
         'success': function(res){
             var data = res.body.categoryRelationSelect.selectOptionItems,
                 html = template('optionTpl',{data: data});
@@ -112,9 +138,10 @@ $(function(){
         };
         var zTree = $.fn.zTree.getZTreeObj("tree");
         if(type == 'add'){ //如果新增
+            obj.currentCategoryId = treeNodes.id;
             method.ajax({
-                'url': 'data/goodsManagement/doAddCategory.json',
-                'type': 'get',
+                'url': 'category/doAddCategory',
+                'type': 'post',
                 'data': obj,
                 'success': function(res){
                     location.reload();
@@ -133,8 +160,8 @@ $(function(){
                 "categoryName": obj.categoryName
             };
             method.ajax({
-                'url': 'data/goodsManagement/doEditCategory.json',
-                'type': 'get',
+                'url': 'category/doEditCategory',
+                'type': 'post',
                 'data': data,
                 'success': function(res){
                     treeNodes.categoryName = data.categoryName;

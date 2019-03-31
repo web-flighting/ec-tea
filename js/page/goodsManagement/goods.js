@@ -69,10 +69,10 @@ $(function(){
             formatter: function (value, row, index) {
                 var btns = '';
                 if(authEdit){
-                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/goods_form.html?id='+ row.createAccountId +'"><i class="fa fa-edit"></i> 编辑</a>';
+                    btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/goods_form.html?id='+ row.itemId +'"><i class="fa fa-edit"></i> 编辑</a>';
                 };
                 if(authRepositoryMgt){
-                    btns += ' <a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/stock.html?id='+ row.createAccountId +'"><i class="glyphicon glyphicon-briefcase"></i> 库存</a>';
+                    btns += ' <a class="J_menuItem btn btn-sm btn-primary" href="/views/goodsManagement/stock.html?id='+ row.sku +'"><i class="glyphicon glyphicon-briefcase"></i> 库存</a>';
                 };
                 return btns;
             }

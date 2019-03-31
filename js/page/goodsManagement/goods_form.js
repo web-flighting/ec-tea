@@ -33,33 +33,76 @@ $(function(){
 		title = '修改商品';
 		//修改商品页面初始化
 		method.ajax({
-	        'url': 'data/userManagement/initEditAccountPage.json',
-	        'type': 'get',
+	        'url': 'item/initEditItemOperatePage',
+	        'type': 'post',
+	        'data': {"itemId": params.id},
 	        'success': function(res){
 	        	var body = res.body;
-	        	//姓名
-	        	$('#accountName').val(body.accountName);
-	        	//手机号
-	        	$('#accountMobile').val(body.accountMobile);
-	        	//邮箱
-	        	$('#accountMail').val(body.accountMail);
+	        	//商品名称
+	        	$('#itemName').val(body.itemName);
+	        	//详细地址
+	        	$('#addressDetail').val(body.addressDetail);
+	        	//商品分类
+	        	if(!!body.itemCategory){
+	        		$('#addClassifyBtn').hide();
+			    	$('#classifyId').val(body.itemCategory);
+			    	$('#classifyBtn').text(body.itemCategoryText).show();
+	        	};
 	        	//备注
-	        	$('#accountRemark').val(body.accountRemark);
+	        	$('#remark').val(body.remark);
 
+	        	body.provinceId = 130000;
+	        	body.cityId = 130100;
+	        	body.areaId = 130121;
 	        	//商品产地（省、市、区初始化）
-	        	var data = body.accountAddresses,
-	                html = template('addressTpl',{data: data});
-	            $('#addressWrap').html(html);
+	        	$('.province').each(function(){
+    				var _this = $(this);
+			        method.initCity({
+						'selector': _this,
+						'provinceId': body.provinceId,
+						'cityId': body.cityId,
+						'areaId': body.areaId
+					});
+    			});
 
+    			//规格设置
+    			var setWrap = $('#setWrap');
+	            var data = body.propertiesConfigures,
+	                html = template('setTpl',{data: data, edit: true});
+	            setWrap.html(html);
+	            //通过确定按钮来渲染出价格的整体结构，然后在填入值
+	            if(!!body.itemPriceGroups && body.itemPriceGroups.length != 0){
+	            	setObj.rowArr = body.itemPriceGroups;
+		            $('#sure').addClass('auto').trigger('click');
+		            $.each(body.itemPriceGroups, function(index, item){
+		            	var priceRow = $('.price-row').eq(index),
+		            		select = priceRow.find('select'),
+		            		priceBox = priceRow.find('.price'),
+		            		totalBox = priceRow.find('.total'),
+		            		skuId = item.skuId,
+		            		propertiesIdGroup = item.propertiesIdGroup,
+		            		price = item.price,
+		            		quantity = item.quantity;
+		            	priceBox.val(price);
+		            	totalBox.val(quantity);
+		            	$.each(propertiesIdGroup.split(';'), function(i, t){
+		            		t = t.split(':')[1];
+		            		if(!!t){
+		            			select.eq(i).find('option[value="'+ t +'"]').prop('selected', true);
+		            		};
+		            	});
+		            });
+	            };
+	            
 
 	            //渲染商品单位与状态
 	            var unitSelect = $('#unitSelect');
-	            var data = res.body.accountLevelSelectOption.selectOptionItems,
+	            var data = body.itemUnitSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
 	            unitSelect.html(html);
 
 	            var statusSelect = $('#statusSelect'),
-	                data = res.body.accountStatusSelectOption.selectOptionItems,
+	                data = body.itemStatusSelectOption.selectOptionItems,
 	                html = template('optionTpl',{data: data});
 	            statusSelect.html(html);
 	        } 
@@ -185,6 +228,7 @@ $(function(){
 	};
 	//规格设置-确定
 	$('#sure').on('click', function(){
+		var _this = $(this);
 		var mark = setCheck();
 		if(mark){
 			setObj.selectArr = [];
@@ -198,7 +242,13 @@ $(function(){
 					};
 				setObj.selectArr.push(obj);
 			});
-			var html = template('priceTpl',{data: setObj});
+			if(_this.hasClass('auto')){ //编辑初始化时通过自动点击确定来渲染价格的结构
+				_this.removeClass('auto');
+				var html = template('priceTpl',{data: setObj});
+				setObj.rowArr = [{}];
+			}else{
+				var html = template('priceTpl',{data: setObj});
+			};
             $('#priceWrap').html(html);
             $('#priceBox').show();
 		};
@@ -273,8 +323,11 @@ $(function(){
 		    	var url = 'item/doAddItem';
 		    	//如果为修改，则上传用户id
 		    	if(!!params.id){
-		    		url = 'data/userManagement/editAccount.json';
-		    		obj.accountId = params.id;
+		    		url = 'item/doEditItemOperate';
+		    		obj.itemId = params.id;
+		    	};
+		    	if(!setCheck() || !priceCheck()){
+		    		return;
 		    	};
 		    	//获取规格设置
 		    	var propertiesConfigures = [];
@@ -322,11 +375,9 @@ $(function(){
 		    	delete obj.propertiesIdGroup;
 		    	delete obj.price;
 		    	delete obj.quantity;
-		    	console.log(obj)
-		    	return;
 		    	method.ajax({
 		          'url': url,
-		          'type': 'get',
+		          'type': 'post',
 		          'data': obj,
 		          'success': function(res){
 	                layer.alert('保存成功', {

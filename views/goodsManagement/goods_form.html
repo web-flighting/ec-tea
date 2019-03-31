@@ -50,7 +50,7 @@
                                             <option value="">请选择</option>
                                         </select>
                                         <span class="m-l m-r m-t-xs pull-left">-</span>
-                                        <input class="form-control pull-left address" style="width:300px;" name="addressDetail" type="text" placeholder="详细地址">
+                                        <input id="addressDetail" class="form-control pull-left address" style="width:300px;" name="addressDetail" type="text" placeholder="详细地址">
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 <div>
                                     <button id="addClassifyBtn" class="btn btn-sm btn-primary" type="button"><i class="fa fa-plus"></i> 添加</button>
                                     <button id="classifyBtn" class="btn btn-sm btn-primary none" type="button"><i class="fa fa-plus"></i> 添加</button>
-                                    <input type="hidden" name="itemCategoryId" value="" class="classifyId">
+                                    <input type="hidden" name="itemCategoryId" value="" id="classifyId">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -90,11 +90,11 @@
                             </div>
                             <div class="form-group">
                                 <label>备注</label>
-                                <textarea id="accountRemark" class="form-control" name="remark" style="height:150px;resize:none;"></textarea>
+                                <textarea id="remark" class="form-control" name="remark" style="height:150px;resize:none;"></textarea>
                             </div>
                         </form>
                         <div class="text-center">
-                            <a id="cancel" href="/views/userManagement/user.html" class="J_menuItem btn btn-default btn-outline m-r-lg">取消</a>
+                            <a id="cancel" href="/views/goodsManagement/goods.html" class="J_menuItem btn btn-default btn-outline m-r-lg">取消</a>
                             <a id="save" class="btn btn-primary">确定</a>
                         </div>
                     </div>
@@ -134,11 +134,19 @@
     <script type="text/html" id="setTpl">
         {{each data}}
         <div class="set-row clearfix m-t-xs m-b">
-            <input class="form-control pull-left spec" style="width:250px;" name="propertiesName" type="text" placeholder="规格字段如：重量，颜色，大小等">
+            <input class="form-control pull-left spec" style="width:250px;" name="propertiesName" type="text" placeholder="规格字段如：重量，颜色，大小等" value="{{$value.propertiesName}}">
             <span class="m-l m-r m-t-xs pull-left">-</span>
-            <input class="form-control pull-left attr" style="width:400px;" name="propertiesValue" type="text" placeholder="对应属性的值：绿色;蓝色;红色等">
+            <input class="form-control pull-left attr" style="width:400px;" name="propertiesValue" type="text" placeholder="对应属性的值：绿色;蓝色;红色等" value="{{$value.propertiesValue}}">
             <button type="button" class="js-add-set btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-plus"></i></button>
+            {{if edit}}
+                {{if $index == 0}}
+                <div class="pull-left m-l m-t-sm">规格值有多个，请用英文的 <span class="text-danger">; </span>隔开</div>
+                {{else}}
+                <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-minus"></i></button>
+                {{/if}}
+            {{else}}
             <button type="button" class="js-del-btn btn btn-primary btn-circle pull-left m-l m-t-xxs"><i class="fa fa-minus"></i></button>
+            {{/if}}
         </div>
         {{/each}}
     </script>
@@ -151,7 +159,9 @@
             <select class="form-control pull-left" style="width:150px;" name="propertiesIdGroup">
                 <option value="">选择{{item.spec}}</option>
                 {{each item.attr.split(';') sitem sindex}}
-                <option value="{{sindex}}">{{sitem}}</option>
+                {{if !!sitem}}
+                <option value="{{sitem}}">{{sitem}}</option>
+                {{/if}}
                 {{/each}}
             </select>
             <span class="m-l m-r m-t-xs pull-left">-</span>

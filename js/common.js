@@ -98,11 +98,6 @@ var method = {
           formatNoMatches: function () { //没有匹配的结果
             return '没有找到匹配的记录';
           },
-          onLoadError: function(res){
-            if(res == 0){
-              method.gotoLogin();
-            };
-          },
           responseHandler: function (res) {
             //如果登录超时则跳转至登录页
             if (res.code == 92 && res.messageCode == 'I000061') {
@@ -149,7 +144,6 @@ var method = {
     },
     //跳转至登录
     gotoLogin: function(){
-      return;
       wsCache.delete('tokenId');
       wsCache.delete('userInfo');
       //wsCache.delete('userParams');
@@ -277,14 +271,6 @@ $(function(){
         };
         self.val(value);
     });
-    //临时解决登录超时
-    $.ajaxSetup({
-      complete: function(xhr){
-        if(xhr.status == 0){
-          method.gotoLogin();
-        }
-      }
-    })
 });
 
 //表单序列化为json

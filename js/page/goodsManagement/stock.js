@@ -73,6 +73,9 @@ $(function(){
             var data = res.body.stockTypeSelectOption.selectOptionItems,
                 html = template('optionTpl',{data: data});
             statusSelect.html(html);
+
+            $('#stockName').html(res.body.itemName);
+            $('#stockCount').html(res.body.itemSkuTotalQuality);
         }
     });
 

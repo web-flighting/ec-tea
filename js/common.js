@@ -6,6 +6,8 @@ var config = {
 //公用方法
 var method = {
     loading: null,
+    //手机号正则
+    phoneReg: /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|16[6]|17[0|6|7|8]|18[0-9]|19[8|9])\d{8}$/,
     //ajax请求http服务
     ajax: function (obj) {
         var tokenId = wsCache.get('tokenId');

@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>管理员管理</title>
+    <title>角色管理</title>
     <!-- 全局css -->
     <link rel="shortcut icon" href="/img/favicon.ico"> 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -25,9 +25,7 @@
     <link href="/css/style.css" rel="stylesheet">
     
     <!-- 对应样式表及插件 -->
-    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-
+    <link href="/css/plugins/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 
 </head>
 
@@ -50,7 +48,7 @@
         </div>
     </div>
     
-    <!-- 级别弹出窗口 -->
+    <!-- 角色弹出窗口 -->
     <div id="levelModal" class="modal inmodal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -60,7 +58,16 @@
                     <h4 class="modal-title">新增角色</h4>
                 </div>
                 <div class="modal-body form-horizontal">
-                    
+                    <form id="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="text-danger">*</span>角色名称</label>
+                            <div class="col-sm-9 fun-pl0">
+                                <input id="roleName" class="form-control" maxlength="16" name="roleName" type="text" value="" autocomplete="off">
+                                <input id="roleId" type="hidden" name="roleId" value="">
+                            </div>
+                        </div>
+                    </form>
+                    <ul id="tree" class="ztree"></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
@@ -80,15 +87,13 @@
     <!-- 对应插件 -->
     <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/js/plugins/zTree/jquery.ztree.core.min.js"></script>
+    <script src="/js/plugins/zTree/jquery.ztree.excheck.min.js"></script>
     
     <!-- 当前页面js -->
     <script src="/js/page/systemManagement/role.js"></script>
-    <script src="/js/plugins/iCheck/icheck.min.js"></script>
 
 
 </body>
-<script>
-     $(".i-checks").iCheck({checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green"});
-</script>
 
 </html>

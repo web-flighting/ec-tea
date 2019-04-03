@@ -88,6 +88,9 @@ $(function () {
   //通过手机号获取用户地址列表接口
   $('#mobile').on('blur', function(){
      var mobile = $.trim($(this).val());
+     if(mobile == '' || !method.phoneReg.test(mobile)){
+      return;
+     };
       method.ajax({
       'url': 'trade/getAccountAddress',
       'type': 'post',

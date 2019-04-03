@@ -25,27 +25,27 @@ $(function(){
             title: '最后编辑人',
             align: 'center'
         },
-        {
-            field: 'do',
-            title: '操作',
-            align: 'center',
-            formatter: function (value, row, index) {
-                var btns = '';
-                if(authEdit){
-                    btns += '<button class="btn btn-sm btn-primary edit" type="button"><i class="fa fa-edit"></i> 编辑</button>';
-                };
-                return btns;
-            },
-            events: { //编辑地区
-                'click .edit': function(e, value, row, index){
-                    $('#cityModal .modal-title').html('编辑地区');
-                    $('#cityName').val(row.areaName);
-                    $('#cityId').val(row.areaId);
-                    $('#confirm').attr('data-type', 'edit');
-                    $('#cityModal').modal();
-                }
-            }
-        }
+        // {
+        //     field: 'do',
+        //     title: '操作',
+        //     align: 'center',
+        //     formatter: function (value, row, index) {
+        //         var btns = '';
+        //         if(authEdit){
+        //             btns += '<button class="btn btn-sm btn-primary edit" type="button"><i class="fa fa-edit"></i> 编辑</button>';
+        //         };
+        //         return btns;
+        //     },
+        //     events: { //编辑地区
+        //         'click .edit': function(e, value, row, index){
+        //             $('#cityModal .modal-title').html('编辑地区');
+        //             $('#cityName').val(row.areaName);
+        //             $('#cityId').val(row.areaId);
+        //             $('#confirm').attr('data-type', 'edit');
+        //             $('#cityModal').modal();
+        //         }
+        //     }
+        // }
     ];
     //初始化table
     method.initTableServer({

@@ -25,6 +25,7 @@ $(function () {
       'success': function (res) {
         // 渲染订单id
         $('#tradeNo').val(res.body.tradeNo);
+
         //渲染订单状态
         var statusSelect = $('#statusSelect'),
           data = res.body.tradeStatusSelectOption.selectOptionItems,
@@ -57,7 +58,7 @@ $(function () {
         //备注
         $('#remark').val(body.remark);
 
-        //常用收货地址（省、市、区初始化）
+        //收货地址
         var data = body.addressList,
           html = template('addressTpl', {
             data: data
@@ -68,16 +69,6 @@ $(function () {
           checkboxClass: "icheckbox_square-green",
           radioClass: "iradio_square-green"
         });
-        //常用收货地址（省、市、区初始化）
-        $('.province').each(function () {
-          var _this = $(this);
-          method.initCity({
-            'selector': _this,
-            'provinceId': _this.attr('data-provinceId'),
-            'cityId': _this.attr('data-cityId'),
-            'areaId': _this.attr('data-areaId')
-          });
-        });
 
         //渲染订单状态
         var statusSelect = $('#statusSelect'),
@@ -85,88 +76,38 @@ $(function () {
           html = template('optionTpl', {
             data: data
           });
-        statusSelect.html(html).attr('disabled', 'disabled');
+        statusSelect.html(html).prop('disabled', true);
       }
     });
   };
 
-  //常用收货地址验证
-  function addressCheck() {
-    var mark = true;
-    $('#addressWrap .address-row').each(function () {
-      var row = $(this);
-      //验证当前行中的省、市、区
-      row.find('select').each(function () {
-        var _this = $(this),
-          value = _this.val();
-        if (value == '') {
-          _this.focus();
-          layer.msg('请选择收货地址');
-          mark = false;
-          return false;
-        }
-      });
-      //验证当前行中的详细地址
-      if (mark) {
-        var address = row.find('.address'),
-          value = $.trim(address.val());
-        if (value == '') {
-          address.focus();
-          layer.msg('请填写详细地址');
-          mark = false;
-        };
-      };
-      return mark;
-    });
-    return mark;
-  };
+  
 
   //设置标题
   $('#title').text(title);
-  //添加常用收货地址
-  $('body').on('click', '.js-add-address', function () {
-    var mark = addressCheck();
-    if (mark) {
-      var data = [{
-          "address": "",
-          "isDefault": false
-        }],
-        html = template('addressTpl', {
-          data: data
+  //通过手机号获取用户地址列表接口
+  $('#mobile').on('blur', function(){
+     var mobile = $.trim($(this).val());
+      method.ajax({
+      'url': 'trade/getAccountAddress',
+      'type': 'post',
+      'data': {"mobile": mobile},
+      'success': function (res) {
+        //收货地址
+        var data = res.body.addressList,
+          html = template('addressTpl', {
+            data: data
+          });
+        $('#addressWrap').html(html);
+        //单选框
+        $(".i-checks").iCheck({
+          checkboxClass: "icheckbox_square-green",
+          radioClass: "iradio_square-green"
         });
-      $('#addressWrap').append(html);
-      //单选框
-      $("#addressWrap .i-checks:last").iCheck({
-        checkboxClass: "icheckbox_square-green",
-        radioClass: "iradio_square-green"
-      });
-      $('.js-del-address').show();
-      //常用收货地址（省、市、区初始化）
-      method.initCity({
-        'selector': $('.province:last')
-      });
-    };
+      }
+    });
   });
-  //删除当前常用收货地址
-  $('body').on('click', '.js-del-address', function () {
-    var _this = $(this),
-      parent = _this.parent(),
-      radio = parent.find('.isDefault');
-    //如果只剩当前一行，则不可删除(按钮是通过在控制台调样式显示出来的)
-    if (parent.siblings().length == 0) {
-      $('.js-del-address').hide();
-      return;
-    };
-    //如果删除后只剩一行，则隐藏减号，不可在删除
-    if (parent.siblings().length <= 1) {
-      $('.js-del-address').hide();
-    };
-    parent.remove();
-    //如果当前行是选中的，则删除后默认让第一行选中
-    if (radio.prop('checked')) {
-      $('#addressWrap .isDefault:first').iCheck('check');
-    };
-  });
+
   //form验证配置
   var icon = "<i class='fa fa-times-circle'></i> ";
   var validateFirtst = $("#form").validate({
@@ -191,48 +132,30 @@ $(function () {
   $('#save').on('click', function () {
     var _this = $(this);
     if (validateFirtst.form()) { //form表单验证通过后
-      var mark = addressCheck();
-      if (mark) {
         var obj = $('#form').serializeObject(); //表单中的数据
-        /* var accountAddresses = [];
-        $('.address-row').each(function () {
-          var row = $(this),
-            provinceId = row.find('.province').val(),
-            cityId = row.find('.city').val(),
-            districtId = row.find('.area').val(),
-            address = $.trim(row.find('.address').val()),
-            isDefault = row.find('.isDefault').prop('checked'),
-            rowObj = {
-              "provinceId": provinceId,
-              "cityId": cityId,
-              "districtId": districtId,
-              "address": address,
-              "isDefault": isDefault
-            };
-          accountAddresses.push(rowObj);
-        }); */
+        var addressCheck = $('#addressWrap .isDefault:checked');
+        if(addressCheck.length == 0){
+          layer.msg('请输入正确的买家手机号获取收货地址');
+          return;
+        };
+        obj.provinceId = addressCheck.attr('data-provinceId');
+        obj.cityId = addressCheck.attr('data-cityId');
+        obj.districtId = addressCheck.attr('data-districtId');
+        obj.address = addressCheck.attr('data-address');
 
         var url = 'trade/doAddTrade';
         //如果为修改，则上传订单id
         if (!!params.id) {
           url = 'trade/doEditTrade';
           obj.tradeId = params.id;
+          obj.tradeStatus = $('#statusSelect').val();
         };
-        /* obj.accountAddresses = accountAddresses;
-        delete obj.provinceId;
-        delete obj.cityId;
-        delete obj.districtId;
-        delete obj.address;
-        delete obj.isDefault; */
-        console.log('====================================');
-        console.log(obj);
-        console.log('====================================');
         method.ajax({
           'url': url,
           'type': 'post',
           'data': obj,
           'success': function (res) {
-            layer.alert('保存成功', {
+            parent.layer.alert('保存成功', {
               time: 1000,
               btn: [],
               end: function () {
@@ -241,7 +164,6 @@ $(function () {
             });
           }
         });
-      };
     } else {
       //定位至第一个错误提示
       var errorTop = $('#form .has-error:first').offset().top - 20;

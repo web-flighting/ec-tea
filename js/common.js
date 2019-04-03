@@ -34,6 +34,9 @@ var method = {
                     return;
                 };
                 if(res.code != 0){
+                  if(!res.resultMessage){
+                    res.resultMessage = '服务器异常';
+                  };
                   parent.layer.alert(res.resultMessage);
                   return;
                 };

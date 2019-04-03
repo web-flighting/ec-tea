@@ -53,35 +53,7 @@
                 </div>
                 <div class="form-group">
                   <label>收货地址</label>
-                  <div id="addressWrap">
-                    <div class="address-row clearfix m-t-xs m-b-xs">
-                      <div class="radio i-checks pull-left m-r">
-                        <label style="padding: 0;">
-                          <input class="isDefault" type="radio" checked value="" name="isDefault">
-                          <i></i>
-                        </label>
-                      </div>
-                      <select class="form-control pull-left province" style="width:150px;" name="provinceId">
-                        <option value="">请选择</option>
-                      </select>
-                      <span class="m-l m-r m-t-xs pull-left">-</span>
-                      <select class="form-control pull-left city" style="width:150px;" name="cityId">
-                        <option value="">请选择</option>
-                      </select>
-                      <span class="m-l m-r m-t-xs pull-left">-</span>
-                      <select class="form-control pull-left area" style="width:150px;" name="districtId">
-                        <option value="">请选择</option>
-                      </select>
-                      <span class="m-l m-r m-t-xs pull-left">-</span>
-                      <input class="form-control pull-left address" style="width:300px;" name="address" type="text"
-                        placeholder="详细地址">
-                      <button type="button" class="js-add-address btn btn-primary btn-circle pull-left m-l m-t-xxs"><i
-                          class="fa fa-plus"></i></button>
-                      <button type="button"
-                        class="js-del-address btn btn-primary btn-circle pull-left m-l m-t-xxs none"><i
-                          class="fa fa-minus"></i></button>
-                    </div>
-                  </div>
+                  <div id="addressWrap"></div>
                 </div>
                 <div class="form-group">
                   <label>备注</label>
@@ -113,30 +85,10 @@
     <div class="address-row clearfix m-t-xs m-b-xs">
       <div class="radio i-checks pull-left m-r">
         <label style="padding: 0;">
-          <input class="isDefault" type="radio" {{$value.isDefault ? 'checked' : ''}} value="" name="isDefault">
-          <i></i>
+          <input class="isDefault" type="radio" {{$value.isDefault ? 'checked' : ''}} value="" name="isDefault" data-provinceId="{{$value.provinceId}}" data-cityId="{{$value.cityId}}" data-districtId="{{$value.districtId}}" data-address="{{$value.address}}">
+          <i></i> {{$value.provinceName}}，{{$value.cityName}}，{{$value.districtName}}，{{$value.address}}
         </label>
       </div>
-      <select class="form-control pull-left province" style="width:150px;" name="provinceId"
-        data-provinceId="{{$value.provinceId}}" data-cityId="{{$value.cityId}}" data-areaId="{{$value.districtId}}">
-        <option value="">请选择</option>
-      </select>
-      <span class="m-l m-r m-t-xs pull-left">-</span>
-      <select class="form-control pull-left city" style="width:150px;" name="cityId">
-        <option value="">请选择</option>
-      </select>
-      <span class="m-l m-r m-t-xs pull-left">-</span>
-      <select class="form-control pull-left area" style="width:150px;" name="districtId">
-        <option value="">请选择</option>
-      </select>
-      <span class="m-l m-r m-t-xs pull-left">-</span>
-      <input class="form-control pull-left address" value="{{$value.address}}" style="width:300px;" name="address"
-        type="text" placeholder="详细地址">
-      <button type="button" class="js-add-address btn btn-primary btn-circle pull-left m-l m-t-xxs"><i
-          class="fa fa-plus"></i></button>
-      <button type="button"
-        class="js-del-address btn btn-primary btn-circle pull-left m-l m-t-xxs {{data.length == 1 ? 'none' : ''}}"><i
-          class="fa fa-minus"></i></button>
     </div>
     {{/each}}
     </script>

@@ -39,7 +39,7 @@ $(function () {
         'click .edit': function (e, value, row, index) {
           $('#unitModal .modal-title').html('编辑单位');
           $('#unitName').val(row.unitName);
-          $('#unitId').val(row.updateAccountId);
+          $('#unitId').val(row.id);
           $('#confirm').attr('data-type', 'edit');
           $('#unitModal').modal();
         }
@@ -124,7 +124,7 @@ $(function () {
       'success': function (res) {
         $('#unitModal').modal('hide');
         searchTable();
-        layer.alert('保存成功', {
+        parent.layer.alert('保存成功', {
           time: 1000,
           btn: []
         });

@@ -76,6 +76,7 @@ $(function () {
           html = template('optionTpl', {
             data: data
           });
+        statusSelect.html(html);
       }
     });
   };

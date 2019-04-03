@@ -84,7 +84,7 @@ var method = {
           queryParams: obj.queryParams, //参数
           pageNumber: 1, //初始化加载第一页，默认第一页
           pageSize: obj.pageSize || 10, //每页的记录行数（*）
-          pageList: [20, 50, 100], //可供选择的每页的行数（*）
+          pageList: [10, 20, 50, 100], //可供选择的每页的行数（*）
           clickToSelect: true, //是否启用点击选中行
           maintainSelected: true,
           height: height, //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度

@@ -20,14 +20,14 @@ $(function () {
     });
     //订单添加页面初始化
     method.ajax({
-      'url': 'data/orderManagement/initAddAccountPage.json',
-      'type': 'get',
+      'url': 'trade/initAddTradePage',
+      'type': 'post',
       'success': function (res) {
         // 渲染订单id
-        $('#accountOrderNo').val(res.body.orderNo);
+        $('#tradeNo').val(res.body.tradeNo);
         //渲染订单状态
         var statusSelect = $('#statusSelect'),
-          data = res.body.accountStatusSelectOption.selectOptionItems,
+          data = res.body.tradeStatusSelectOption.selectOptionItems,
           html = template('optionTpl', {
             data: data
           });
@@ -39,23 +39,26 @@ $(function () {
     title = '编辑订单';
     //订单修改页面初始化
     method.ajax({
-      'url': 'data/orderManagement/initEditAccountPage.json',
-      'type': 'get',
+      'url': 'trade/initEditTradePage',
+      'type': 'post',
+      'data': {
+        'tradeId': params.id
+      },
       'success': function (res) {
         var body = res.body;
         // 渲染订单id
-        $('#accountOrderNo').val(body.orderNo);
+        $('#tradeNo').val(body.tradeNo);
         // 渲染商品SKU
-        $('#accountSku').val(body.accountSku);
+        $('#sku').val(body.sku);
         // 渲染订单数量
-        $('#accountNum').val(body.accountNum);
+        $('#quantity').val(body.quantity);
         //手机号
-        $('#accountMobile').val(body.accountMobile);
+        $('#mobile').val(body.mobile);
         //备注
-        $('#accountRemark').val(body.accountRemark);
+        $('#remark').val(body.remark);
 
         //常用收货地址（省、市、区初始化）
-        var data = body.accountAddresses,
+        var data = body.addressList,
           html = template('addressTpl', {
             data: data
           });
@@ -78,7 +81,7 @@ $(function () {
 
         //渲染订单状态
         var statusSelect = $('#statusSelect'),
-          data = body.accountStatusSelectOption.selectOptionItems,
+          data = body.tradeStatusSelectOption.selectOptionItems,
           html = template('optionTpl', {
             data: data
           });
@@ -169,17 +172,17 @@ $(function () {
   var validateFirtst = $("#form").validate({
     debug: true,
     rules: {
-      accountSku: 'required',
-      accountNum: 'required',
-      accountMobile: {
+      sku: 'required',
+      quantity: 'required',
+      mobile: {
         'required': true,
         'phone': true
       },
     },
     messages: {
-      accountSku: icon + '请输入商品SKU',
-      accountNum: icon + '请输入数量',
-      accountMobile: {
+      sku: icon + '请输入商品SKU',
+      quantity: icon + '请输入数量',
+      mobile: {
         'required': icon + '请输入手机号'
       }
     }
@@ -191,7 +194,7 @@ $(function () {
       var mark = addressCheck();
       if (mark) {
         var obj = $('#form').serializeObject(); //表单中的数据
-        var accountAddresses = [];
+        /* var accountAddresses = [];
         $('.address-row').each(function () {
           var row = $(this),
             provinceId = row.find('.province').val(),
@@ -207,24 +210,26 @@ $(function () {
               "isDefault": isDefault
             };
           accountAddresses.push(rowObj);
-        });
+        }); */
 
-        var url = 'data/orderManagement/addAccount.json';
+        var url = 'trade/doAddTrade';
         //如果为修改，则上传订单id
         if (!!params.id) {
-          url = 'data/orderManagement/editAccount.json';
-          obj.accountId = params.id;
+          url = 'trade/doEditTrade';
+          obj.tradeId = params.id;
         };
-        obj.accountAddresses = accountAddresses;
+        /* obj.accountAddresses = accountAddresses;
         delete obj.provinceId;
         delete obj.cityId;
         delete obj.districtId;
         delete obj.address;
-        delete obj.isDefault;
-
+        delete obj.isDefault; */
+        console.log('====================================');
+        console.log(obj);
+        console.log('====================================');
         method.ajax({
           'url': url,
-          'type': 'get',
+          'type': 'post',
           'data': obj,
           'success': function (res) {
             layer.alert('保存成功', {

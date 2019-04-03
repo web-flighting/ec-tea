@@ -10,19 +10,19 @@ $(function () {
       }
     },
     {
-      field: 'accountName',
+      field: 'tradeNo',
       title: '订单号',
       align: 'center',
       width: 130
     },
     {
-      field: 'accountMobile',
+      field: 'mobile',
       title: '手机号',
       align: 'center',
       width: 130
     },
     {
-      field: 'accountLevelName',
+      field: 'ecAccountLevelText',
       title: '用户级别',
       align: 'center',
       width: 130
@@ -34,13 +34,13 @@ $(function () {
       width: 130
     },
     {
-      field: 'createDate',
+      field: 'updateDateText',
       title: '订单最近变化',
       align: 'center',
       width: 180
     },
     {
-      field: 'accountRemark',
+      field: 'remark',
       title: '备注',
       align: 'center',
       width: 200
@@ -52,19 +52,33 @@ $(function () {
       formatter: function (value, row, index) {
         var btns = '';
         if (authEdit) {
-          btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/orderManagement/order_form.html?id=' + row.createAccountId + '"><i class="fa fa-edit"></i> 编辑</a>';
+          btns += '<a class="J_menuItem btn btn-sm btn-primary" href="/views/orderManagement/order_form.html?id=' + row.id + '"><i class="fa fa-edit"></i> 编辑</a>';
         };
         return btns;
       }
     }
   ];
+
+  //渲染状态
+  method.ajax({
+    'url': 'trade/initTradePageListCondition',
+    'type': 'post',
+    'success': function (res) {
+      var statusSelect = $('#statusSelect');
+      data = res.body.tradeStatusSelectOption.selectOptionItems,
+        html = template('optionTpl', {
+          data: data
+        });
+      statusSelect.html(html);
+    }
+  });
   //初始化table
   method.initTableServer({
     'id': 'table',
-    'url': 'data/orderManagement/table.json',
-    'type': 'get',
+    'url': 'trade/queryTradePageList',
+    'type': 'post',
     'data': [],
-    'pageInfoName': 'accountPageInformation',
+    'pageInfoName': 'tradePageList',
     'columns': columns,
     'queryParams': function (params) {
       var data = $('#form').serializeObject(),
@@ -88,17 +102,7 @@ $(function () {
       if (edit.length != 0) {
         authEdit = true;
       };
-      //渲染状态
-      var statusSelect = $('#statusSelect');
-      if (statusSelect.hasClass('off')) { //只渲染一次
-        return;
-      };
-      statusSelect.addClass('off');
-      data = res.body.accountStatusSelectOption.selectOptionItems,
-        html = template('optionTpl', {
-          data: data
-        });
-      statusSelect.html(html);
+      
     }
   });
 

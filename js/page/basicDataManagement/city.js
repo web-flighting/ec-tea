@@ -50,8 +50,8 @@ $(function(){
     //初始化table
     method.initTableServer({
         'id': 'table',
-        'url': 'data/basicDataManagement/initAccountCityPageList.json',
-        'type': 'get',
+        'url': 'city/queryCityPageList',
+        'type': 'post',
         'data': [],
         'pageInfoName': 'cityPageInformation',
         'columns': columns,

@@ -56,7 +56,7 @@ var method = {
     getTableParams: function (params, obj) {
         var data = obj;
         data.pageSize = params.limit;
-        data.currentPage = Math.ceil(params.offset / 10) + 1;
+        data.currentPage = Math.ceil(params.offset / params.limit) + 1;
         return JSON.stringify(data);
     },
     //初始化Table

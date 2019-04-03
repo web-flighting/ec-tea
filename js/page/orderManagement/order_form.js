@@ -76,7 +76,6 @@ $(function () {
           html = template('optionTpl', {
             data: data
           });
-        statusSelect.html(html).prop('disabled', true);
       }
     });
   };
@@ -151,7 +150,6 @@ $(function () {
         if (!!params.id) {
           url = 'trade/doEditTrade';
           obj.tradeId = params.id;
-          obj.tradeStatus = $('#statusSelect').val();
         };
         method.ajax({
           'url': url,

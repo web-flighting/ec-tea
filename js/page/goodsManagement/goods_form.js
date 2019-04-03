@@ -316,16 +316,19 @@ $(function(){
 	//验证价格下的规格是否有选择重复
 	function checkRepeat(){
 		var mark = true;
-		$('#priceWrap select').each(function(){
+		$('#priceWrap .price-row').each(function(){
 			var _this = $(this),
-				parent = _this.parent(),
-				rowSelects = parent.find('select'),
-				index = $.makeArray(rowSelects).indexOf(_this.get(0)),
-				value = _this.val();
-			parent.siblings().each(function(){
-				var siblingsValue = $(this).find('select').eq(index).val();
-				if(value == siblingsValue){
-					_this.focus();
+				text = '';
+			_this.find('select').each(function(){
+				text += $(this).val();
+			});
+			_this.siblings().each(function(){
+				var texts = '';
+				$(this).find('select').each(function(){
+					texts += $(this).val();
+				});
+				if(text == texts){
+					_this.find('select:first').focus();
 					layer.msg('检测到有选择重复的规格');
 					mark = false;
 					return false;

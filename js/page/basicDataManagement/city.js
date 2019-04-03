@@ -16,7 +16,7 @@ $(function(){
             align: 'center'
         },
         {
-            field: 'parentId',
+            field: 'areaId',
             title: '编号',
             align: 'center'
         },
